@@ -3,7 +3,7 @@ set -e
 
 BASE_DIR=~
 SPEEDCRUNCH_SOURCE_DIR=/speedcrunch-source
-RELEASE_VERSION=master
+RELEASE_VERSION=0.12
 OUTPUT_DIR=/vagrant/dist
 
 if [ "$RELEASE_VERSION" = "master" ]; then
