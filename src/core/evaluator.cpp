@@ -1959,6 +1959,7 @@ void Evaluator::unsetAllUserDefinedVariables()
     Quantity ansBackup = getVariable(QLatin1String("ans")).value();
     m_session->clearVariables();
     setVariable(QLatin1String("ans"), ansBackup, Variable::BuiltIn);
+    initializeBuiltInVariables();
 }
 
 static QRegularExpression s_superscriptPowersRE("(\\x{207B})?[\\x{2070}¹²³\\x{2074}-\\x{2079}]+");
