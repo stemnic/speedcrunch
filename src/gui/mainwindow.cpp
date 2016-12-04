@@ -1030,6 +1030,8 @@ void MainWindow::applySettings()
     m_widgets.display->setFont(font);
     m_widgets.editor->setFont(font);
 
+    m_widgets.display->scrollToBottom();
+
     for (QAction* action : m_actions.settingsDisplayColorSchemes) {
         if (m_settings->colorScheme == action->data().toString())
             action->setChecked(true);
