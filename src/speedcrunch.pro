@@ -96,7 +96,8 @@ HEADERS += core/book.h \
            gui/manualwindow.h \
            gui/mainwindow.h \
            gui/syntaxhighlighter.h \
-           math/floatcommon.h \
+		   math/cmath.h \
+		   math/floatcommon.h \
            math/floatconfig.h \
            math/floatconst.h \
            math/floatconvert.h \
@@ -118,7 +119,7 @@ HEADERS += core/book.h \
            math/number.h \
            math/quantity.h \
            math/rational.h \
-           math/units.h
+		   math/units.h
 
 
 SOURCES += main.cpp \

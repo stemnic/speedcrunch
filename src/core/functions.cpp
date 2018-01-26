@@ -83,11 +83,21 @@
             f->setError(OutOfDomain); \
             return DMath::nan(); \
         } \
+    } \
+    else if (Settings::instance()->angleUnit == 'g') { \
+        if (angle.isReal()) \
+            angle = DMath::deg2rad(angle); \
+        else { \
+            f->setError(OutOfDomain); \
+            return DMath::nan(); \
+        } \
     }
 
 #define CONVERT_RESULT_ANGLE(result) \
     if (Settings::instance()->angleUnit == 'd') \
         result = DMath::rad2deg(result); \
+    else if (Settings::instance()->angleUnit == 'g') \
+        result = DMath::rad2gon(result);
 
 static FunctionRepo* s_FunctionRepoInstance = 0;
 
