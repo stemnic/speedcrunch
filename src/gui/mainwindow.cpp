@@ -135,6 +135,7 @@ void MainWindow::createActions()
     m_actions.viewUserFunctions = new QAction(this);
     m_actions.settingsAngleUnitDegree = new QAction(this);
     m_actions.settingsAngleUnitRadian = new QAction(this);
+    m_actions.settingsAngleUnitGradian = new QAction(this);
     m_actions.settingsBehaviorAlwaysOnTop = new QAction(this);
     m_actions.settingsBehaviorAutoAns = new QAction(this);
     m_actions.settingsBehaviorAutoCompletion = new QAction(this);
@@ -182,6 +183,7 @@ void MainWindow::createActions()
 
     m_actions.settingsAngleUnitDegree->setCheckable(true);
     m_actions.settingsAngleUnitRadian->setCheckable(true);
+    m_actions.settingsAngleUnitGradian->setCheckable(true);
     m_actions.settingsBehaviorAlwaysOnTop->setCheckable(true);
     m_actions.settingsBehaviorAutoAns->setCheckable(true);
     m_actions.settingsBehaviorAutoCompletion->setCheckable(true);
@@ -267,8 +269,8 @@ void MainWindow::retranslateText()
 void MainWindow::setStatusBarText()
 {
     if (m_status.angleUnit) {
-        QString angleUnit = (m_settings->angleUnit == 'r') ?
-            MainWindow::tr("Radian") : MainWindow::tr("Degree");
+        QString angleUnit = (m_settings->angleUnit == 'r' ? MainWindow::tr("Radian")
+            : ( m_settings->angleUnit == 'g') ? MainWindow::tr("Gradian") : MainWindow::tr("Degree"));
 
         QString format;
         switch (m_settings->resultFormat) {
@@ -320,6 +322,7 @@ void MainWindow::setActionsText()
 
     m_actions.settingsAngleUnitDegree->setText(MainWindow::tr("&Degree"));
     m_actions.settingsAngleUnitRadian->setText(MainWindow::tr("&Radian"));
+    m_actions.settingsAngleUnitGradian->setText(MainWindow::tr("&Gradian"));
     m_actions.settingsBehaviorAlwaysOnTop->setText(MainWindow::tr("Always on &Top"));
     m_actions.settingsBehaviorAutoAns->setText(MainWindow::tr("Automatic Result &Reuse"));
     m_actions.settingsBehaviorAutoCompletion->setText(MainWindow::tr("Automatic &Completion"));
@@ -400,6 +403,7 @@ void MainWindow::createActionGroups()
     m_actionGroups.angle = new QActionGroup(this);
     m_actionGroups.angle->addAction(m_actions.settingsAngleUnitRadian);
     m_actionGroups.angle->addAction(m_actions.settingsAngleUnitDegree);
+    m_actionGroups.angle->addAction(m_actions.settingsAngleUnitGradian);
 
     m_actionGroups.colorScheme = new QActionGroup(this);
     const auto schemes = m_actions.settingsDisplayColorSchemes;
@@ -437,6 +441,7 @@ void MainWindow::createActionShortcuts()
     m_actions.viewUserFunctions->setShortcut(Qt::CTRL + Qt::Key_5);
     m_actions.settingsAngleUnitDegree->setShortcut(Qt::Key_F10);
     m_actions.settingsAngleUnitRadian->setShortcut(Qt::Key_F9);
+//    m_actions.settingsAngleUnitGradian->setShortcut(Qt::Key_F10);
     m_actions.settingsResultFormatGeneral->setShortcut(Qt::Key_F2);
     m_actions.settingsResultFormatFixed->setShortcut(Qt::Key_F3);
     m_actions.settingsResultFormatEngineering->setShortcut(Qt::Key_F4);
@@ -530,6 +535,7 @@ void MainWindow::createMenus()
     m_menus.angleUnit = m_menus.settings->addMenu("");
     m_menus.angleUnit->addAction(m_actions.settingsAngleUnitRadian);
     m_menus.angleUnit->addAction(m_actions.settingsAngleUnitDegree);
+    m_menus.angleUnit->addAction(m_actions.settingsAngleUnitGradian);
 
     m_menus.behavior = m_menus.settings->addMenu("");
     m_menus.behavior->addAction(m_actions.settingsBehaviorSaveSessionOnExit);
@@ -614,6 +620,7 @@ void MainWindow::createStatusBar()
     m_status.angleUnit->setContextMenuPolicy(Qt::ActionsContextMenu);
     m_status.angleUnit->addAction(m_actions.settingsAngleUnitRadian);
     m_status.angleUnit->addAction(m_actions.settingsAngleUnitDegree);
+    m_status.angleUnit->addAction(m_actions.settingsAngleUnitGradian);
 
     m_status.resultFormat->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(m_status.resultFormat, SIGNAL(customContextMenuRequested(const QPoint&)),
@@ -843,6 +850,7 @@ void MainWindow::createFixedConnections()
 
     connect(m_actions.settingsAngleUnitDegree, SIGNAL(triggered()), SLOT(setAngleModeDegree()));
     connect(m_actions.settingsAngleUnitRadian, SIGNAL(triggered()), SLOT(setAngleModeRadian()));
+    connect(m_actions.settingsAngleUnitGradian, SIGNAL(triggered()), SLOT(setAngleModeGradian()));
 
     connect(m_actions.settingsBehaviorAlwaysOnTop, SIGNAL(toggled(bool)), SLOT(setAlwaysOnTopEnabled(bool)));
     connect(m_actions.settingsBehaviorAutoCompletion, SIGNAL(toggled(bool)), SLOT(setAutoCompletionEnabled(bool)));
@@ -981,6 +989,8 @@ void MainWindow::applySettings()
         m_actions.settingsAngleUnitRadian->setChecked(true);
     else if (m_settings->angleUnit == 'd')
         m_actions.settingsAngleUnitDegree->setChecked(true);
+    else if (m_settings->angleUnit == 'g')
+        m_actions.settingsAngleUnitGradian->setChecked(true);
 
     if (m_settings->sessionSave) {
         m_actions.settingsBehaviorSaveSessionOnExit->setChecked(true);
@@ -1253,20 +1263,6 @@ void MainWindow::copyResultToClipboard()
     QString strToCopy(NumberFormatter::format(q));
     strToCopy.replace(QChar(0x2212), QChar('-'));
     cb->setText(strToCopy, QClipboard::Clipboard);
-}
-
-void MainWindow::setAngleModeDegree()
-{
-    if (m_settings->angleUnit == 'd')
-        return;
-
-    m_settings->angleUnit = 'd';
-
-    if (m_status.angleUnit)
-        m_status.angleUnit->setText(tr("Degree"));
-
-    m_evaluator->initializeAngleUnits();
-    emit angleUnitChanged();
 }
 
 void MainWindow::decreaseOpacity()
@@ -1583,6 +1579,20 @@ void MainWindow::setComplexNumbers(bool b)
     DMath::complexMode = b;
 }
 
+void MainWindow::setAngleModeDegree()
+{
+    if (m_settings->angleUnit == 'd')
+        return;
+
+    m_settings->angleUnit = 'd';
+
+    if (m_status.angleUnit)
+        m_status.angleUnit->setText(tr("Degree"));
+
+    m_evaluator->initializeAngleUnits();
+    emit angleUnitChanged();
+}
+
 void MainWindow::setAngleModeRadian()
 {
     if (m_settings->angleUnit == 'r')
@@ -1592,6 +1602,20 @@ void MainWindow::setAngleModeRadian()
 
     if (m_status.angleUnit)
         m_status.angleUnit->setText(tr("Radian"));
+
+    m_evaluator->initializeAngleUnits();
+    emit angleUnitChanged();
+}
+
+void MainWindow::setAngleModeGradian()
+{
+    if (m_settings->angleUnit == 'g')
+        return;
+
+    m_settings->angleUnit = 'g';
+
+    if (m_status.angleUnit)
+        m_status.angleUnit->setText(tr("Gradian"));
 
     m_evaluator->initializeAngleUnits();
     emit angleUnitChanged();
@@ -2389,6 +2413,8 @@ void MainWindow::cycleAngleUnits()
     if (m_actions.settingsAngleUnitDegree->isChecked())
         m_actions.settingsAngleUnitRadian->trigger();
     else if (m_actions.settingsAngleUnitRadian->isChecked())
+        m_actions.settingsAngleUnitGradian->trigger();
+    else if (m_actions.settingsAngleUnitGradian->isChecked())
         m_actions.settingsAngleUnitDegree->trigger();
 }
 
