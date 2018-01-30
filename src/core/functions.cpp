@@ -504,7 +504,7 @@ Quantity function_radians(Function* f, const Function::ArgumentList& args)
 Quantity function_gradians(Function* f, const Function::ArgumentList& args)
 {
     ENSURE_ARGUMENT_COUNT(1);
-    return DMath::gon2rad(args[0]);
+    return DMath::rad2gon(args[0]);
 }
 
 Quantity function_max(Function* f, const Function::ArgumentList& args)
