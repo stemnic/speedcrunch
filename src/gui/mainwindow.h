@@ -279,6 +279,7 @@ private:
         QAction* settingsAngleUnitRadian;
         QAction* settingsAngleUnitDegree;
         QAction* settingsAngleUnitGradian;
+        QAction* settingsAngleUnitCycle;
         QAction* settingsBehaviorSaveSessionOnExit;
         QAction* settingsBehaviorSaveWindowPositionOnExit;
         QAction* settingsBehaviorPartialResults;

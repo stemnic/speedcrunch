@@ -136,6 +136,7 @@ void MainWindow::createActions()
     m_actions.settingsAngleUnitDegree = new QAction(this);
     m_actions.settingsAngleUnitRadian = new QAction(this);
     m_actions.settingsAngleUnitGradian = new QAction(this);
+    m_actions.settingsAngleUnitCycle = new QAction(this);
     m_actions.settingsBehaviorAlwaysOnTop = new QAction(this);
     m_actions.settingsBehaviorAutoAns = new QAction(this);
     m_actions.settingsBehaviorAutoCompletion = new QAction(this);
@@ -323,6 +324,7 @@ void MainWindow::setActionsText()
     m_actions.settingsAngleUnitDegree->setText(MainWindow::tr("&Degree"));
     m_actions.settingsAngleUnitRadian->setText(MainWindow::tr("&Radian"));
     m_actions.settingsAngleUnitGradian->setText(MainWindow::tr("&Gradian"));
+    m_actions.settingsAngleUnitCycle->setText(MainWindow::tr("&Cycle unit"));
     m_actions.settingsBehaviorAlwaysOnTop->setText(MainWindow::tr("Always on &Top"));
     m_actions.settingsBehaviorAutoAns->setText(MainWindow::tr("Automatic Result &Reuse"));
     m_actions.settingsBehaviorAutoCompletion->setText(MainWindow::tr("Automatic &Completion"));
@@ -401,8 +403,8 @@ void MainWindow::createActionGroups()
     m_actionGroups.digits->addAction(m_actions.settingsResultFormat50Digits);
 
     m_actionGroups.angle = new QActionGroup(this);
-    m_actionGroups.angle->addAction(m_actions.settingsAngleUnitRadian);
     m_actionGroups.angle->addAction(m_actions.settingsAngleUnitDegree);
+    m_actionGroups.angle->addAction(m_actions.settingsAngleUnitRadian);
     m_actionGroups.angle->addAction(m_actions.settingsAngleUnitGradian);
 
     m_actionGroups.colorScheme = new QActionGroup(this);
@@ -439,9 +441,7 @@ void MainWindow::createActionShortcuts()
     m_actions.viewStatusBar->setShortcut(Qt::CTRL + Qt::Key_B);
     m_actions.viewVariables->setShortcut(Qt::CTRL + Qt::Key_4);
     m_actions.viewUserFunctions->setShortcut(Qt::CTRL + Qt::Key_5);
-    m_actions.settingsAngleUnitDegree->setShortcut(Qt::Key_F10);
-    m_actions.settingsAngleUnitRadian->setShortcut(Qt::Key_F9);
-//    m_actions.settingsAngleUnitGradian->setShortcut(Qt::Key_F10);
+    m_actions.settingsAngleUnitCycle->setShortcut(Qt::Key_F9);
     m_actions.settingsResultFormatGeneral->setShortcut(Qt::Key_F2);
     m_actions.settingsResultFormatFixed->setShortcut(Qt::Key_F3);
     m_actions.settingsResultFormatEngineering->setShortcut(Qt::Key_F4);
@@ -533,9 +533,11 @@ void MainWindow::createMenus()
     m_menus.radixChar->addAction(m_actions.settingsRadixCharBoth);
 
     m_menus.angleUnit = m_menus.settings->addMenu("");
-    m_menus.angleUnit->addAction(m_actions.settingsAngleUnitRadian);
     m_menus.angleUnit->addAction(m_actions.settingsAngleUnitDegree);
+    m_menus.angleUnit->addAction(m_actions.settingsAngleUnitRadian);
     m_menus.angleUnit->addAction(m_actions.settingsAngleUnitGradian);
+    m_menus.angleUnit->addSeparator();
+    m_menus.angleUnit->addAction(m_actions.settingsAngleUnitCycle);
 
     m_menus.behavior = m_menus.settings->addMenu("");
     m_menus.behavior->addAction(m_actions.settingsBehaviorSaveSessionOnExit);
@@ -618,8 +620,8 @@ void MainWindow::createStatusBar()
     m_status.resultFormat->setFlat(true);
 
     m_status.angleUnit->setContextMenuPolicy(Qt::ActionsContextMenu);
-    m_status.angleUnit->addAction(m_actions.settingsAngleUnitRadian);
     m_status.angleUnit->addAction(m_actions.settingsAngleUnitDegree);
+    m_status.angleUnit->addAction(m_actions.settingsAngleUnitRadian);
     m_status.angleUnit->addAction(m_actions.settingsAngleUnitGradian);
 
     m_status.resultFormat->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -851,6 +853,7 @@ void MainWindow::createFixedConnections()
     connect(m_actions.settingsAngleUnitDegree, SIGNAL(triggered()), SLOT(setAngleModeDegree()));
     connect(m_actions.settingsAngleUnitRadian, SIGNAL(triggered()), SLOT(setAngleModeRadian()));
     connect(m_actions.settingsAngleUnitGradian, SIGNAL(triggered()), SLOT(setAngleModeGradian()));
+    connect(m_actions.settingsAngleUnitCycle, SIGNAL(triggered()), SLOT(cycleAngleUnits()));
 
     connect(m_actions.settingsBehaviorAlwaysOnTop, SIGNAL(toggled(bool)), SLOT(setAlwaysOnTopEnabled(bool)));
     connect(m_actions.settingsBehaviorAutoCompletion, SIGNAL(toggled(bool)), SLOT(setAutoCompletionEnabled(bool)));

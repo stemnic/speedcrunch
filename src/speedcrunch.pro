@@ -169,8 +169,8 @@ SOURCES += main.cpp \
            math/floatincgamma.c \
            math/hmath.cpp \
            math/number.c \
-	   math/cmath.cpp \
-	   math/cnumberparser.cpp \
+		   math/cmath.cpp \
+		   math/cnumberparser.cpp \
            math/quantity.cpp \
            math/rational.cpp \
            math/units.cpp
