@@ -96,8 +96,8 @@ HEADERS += core/book.h \
            gui/manualwindow.h \
            gui/mainwindow.h \
            gui/syntaxhighlighter.h \
-		   math/cmath.h \
-		   math/floatcommon.h \
+           math/cmath.h \
+           math/floatcommon.h \
            math/floatconfig.h \
            math/floatconst.h \
            math/floatconvert.h \
