@@ -31,6 +31,7 @@ win32:DEFINES += _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_WARNINGS _SCL_SECURE_NO
 TEMPLATE = app
 TARGET = speedcrunch
 QT += help
+QT += network
 
 DEPENDPATH += . \
               core \
@@ -82,6 +83,7 @@ HEADERS += core/book.h \
            core/variable.h \
            core/userfunction.h \
            gui/aboutbox.h \
+           gui/application.h \
            gui/bitfieldwidget.h \
            gui/bookdock.h \
            gui/constantswidget.h \
@@ -137,6 +139,7 @@ SOURCES += main.cpp \
            core/userfunction.cpp \
            core/opcode.cpp \
            gui/aboutbox.cpp \
+           gui/application.cpp \
            gui/bitfieldwidget.cpp \
            gui/bookdock.cpp \
            gui/constantswidget.cpp \

@@ -18,6 +18,7 @@ core/sessionhistory.h
 core/variable.h
 core/userfunction.h
 gui/aboutbox.h
+gui/application.h
 gui/bitfieldwidget.h
 gui/bookdock.h
 gui/constantswidget.h
@@ -73,6 +74,7 @@ core/variable.cpp
 core/userfunction.cpp
 core/opcode.cpp
 gui/aboutbox.cpp
+gui/application.cpp
 gui/bitfieldwidget.cpp
 gui/bookdock.cpp
 gui/constantswidget.cpp
