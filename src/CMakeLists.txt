@@ -29,7 +29,9 @@ set(CMAKE_MACOSX_RPATH ON)
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Help REQUIRED)
-find_package(Qt5Network REQUIRED)
+if(NOT WIN32)
+    find_package(Qt5Network REQUIRED)
+endif()
 
 ADD_DEFINITIONS("-DSPEEDCRUNCH_VERSION=\"${speedcrunch_VERSION}\"")
 ADD_DEFINITIONS(-DQT_USE_QSTRINGBUILDER)
@@ -78,7 +80,11 @@ endif()
 
 add_custom_target(confclean COMMAND rm -rf Makefile CMakeFiles/ CMakeCache.txt cmake_install.cmake DartTestfile.txt install_manifest.txt)
 
-set(QT_LIBRARIES Qt5::Widgets Qt5::Help Qt5::Network)
+if(WIN32)
+    set(QT_LIBRARIES Qt5::Widgets Qt5::Help)
+else()
+    set(QT_LIBRARIES Qt5::Widgets Qt5::Help Qt5::Network)
+endif()
 target_link_libraries(${APPLICATION_NAME} ${QT_LIBRARIES})
 qt5_use_modules(${APPLICATION_NAME} Widgets Help Sql)
 

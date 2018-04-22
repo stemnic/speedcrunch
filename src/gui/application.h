@@ -37,11 +37,15 @@ public:
     bool isRunning();
     bool sendRaiseRequest();
 
+#ifndef Q_OS_WIN
+
 signals:
     void raiseRequested();
 
 private slots:
     void receiveMessage();
+
+#endif  /* Q_OS_WIN */
 
 private:
     QScopedPointer<ApplicationPrivate> d_ptr;

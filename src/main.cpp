@@ -41,6 +41,8 @@ int main(int argc, char* argv[])
 
     application.connect(&application, SIGNAL(lastWindowClosed()), &application, SLOT(quit()));
 
+#ifndef Q_OS_WIN
+
     application.connect(&application, &Application::raiseRequested, &window, [&] {
         printf("RAISE!!!\n");
         window.setWindowState( (window.windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
@@ -52,6 +54,8 @@ int main(int argc, char* argv[])
             appWindow->requestActivate();
         }
     });
+
+#endif  /* Q_OS_WIN */
 
     return application.exec();
 }

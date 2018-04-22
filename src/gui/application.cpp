@@ -23,18 +23,56 @@
 #include <QByteArray>
 
 #include <QSharedMemory>
+#ifndef Q_OS_WIN
 #include <QLocalServer>
 #include <QLocalSocket>
+#endif  /* Q_OS_WIN */
+
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif  /* Q_OS_WIN */
 
 #define GUI_APPLICATION_SHARED_MEMORY_KEY "speedcrunch"
 #define GUI_APPLICATION_LOCAL_SOCKET_TIMEOUT 1000
 
+#ifdef Q_OS_WIN
+
+typedef struct {
+    /** ID of the process to look for (IN) */
+    DWORD processId;
+    /** Handle of the main window of that process (OUT) */
+    HWND hwnd;
+} EnumWindowParam;
+
+static HWND FindProcessWindow(DWORD processId);
+static BOOL CALLBACK FindProcessWindowCallback(HWND hwnd, LPARAM lParam);
+
+#endif  /* Q_OS_WIN */
+
+static QString GetSessionId(void);
+
 class ApplicationPrivate {
 public:
     bool isRunning;
-    QLocalServer localServer;
     QSharedMemory sharedMemory;
+    QString instanceKey;
+#ifndef Q_OS_WIN
+    QLocalServer localServer;
+#endif  /* Q_OS_WIN */
 };
+
+typedef struct {
+#ifdef Q_OS_WIN
+
+    /** Process ID of the already running instance */
+    DWORD processId;
+
+#else   /* Q_OS_WIN */
+
+    char dummy;  // Make sure the size of the data is not 0
+
+#endif  /* Q_OS_WIN */
+} ApplicationShared;
 
 Application::Application(int &argc, char *argv[])
     : QApplication(argc, argv)
@@ -42,16 +80,33 @@ Application::Application(int &argc, char *argv[])
 {
     Q_D(Application);
 
+    // Make instance key specific to user sessions
+    d->instanceKey = GUI_APPLICATION_SHARED_MEMORY_KEY + QString("@") + GetSessionId();
+
     d->isRunning = false;
-    d->sharedMemory.setKey(GUI_APPLICATION_SHARED_MEMORY_KEY);
+    d->sharedMemory.setKey(d->instanceKey);
 
     if (d->sharedMemory.attach()) {
         d->isRunning = true;
     } else {
-        if (!d->sharedMemory.create(1))
+        if (!d->sharedMemory.create(sizeof(ApplicationShared)))
             return;
+
+#ifdef Q_OS_WIN
+
+        // Share our own process ID so that other instances can raise our window
+        d->sharedMemory.lock();
+        ApplicationShared *sharedData = (ApplicationShared*) d->sharedMemory.data();
+        sharedData->processId = GetCurrentProcessId();
+        d->sharedMemory.unlock();
+
+#else   /* Q_OS_WIN */
+
         connect(&d->localServer, SIGNAL(newConnection()), SLOT(receiveMessage()));
-        d->localServer.listen(GUI_APPLICATION_SHARED_MEMORY_KEY);
+        d->localServer.listen(d->instanceKey);
+
+#endif  /* Q_OS_WIN */
+
     }
 }
 
@@ -59,9 +114,13 @@ Application::~Application()
 {
 }
 
+#ifndef Q_OS_WIN
+
 void Application::receiveMessage()
 {
-    QLocalSocket *localSocket = d_ptr->localServer.nextPendingConnection();
+    Q_D(Application);
+
+    QLocalSocket *localSocket = d->localServer.nextPendingConnection();
 
     if (!localSocket->waitForReadyRead(GUI_APPLICATION_LOCAL_SOCKET_TIMEOUT))
         return;
@@ -75,18 +134,50 @@ void Application::receiveMessage()
     localSocket->disconnectFromServer();
 }
 
+#endif  /* Q_OS_WIN */
+
 bool Application::isRunning()
 {
-    return d_ptr->isRunning;
+    Q_D(Application);
+
+    return d->isRunning;
 }
 
 bool Application::sendRaiseRequest()
 {
-    if (!d_ptr->isRunning)
+    Q_D(Application);
+
+    if (!d->isRunning)
         return false;
 
+#ifdef Q_OS_WIN
+
+    // Read other instance process ID (and copy it locally to prevent leaking the lock on crash)
+    d->sharedMemory.lock();
+    ApplicationShared *sharedData = (ApplicationShared*) d->sharedMemory.data();
+    DWORD processId = sharedData->processId;
+    d->sharedMemory.unlock();
+
+    HWND hwnd = FindProcessWindow(processId);
+    if (hwnd == NULL)
+        return false;
+
+    // Restore window if it is minimized
+    WINDOWPLACEMENT placement = { sizeof(placement) };
+    GetWindowPlacement(hwnd, &placement);
+
+    if (placement.showCmd == SW_SHOWMINIMIZED)
+        ShowWindowAsync(hwnd, SW_RESTORE);
+
+    // Raise window up
+    SetForegroundWindow(hwnd);
+
+    return true;
+
+#else   /* Q_OS_WIN */
+
     QLocalSocket localSocket;
-    localSocket.connectToServer(GUI_APPLICATION_SHARED_MEMORY_KEY, QIODevice::WriteOnly);
+    localSocket.connectToServer(d->instanceKey, QIODevice::WriteOnly);
 
     if (!localSocket.waitForConnected(GUI_APPLICATION_LOCAL_SOCKET_TIMEOUT))
         return false;
@@ -98,4 +189,66 @@ bool Application::sendRaiseRequest()
 
     localSocket.disconnectFromServer();
     return true;
+
+#endif  /* Q_OS_WIN */
+
 }
+
+/** Return system session ID (QGuiApplication::sessionId() returns something unrelated) */
+QString GetSessionId(void) {
+
+#ifdef Q_OS_WIN
+
+    DWORD sessionId;
+    if(ProcessIdToSessionId(GetCurrentProcessId(), &sessionId) == TRUE)
+        return QString::number(sessionId);
+
+    // Fallback to user name
+    return qgetenv("USERNAME");
+
+#else   /* Q_OS_WIN */
+
+    // Fallback to user name
+    QString user = qgetenv("USER");  // Linux/MacOS
+    if (user.isEmpty())
+        user = qgetenv("USERNAME");  // Windows
+
+    return user;
+
+#endif  /* Q_OS_WIN */
+
+}
+
+#ifdef Q_OS_WIN
+
+/** Find window handle of given process. */
+HWND FindProcessWindow(DWORD processId) {
+    EnumWindowParam param;
+    param.hwnd = NULL;
+    param.processId = processId;
+
+    // Enumerate all windows and return the one that is the main window of given process
+    EnumWindows(FindProcessWindowCallback, (LPARAM) &param);
+
+    return param.hwnd;
+}
+
+/** EnumWindows() callback used by FindProcessWindow(). */
+BOOL CALLBACK FindProcessWindowCallback(HWND hwnd, LPARAM lParam) {
+    EnumWindowParam *param = (EnumWindowParam*) lParam;
+
+    // Check if the window belongs to the requested process
+    DWORD processId;
+    GetWindowThreadProcessId(hwnd, &processId);
+    if (processId == param->processId) {
+        // Check if this is the main window
+        if (GetWindow(hwnd, GW_OWNER) == (HWND)0 && IsWindowVisible(hwnd)) {
+            param->hwnd = hwnd;
+            return FALSE;
+        }
+    }
+
+    return TRUE;
+}
+
+#endif  /* Q_OS_WIN */
