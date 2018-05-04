@@ -39,14 +39,10 @@ QString NumberFormatter::format(Quantity q)
             format.base = Quantity::Format::Base::Hexadecimal;
             break;
         case 'n':
-            format.base = Quantity::Format::Base::Decimal;
-            break;
         case 'f':
-            format.base = Quantity::Format::Base::Decimal;
-            break;
         case 'e':
-            format.base = Quantity::Format::Base::Decimal;
-            break;
+        case 'a':
+        case 't':
         case 'g':
         default:
             format.base = Quantity::Format::Base::Decimal;
@@ -65,6 +61,12 @@ QString NumberFormatter::format(Quantity q)
               break;
           case 'e':
               format.mode = Quantity::Format::Mode::Scientific;
+              break;
+          case 'a':
+              format.mode = Quantity::Format::Mode::Arc;
+              break;
+          case 't':
+              format.mode = Quantity::Format::Mode::Time;
               break;
           case 'g':
           default:
@@ -85,7 +87,34 @@ QString NumberFormatter::format(Quantity q)
             format.notation = Quantity::Format::Notation::Polar;
     }
 
+    if (settings->resultFormat == 'a') {    // Convert to arcseconds
+        if (settings->angleUnit == 'r')
+            q /= Quantity(HMath::pi() / HNumber(180));
+        else if (settings->angleUnit == 'g')
+            q /= Quantity(HNumber(200) / HNumber(180));
+        q *= Quantity(3600);
+    }
+    
     QString result = DMath::format(q, format);
+
+    if (settings->resultFormat == 'a' || settings->resultFormat == 't') {   // Arc or time
+        bool arc = (settings->resultFormat == 'a');
+        int unit = result.indexOf(" second");
+        if ( unit > 0 )
+            result = result.left(unit);
+        int dotPos = result.indexOf('.');
+        int seconds = (dotPos > 0 ? result.left(dotPos).toInt() : result.toInt());
+        int hours = seconds / 3600;
+        seconds -= (hours * 3600);
+        int minutes = seconds / 60;
+        seconds -= (minutes * 60);
+        QString time = QString::number(hours);
+        time.append(arc ? 0xB0 : ':').append(minutes < 10 ? "0" : "").append(QString::number(minutes));
+        time.append(arc ? '\'' : ':').append(seconds < 10 ? "0" : "").append(QString::number(seconds));
+        if (dotPos > 0)     // append decimals
+            time.append(result.mid(dotPos));
+        result = time;
+    }
 
     if (settings->radixCharacter() == ',')
         result.replace('.', ',');

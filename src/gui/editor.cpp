@@ -416,6 +416,8 @@ void Editor::triggerAutoComplete()
     // Last token must be an identifier.
     if (!lastToken.isIdentifier())
         return;
+    if (!lastToken.size())  // Invisible unit token
+        return;
     const auto id = lastToken.text();
     if (id.length() < 1)
         return;
@@ -813,12 +815,12 @@ void Editor::keyPressEvent(QKeyEvent* event)
         insert(QString::fromUtf8("−")); // U+2212 − MINUS SIGN.
         event->accept();
         return;
-
+/*
     case Qt::Key_Colon:
         insert(QString::fromUtf8("÷")); // U+00F7 ÷ DIVISION SIGN.
         event->accept();
         return;
-
+*/
     default:;
     }
 

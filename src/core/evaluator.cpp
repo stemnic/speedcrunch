@@ -688,6 +688,102 @@ QString Evaluator::fixNumberRadix(const QString& number)
     return result;
 }
 
+QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
+{
+    unit.clear();
+    QString result = number;
+
+    bool arc = false;
+    int dotCount = 0, colonCount = 0, degreeCount = 0, minuteCount = 0;
+    for (int i = 0 ; i < number.size() ; ++i) { // check order and amount
+        QChar c = number[i];
+        if (c == '.')   // check only point, called after fixNumberRadix()
+            ++dotCount;
+        else if (c == 0xB0) {   // °
+            if (dotCount)   // dot before degree, just ignored unit
+                return result.remove(c);
+            if (colonCount || minuteCount)
+                return QString();
+            if (++degreeCount > 1)
+                return QString();
+            arc = true;
+        }
+        else if (c == ':') {
+            if (dotCount || minuteCount || degreeCount)
+                return QString();
+            if (++colonCount > 2)
+                return QString();
+        }
+        else if (c == '\'') {
+            if (!arc)   // no degree, just thousand separator
+                return result.remove(c);
+            if (++minuteCount > 1)
+                return QString();
+        }
+    }
+
+    if (colonCount || degreeCount || minuteCount) {
+        int minutes = 0, seconds = 0;
+        int dotPos = number.indexOf('.');
+        int minPos = number.indexOf(arc ? 0xB0 : ':');
+        if (minPos >= 0) {  // first colon or degree sign, minutes
+            int mains = number.left(minPos).toInt();    // hours or degrees
+            int secPos = number.indexOf(arc ? '\'' : ':', minPos + 1);
+            // second colon or single quote before decimals, seconds
+            if (secPos >= 0 && (dotPos < 0 || dotPos > secPos)) {
+                minutes = number.mid(minPos + 1, secPos - minPos - 1).toInt();
+                if (dotPos >= 0)
+                    seconds = number.mid(secPos + 1, dotPos - secPos - 1).toInt();
+                else    // no decimals
+                    seconds = number.mid(secPos + 1).toInt();
+                result = QString::number(mains * 3600 + minutes * 60 + seconds);
+                unit = (arc ? "arcsecond" : "second");
+            }
+            else {  // just minutes
+                if (dotPos >= 0)
+                    minutes = number.mid(minPos + 1, dotPos - minPos - 1).toInt();
+                else    // no decimals
+                    minutes = number.mid(minPos + 1).toInt();
+                result = QString::number(mains * 60 + minutes);
+                unit = (arc ? "arcminute" : "minute");
+            }
+            if (minutes > 59 || seconds > 59)
+                return QString();
+            if (dotPos > 0)     // append decimals
+                result += number.mid(dotPos);
+        }
+    }
+    return result;
+}
+
+/*
+    12:          43200.0000 second (minute)
+    12:0         43200.0000 second (minute)
+    12:34        45240.0000 second (minute)
+    12:34.5      45270.0000 second (minute)
+    12:34:       45240.0000 second (second)
+    12:34:0      45240.0000 second (second)
+    12:34:56     45296.0000 second (second)
+    12:34:56.0   45296.0000 second (second)
+    12:34:56.78  45296.7800 second (second)
+
+    12           12.00000000 degree (arcminute)
+    12°          12.00000000 degree (arcminute)
+    12°0         12.00000000 degree (arcminute)
+    12°34        12.56666667 degree (arcminute)
+    12°34.5      12.57500000 degree (arcminute)
+    12°34.5'     12.57500000 degree (arcminute)
+    12°34'       12.56666667 degree (arcsecond)
+    12°34'0      12.56666667 degree (arcsecond)
+    12°34'56     12.58222222 degree (arcsecond)
+    12°34'56.0   12.58222222 degree (arcsecond)
+    12°34'56.78  12.58243889 degree (arcsecond)
+    12°34'56.78" 12.58243889 degree (arcsecond)
+
+
+
+*/ 
+
 Evaluator* Evaluator::instance()
 {
     if (!s_evaluatorInstance) {
@@ -735,16 +831,22 @@ void Evaluator::initializeAngleUnits()
         setVariable("degree", HMath::pi() / HNumber(180), Variable::BuiltIn);
         setVariable("gradian", HMath::pi() / HNumber(200), Variable::BuiltIn);
         setVariable("gon", HMath::pi() / HNumber(200), Variable::BuiltIn);
+        setVariable("arcminute", HMath::pi() / HNumber(180) / HNumber(60), Variable::BuiltIn);
+        setVariable("arcsecond", HMath::pi() / HNumber(180) / HNumber(3600), Variable::BuiltIn);
     } else if (Settings::instance()->angleUnit == 'g') {
         setVariable("radian", HNumber(200) / HMath::pi(), Variable::BuiltIn);
         setVariable("degree", HNumber(200) / HNumber(180), Variable::BuiltIn);
         setVariable("gradian", 1, Variable::BuiltIn);
         setVariable("gon", 1, Variable::BuiltIn);
+        setVariable("arcminute", HNumber(200) / HNumber(180) / HNumber(60), Variable::BuiltIn);
+        setVariable("arcsecond", HNumber(200) / HNumber(180) / HNumber(3600), Variable::BuiltIn);
     } else {    // d
         setVariable("radian", HNumber(180) / HMath::pi(), Variable::BuiltIn);
-        setVariable("degree", 1,Variable::BuiltIn);
+        setVariable("degree", 1, Variable::BuiltIn);
         setVariable("gradian", HNumber(180) / HNumber(200), Variable::BuiltIn);
         setVariable("gon", HNumber(180) / HNumber(200), Variable::BuiltIn);
+        setVariable("arcminute", HNumber(1) / HNumber(60), Variable::BuiltIn);
+        setVariable("arcsecond", HNumber(1) / HNumber(3600), Variable::BuiltIn);
     }
 }
 
@@ -847,6 +949,7 @@ Tokens Evaluator::scan(const QString& expr) const
     int i = 0;
     QString ex = expr;
     QString tokenText;
+    QString tokenUnit;
     int tokenStart = 0; // Includes leading spaces.
     Token::Type type;
     int numberBase = 10;
@@ -1020,6 +1123,12 @@ Tokens Evaluator::scan(const QString& expr) const
                 tokenText.append('d');
                 ++i;
                 state = InNumber;
+            } else if ((ch == 0xB0 || ch == 0xA4 || ch == '\'' || ch == ':') && tokenText == "0") {
+                // Time/Degree notation starting with zero
+                numberBase = 10;
+                tokenText.append(ch == 0xA4 ? 0xB0 : ch);   // convert currency to degree
+                ++i;
+                state = InNumber;
             } else if (isSeparatorChar(ch)) {
                 // Ignore thousand separators.
                 ++i;
@@ -1048,6 +1157,10 @@ Tokens Evaluator::scan(const QString& expr) const
             if (isDigit) {
                 // Consume as long as it's a digit
                 tokenText.append(ex.at(i++).toUpper());
+            } else if (ch == 0xB0 || ch == 0xA4 || ch == '\'' || ch == ':') {
+                // Time/Degree notation
+                tokenText.append(ch == 0xA4 ? 0xB0 : ch);   // convert currency to degree
+                ++i;
             } else if (isExponent(ch, numberBase)) {
                 // Maybe exponent
                 expText = ch.toUpper();
@@ -1055,7 +1168,13 @@ Tokens Evaluator::scan(const QString& expr) const
                 ++i;
                 tokenText = fixNumberRadix(tokenText);
                 if (!tokenText.isNull()) {
-                    state = InExpIndicator;
+                    if (numberBase == 10) {
+                        tokenText = fixSexagesimal(tokenText, tokenUnit);
+                        if (!tokenText.isNull())
+                            state = InExpIndicator;
+                        else
+                            state = Bad;
+                    }
                 } else
                     state = Bad;
             } else if (isRadixChar(ch)) {
@@ -1069,9 +1188,15 @@ Tokens Evaluator::scan(const QString& expr) const
             } else {
                 // We're done with number.
                 tokenText = fixNumberRadix(tokenText);
-                if (!tokenText.isNull())
-                    state = InNumberEnd;
-                else
+                if (!tokenText.isNull()) {
+                    if (numberBase == 10) {
+                        tokenText = fixSexagesimal(tokenText, tokenUnit);
+                        if (!tokenText.isNull())
+                            state = InNumberEnd;
+                        else
+                            state = Bad;
+                    }
+                } else
                     state = Bad;
             }
 
@@ -1173,6 +1298,11 @@ Tokens Evaluator::scan(const QString& expr) const
             int tokenSize = i - tokenStart;
             tokens.append(Token(Token::stxNumber, tokenText,
                                 tokenStart, tokenSize));
+
+            if (!tokenUnit.isEmpty()) { // add unit token
+                tokens.append(Token(Token::stxIdentifier, tokenUnit,
+                    tokenStart + tokenSize, 0));
+            }
 
             // Make sure a number cannot be followed by another number.
             if (ch.isDigit() || isRadixChar(ch) || ch == '#')
