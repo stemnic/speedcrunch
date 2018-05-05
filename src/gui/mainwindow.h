@@ -153,8 +153,7 @@ private slots:
     void setResultFormatOctal();
     void setResultFormatPolar();
     void setResultFormatScientific();
-    void setResultFormatArc();
-    void setResultFormatTime();
+    void setResultFormatSexagecimal();
     void setResultPrecision15Digits();
     void setResultPrecision2Digits();
     void setResultPrecision3Digits();
@@ -278,8 +277,7 @@ private:
         QAction* settingsResultFormatCartesian;
         QAction* settingsResultFormatPolar;
         QAction* settingsResultFormatHexadecimal;
-        QAction* settingsResultFormatArc;
-        QAction* settingsResultFormatTime;
+        QAction* settingsResultFormatSexagecimal;
         QAction* settingsAngleUnitRadian;
         QAction* settingsAngleUnitDegree;
         QAction* settingsAngleUnitGradian;

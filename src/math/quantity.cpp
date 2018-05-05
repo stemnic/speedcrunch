@@ -591,11 +591,8 @@ void Quantity::Format::serialize(QJsonObject& json) const
     case Mode::Engineering:
         json["mode"] = QStringLiteral("Engineering");
         break;
-    case Mode::Arc:
-        json["mode"] = QStringLiteral("Arc");
-        break;
-    case Mode::Time:
-        json["mode"] = QStringLiteral("Time");
+    case Mode::Sexagecimal:
+        json["mode"] = QStringLiteral("Sexagecimal");
         break;
     case Mode::Null:
         break;
@@ -647,10 +644,8 @@ Quantity::Format Quantity::Format::deSerialize(const QJsonObject& json)
             result.mode = Mode::Scientific;
         else if (strMode == "Engineering")
             result.mode = Mode::Engineering;
-        else if (strMode == "Arc")
-            result.mode = Mode::Arc;
-        else if (strMode == "Time")
-            result.mode = Mode::Time;
+        else if (strMode == "Sexagecimal")
+            result.mode = Mode::Sexagecimal;
         else
             result.mode = Mode::Null;
     } else

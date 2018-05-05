@@ -41,8 +41,7 @@ QString NumberFormatter::format(Quantity q)
         case 'n':
         case 'f':
         case 'e':
-        case 'a':
-        case 't':
+        case 's':
         case 'g':
         default:
             format.base = Quantity::Format::Base::Decimal;
@@ -62,11 +61,8 @@ QString NumberFormatter::format(Quantity q)
           case 'e':
               format.mode = Quantity::Format::Mode::Scientific;
               break;
-          case 'a':
-              format.mode = Quantity::Format::Mode::Arc;
-              break;
-          case 't':
-              format.mode = Quantity::Format::Mode::Time;
+          case 's':
+              format.mode = Quantity::Format::Mode::Sexagecimal;
               break;
           case 'g':
           default:
@@ -87,33 +83,44 @@ QString NumberFormatter::format(Quantity q)
             format.notation = Quantity::Format::Notation::Polar;
     }
 
-    if (settings->resultFormat == 'a') {    // Convert to arcseconds
+    bool time = false, arc = q.isDimensionless();
+    if (settings->resultFormat == 's' && q.hasDimension()) {
+        auto dimension = q.getDimension();
+        if (dimension.count() == 1 && dimension.firstKey() == "time") {
+            auto iterator = dimension.begin();
+            if ( iterator->numerator() == 1 && iterator->denominator() == 1)
+                time = true;    // single dimension time unit
+        }
+    }
+
+    if (arc && settings->resultFormat == 's') {     // convert to arcseconds
         if (settings->angleUnit == 'r')
             q /= Quantity(HMath::pi() / HNumber(180));
         else if (settings->angleUnit == 'g')
             q /= Quantity(HNumber(200) / HNumber(180));
         q *= Quantity(3600);
     }
-    
+
     QString result = DMath::format(q, format);
 
-    if (settings->resultFormat == 'a' || settings->resultFormat == 't') {   // Arc or time
-        bool arc = (settings->resultFormat == 'a');
-        int unit = result.indexOf(" second");
-        if ( unit > 0 )
-            result = result.left(unit);
+    if (settings->resultFormat == 's' && (arc || time)) {   // sexagecimal
+        if (time) {     // remove unit, formatting itself is already 'unit'
+            int unit = result.indexOf(" second");
+            if ( unit > 0 )
+                result = result.left(unit);
+        }
         int dotPos = result.indexOf('.');
         int seconds = (dotPos > 0 ? result.left(dotPos).toInt() : result.toInt());
         int hours = seconds / 3600;
         seconds -= (hours * 3600);
         int minutes = seconds / 60;
         seconds -= (minutes * 60);
-        QString time = QString::number(hours);
-        time.append(arc ? 0xB0 : ':').append(minutes < 10 ? "0" : "").append(QString::number(minutes));
-        time.append(arc ? '\'' : ':').append(seconds < 10 ? "0" : "").append(QString::number(seconds));
+        QString sexa = QString::number(hours);
+        sexa.append(time ? ':' : 0xB0).append(minutes < 10 ? "0" : "").append(QString::number(minutes));
+        sexa.append(time ? ':' : '\'').append(seconds < 10 ? "0" : "").append(QString::number(seconds));
         if (dotPos > 0)     // append decimals
-            time.append(result.mid(dotPos));
-        result = time;
+            sexa.append(result.mid(dotPos));
+        result = sexa;
     }
 
     if (settings->radixCharacter() == ',')

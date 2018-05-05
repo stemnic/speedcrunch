@@ -723,13 +723,13 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
     }
 
     if (colonCount || degreeCount || minuteCount) {
-        int minutes = 0, seconds = 0;
         int dotPos = number.indexOf('.');
         int minPos = number.indexOf(arc ? 0xB0 : ':');
-        if (minPos >= 0) {  // first colon or degree sign, minutes
+        if (minPos >= 0) {  // degree sign or first colon -> minutes
+            int minutes = 0, seconds = 0;
             int mains = number.left(minPos).toInt();    // hours or degrees
             int secPos = number.indexOf(arc ? '\'' : ':', minPos + 1);
-            // second colon or single quote before decimals, seconds
+            // single quote or second colon before decimals -> seconds
             if (secPos >= 0 && (dotPos < 0 || dotPos > secPos)) {
                 minutes = number.mid(minPos + 1, secPos - minPos - 1).toInt();
                 if (dotPos >= 0)
@@ -757,30 +757,59 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
 }
 
 /*
-    12:          43200.0000 second (minute)
-    12:0         43200.0000 second (minute)
-    12:34        45240.0000 second (minute)
-    12:34.5      45270.0000 second (minute)
-    12:34:       45240.0000 second (second)
-    12:34:0      45240.0000 second (second)
-    12:34:56     45296.0000 second (second)
-    12:34:56.0   45296.0000 second (second)
-    12:34:56.78  45296.7800 second (second)
+    12:            43200.0000 second (minute)
+    12:0           43200.0000 second (minute)
+    12:34          45240.0000 second (minute)
+    12:34.         45240.0000 second (minute)
+    12:34.5        45270.0000 second (minute)
+    12:34:         45240.0000 second (second)
+    12:34:0        45240.0000 second (second)
+    12:34:56       45296.0000 second (second)
+    12:34:56.      45296.0000 second (second)
+    12:34:56.78    45296.7800 second (second)
 
-    12           12.00000000 degree (arcminute)
-    12°          12.00000000 degree (arcminute)
-    12°0         12.00000000 degree (arcminute)
-    12°34        12.56666667 degree (arcminute)
-    12°34.5      12.57500000 degree (arcminute)
-    12°34.5'     12.57500000 degree (arcminute)
-    12°34'       12.56666667 degree (arcsecond)
-    12°34'0      12.56666667 degree (arcsecond)
-    12°34'56     12.58222222 degree (arcsecond)
-    12°34'56.0   12.58222222 degree (arcsecond)
-    12°34'56.78  12.58243889 degree (arcsecond)
-    12°34'56.78" 12.58243889 degree (arcsecond)
+    -12:          -43200.0000 second (minute)
+    -12:0         -43200.0000 second (minute)
+    -12:34        -45240.0000 second (minute)
+    -12:34.       -45240.0000 second (minute)
+    -12:34.5      -45270.0000 second (minute)
+    -12:34:       -45240.0000 second (second)
+    -12:34:0      -45240.0000 second (second)
+    -12:34:56     -45296.0000 second (second)
+    -12:34:56.    -45296.0000 second (second)
+    -12:34:56.78  .45296.7800 second (second)
 
+    12             12.00000000 degree (degree)
+    12°            12.00000000 degree (arcminute)
+    12°0           12.00000000 degree (arcminute)
+    12°34          12.56666667 degree (arcminute)
+    12°34.5        12.57500000 degree (arcminute)
+    12°34.5'       12.57500000 degree (arcminute)
+    12°34'         12.56666667 degree (arcsecond)
+    12°34'0        12.56666667 degree (arcsecond)
+    12°34'56       12.58222222 degree (arcsecond)
+    12°34'56.      12.58222222 degree (arcsecond)
+    12°34'56.78    12.58243889 degree (arcsecond)
+    12°34'56.78"   12.58243889 degree (arcsecond)
 
+    -12           -12.00000000 degree (degree)
+    -12°          -12.00000000 degree (arcminute)
+    -12°0         -12.00000000 degree (arcminute)
+    -12°34        -12.56666667 degree (arcminute)
+    -12°34.5      -12.57500000 degree (arcminute)
+    -12°34.5'     -12.57500000 degree (arcminute)
+    -12°34'       -12.56666667 degree (arcsecond)
+    -12°34'0      -12.56666667 degree (arcsecond)
+    -12°34'56     -12.58222222 degree (arcsecond)
+    -12°34'56.    -12.58222222 degree (arcsecond)
+    -12°34'56.78  -12.58243889 degree (arcsecond)
+    -12°34'56.78" -12.58243889 degree (arcsecond)
+
+    //???
+    :2
+    ::2
+    °2
+    °'2
 
 */ 
 

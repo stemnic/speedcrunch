@@ -731,17 +731,10 @@ HNumber::Format HNumber::Format::Engineering()
     return result;
 }
 
-HNumber::Format HNumber::Format::Arc()
+HNumber::Format HNumber::Format::Sexagecimal()
 {
     Format result;
-    result.mode = Mode::Arc;
-    return result;
-}
-
-HNumber::Format HNumber::Format::Time()
-{
-    Format result;
-    result.mode = Mode::Time;
+    result.mode = Mode::Sexagecimal;
     return result;
 }
 
@@ -898,10 +891,7 @@ QString HMath::format(const HNumber& hn, HNumber::Format format)
     case HNumber::Format::Mode::Engineering:
         rs = formatEngineering(&hn.d->fnum, format.precision, base);
         break;
-    case HNumber::Format::Mode::Arc:
-        rs = formatFixed(&hn.d->fnum, format.precision, base);
-        break;
-    case HNumber::Format::Mode::Time:
+    case HNumber::Format::Mode::Sexagecimal:
         rs = formatFixed(&hn.d->fnum, format.precision, base);
         break;
     case HNumber::Format::Mode::General:
