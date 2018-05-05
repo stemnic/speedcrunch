@@ -731,10 +731,10 @@ HNumber::Format HNumber::Format::Engineering()
     return result;
 }
 
-HNumber::Format HNumber::Format::Sexagecimal()
+HNumber::Format HNumber::Format::Sexagesimal()
 {
     Format result;
-    result.mode = Mode::Sexagecimal;
+    result.mode = Mode::Sexagesimal;
     return result;
 }
 
@@ -891,7 +891,7 @@ QString HMath::format(const HNumber& hn, HNumber::Format format)
     case HNumber::Format::Mode::Engineering:
         rs = formatEngineering(&hn.d->fnum, format.precision, base);
         break;
-    case HNumber::Format::Mode::Sexagecimal:
+    case HNumber::Format::Mode::Sexagesimal:
         rs = formatFixed(&hn.d->fnum, format.precision, base);
         break;
     case HNumber::Format::Mode::General:

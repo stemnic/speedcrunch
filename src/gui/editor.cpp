@@ -815,12 +815,10 @@ void Editor::keyPressEvent(QKeyEvent* event)
         insert(QString::fromUtf8("−")); // U+2212 − MINUS SIGN.
         event->accept();
         return;
-/*
-    case Qt::Key_Colon:
-        insert(QString::fromUtf8("÷")); // U+00F7 ÷ DIVISION SIGN.
+    case Qt::Key_At:
+        insert(QString::fromUtf8("°")); // U+00B0 − DEGREE SIGN
         event->accept();
         return;
-*/
     default:;
     }
 

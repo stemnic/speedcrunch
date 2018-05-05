@@ -62,7 +62,7 @@ QString NumberFormatter::format(Quantity q)
               format.mode = Quantity::Format::Mode::Scientific;
               break;
           case 's':
-              format.mode = Quantity::Format::Mode::Sexagecimal;
+              format.mode = Quantity::Format::Mode::Sexagesimal;
               break;
           case 'g':
           default:
@@ -103,8 +103,8 @@ QString NumberFormatter::format(Quantity q)
 
     QString result = DMath::format(q, format);
 
-    if (settings->resultFormat == 's' && (arc || time)) {   // sexagecimal
-        if (time) {     // remove unit, formatting itself is already 'unit'
+    if (settings->resultFormat == 's' && (arc || time)) {   // sexagesimal
+        if (time) {     // remove unit, formatting itself is already unit
             int unit = result.indexOf(" second");
             if ( unit > 0 )
                 result = result.left(unit);

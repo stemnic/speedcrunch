@@ -173,7 +173,7 @@ void MainWindow::createActions()
     m_actions.settingsResultFormatScientific = new QAction(this);
     m_actions.settingsResultFormatCartesian= new QAction(this);
     m_actions.settingsResultFormatPolar = new QAction(this);
-    m_actions.settingsResultFormatSexagecimal = new QAction(this);
+    m_actions.settingsResultFormatSexagesimal = new QAction(this);
     m_actions.helpManual = new QAction(this);
     m_actions.helpUpdates = new QAction(this);
     m_actions.helpFeedback = new QAction(this);
@@ -224,7 +224,7 @@ void MainWindow::createActions()
     m_actions.settingsResultFormatOctal->setCheckable(true);
     m_actions.settingsResultFormatPolar->setCheckable(true);
     m_actions.settingsResultFormatScientific->setCheckable(true);
-    m_actions.settingsResultFormatSexagecimal->setCheckable(true);
+    m_actions.settingsResultFormatSexagesimal->setCheckable(true);
     m_actions.viewConstants->setCheckable(true);
     m_actions.viewFullScreenMode->setCheckable(true);
     m_actions.viewFunctions->setCheckable(true);
@@ -280,7 +280,7 @@ void MainWindow::setStatusBarText()
             case 'b': format = MainWindow::tr("Binary"); break;
             case 'o': format = MainWindow::tr("Octal"); break;
             case 'h': format = MainWindow::tr("Hexadecimal"); break;
-            case 's': format = MainWindow::tr("Sexagecimal"); break;
+            case 's': format = MainWindow::tr("Sexagesimal"); break;
             case 'f': format = MainWindow::tr("Fixed decimal"); break;
             case 'n': format = MainWindow::tr("Engineering decimal"); break;
             case 'e': format = MainWindow::tr("Scientific decimal"); break;
@@ -360,7 +360,7 @@ void MainWindow::setActionsText()
     m_actions.settingsResultFormatBinary->setText(MainWindow::tr("&Binary"));
     m_actions.settingsResultFormatOctal->setText(MainWindow::tr("&Octal"));
     m_actions.settingsResultFormatHexadecimal->setText(MainWindow::tr("&Hexadecimal"));
-    m_actions.settingsResultFormatSexagecimal->setText(MainWindow::tr("&Sexagecimal"));
+    m_actions.settingsResultFormatSexagesimal->setText(MainWindow::tr("&Sexagesimal"));
     m_actions.settingsResultFormatCartesian->setText(MainWindow::tr("&Cartesian"));
     m_actions.settingsResultFormatPolar->setText(MainWindow::tr("&Polar"));
     m_actions.settingsDisplayFont->setText(MainWindow::tr("&Font..."));
@@ -386,7 +386,7 @@ void MainWindow::createActionGroups()
     m_actionGroups.resultFormat->addAction(m_actions.settingsResultFormatScientific);
     m_actionGroups.resultFormat->addAction(m_actions.settingsResultFormatOctal);
     m_actionGroups.resultFormat->addAction(m_actions.settingsResultFormatHexadecimal);
-    m_actionGroups.resultFormat->addAction(m_actions.settingsResultFormatSexagecimal);
+    m_actionGroups.resultFormat->addAction(m_actions.settingsResultFormatSexagesimal);
 
     m_actionGroups.complexFormat = new QActionGroup(this);
     m_actionGroups.complexFormat->addAction(m_actions.settingsResultFormatCartesian);
@@ -453,7 +453,7 @@ void MainWindow::createActionShortcuts()
     m_actions.settingsResultFormatBinary->setShortcut(Qt::Key_F6);
     m_actions.settingsResultFormatOctal->setShortcut(Qt::Key_F7);
     m_actions.settingsResultFormatHexadecimal->setShortcut(Qt::Key_F8);
-    m_actions.settingsResultFormatSexagecimal->setShortcut(Qt::Key_F9);
+    m_actions.settingsResultFormatSexagesimal->setShortcut(Qt::Key_F9);
     m_actions.settingsAngleUnitCycle->setShortcut(Qt::Key_F10);
     m_actions.settingsRadixCharDot->setShortcut(Qt::CTRL + Qt::Key_Period);
     m_actions.settingsRadixCharComma->setShortcut(Qt::CTRL + Qt::Key_Comma);
@@ -514,7 +514,7 @@ void MainWindow::createMenus()
     m_menus.resultFormat->addAction(m_actions.settingsResultFormatBinary);
     m_menus.resultFormat->addAction(m_actions.settingsResultFormatOctal);
     m_menus.resultFormat->addAction(m_actions.settingsResultFormatHexadecimal);
-    m_menus.resultFormat->addAction(m_actions.settingsResultFormatSexagecimal);
+    m_menus.resultFormat->addAction(m_actions.settingsResultFormatSexagesimal);
     m_menus.resultFormat->addSeparator();
 
     m_menus.precision = m_menus.resultFormat->addMenu("");
@@ -894,7 +894,7 @@ void MainWindow::createFixedConnections()
     connect(m_actions.settingsResultFormatHexadecimal, SIGNAL(triggered()), SLOT(setResultFormatHexadecimal()));
     connect(m_actions.settingsResultFormatOctal, SIGNAL(triggered()), SLOT(setResultFormatOctal()));
     connect(m_actions.settingsResultFormatPolar, SIGNAL(triggered()), SLOT(setResultFormatPolar()));
-    connect(m_actions.settingsResultFormatSexagecimal, SIGNAL(triggered()), SLOT(setResultFormatSexagecimal()));
+    connect(m_actions.settingsResultFormatSexagesimal, SIGNAL(triggered()), SLOT(setResultFormatSexagesimal()));
     connect(m_actions.settingsResultFormatScientific, SIGNAL(triggered()), SLOT(setResultFormatScientific()));
 
     connect(m_actions.settingsLanguage, SIGNAL(triggered()), SLOT(showLanguageChooserDialog()));
@@ -1115,7 +1115,7 @@ void MainWindow::checkInitialResultFormat()
         case 'h': m_actions.settingsResultFormatHexadecimal->setChecked(true); break;
         case 'o': m_actions.settingsResultFormatOctal->setChecked(true); break;
         case 'b': m_actions.settingsResultFormatBinary->setChecked(true); break;
-        case 's': m_actions.settingsResultFormatSexagecimal->setChecked(true); break;
+        case 's': m_actions.settingsResultFormatSexagesimal->setChecked(true); break;
         default : m_actions.settingsResultFormatFixed->setChecked(true);
     }
 }
@@ -2030,12 +2030,12 @@ void MainWindow::setResultFormatScientific()
         m_status.resultFormat->setText(tr("Scientific decimal"));
 }
 
-void MainWindow::setResultFormatSexagecimal()
+void MainWindow::setResultFormatSexagesimal()
 {
     setResultFormat('s');
 
     if (m_status.resultFormat)
-        m_status.resultFormat->setText(tr("Sexagecimal"));
+        m_status.resultFormat->setText(tr("Sexagesimal"));
 }
 
 void MainWindow::insertConstantIntoEditor(const QString& c)
@@ -2457,7 +2457,7 @@ void MainWindow::cycleResultFormats()
   else if (m_actions.settingsResultFormatOctal->isChecked())
       m_actions.settingsResultFormatHexadecimal->trigger();
   else if (m_actions.settingsResultFormatHexadecimal->isChecked())
-      m_actions.settingsResultFormatSexagecimal->trigger();
-  else if (m_actions.settingsResultFormatSexagecimal->isChecked())
+      m_actions.settingsResultFormatSexagesimal->trigger();
+  else if (m_actions.settingsResultFormatSexagesimal->isChecked())
       m_actions.settingsResultFormatGeneral->trigger();
 }

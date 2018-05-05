@@ -747,8 +747,6 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
                 result = QString::number(mains * 60 + minutes);
                 unit = (arc ? "arcminute" : "minute");
             }
-            if (minutes > 59 || seconds > 59)
-                return QString();
             if (dotPos > 0)     // append decimals
                 result += number.mid(dotPos);
         }
@@ -757,60 +755,38 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
 }
 
 /*
-    12:            43200.0000 second (minute)
-    12:0           43200.0000 second (minute)
-    12:34          45240.0000 second (minute)
-    12:34.         45240.0000 second (minute)
-    12:34.5        45270.0000 second (minute)
-    12:34:         45240.0000 second (second)
-    12:34:0        45240.0000 second (second)
-    12:34:56       45296.0000 second (second)
-    12:34:56.      45296.0000 second (second)
-    12:34:56.78    45296.7800 second (second)
+    input         fixed decimal     sexagesimal
 
-    -12:          -43200.0000 second (minute)
-    -12:0         -43200.0000 second (minute)
-    -12:34        -45240.0000 second (minute)
-    -12:34.       -45240.0000 second (minute)
-    -12:34.5      -45270.0000 second (minute)
-    -12:34:       -45240.0000 second (second)
-    -12:34:0      -45240.0000 second (second)
-    -12:34:56     -45296.0000 second (second)
-    -12:34:56.    -45296.0000 second (second)
-    -12:34:56.78  .45296.7800 second (second)
+    :             0 second          0:00:00
+    ::            0 second          0:00:00
+    ::56          56.00 second      0:34:00.00
+    :34           2040.00 second    0:00:56.00
+    12:           43200.00 second   12:00:00.00
+    12::          43200.00 second   12:00:00.00
+    12:34         45240.00 second   12:34:00.00
+    12:34:        45240.00 second   12:34:00.00
+    12:34.        45240.00 second   12:34:00.00
+    12:34.5       45270.00 second   12:34:30.00
+    12:34:56      45296.00 second   12:34:56.00
+    12:34:56.     45296.00 second   12:34:56.00
+    12:34:56.78   45296.78 second   12:34:56.78
 
-    12             12.00000000 degree (degree)
-    12°            12.00000000 degree (arcminute)
-    12°0           12.00000000 degree (arcminute)
-    12°34          12.56666667 degree (arcminute)
-    12°34.5        12.57500000 degree (arcminute)
-    12°34.5'       12.57500000 degree (arcminute)
-    12°34'         12.56666667 degree (arcsecond)
-    12°34'0        12.56666667 degree (arcsecond)
-    12°34'56       12.58222222 degree (arcsecond)
-    12°34'56.      12.58222222 degree (arcsecond)
-    12°34'56.78    12.58243889 degree (arcsecond)
-    12°34'56.78"   12.58243889 degree (arcsecond)
-
-    -12           -12.00000000 degree (degree)
-    -12°          -12.00000000 degree (arcminute)
-    -12°0         -12.00000000 degree (arcminute)
-    -12°34        -12.56666667 degree (arcminute)
-    -12°34.5      -12.57500000 degree (arcminute)
-    -12°34.5'     -12.57500000 degree (arcminute)
-    -12°34'       -12.56666667 degree (arcsecond)
-    -12°34'0      -12.56666667 degree (arcsecond)
-    -12°34'56     -12.58222222 degree (arcsecond)
-    -12°34'56.    -12.58222222 degree (arcsecond)
-    -12°34'56.78  -12.58243889 degree (arcsecond)
-    -12°34'56.78" -12.58243889 degree (arcsecond)
-
-    //???
-    :2
-    ::2
-    °2
-    °'2
-
+    °             0                 0°00'00
+    °'            0                 0°00'00
+    °'56          0.01555556        0°00'56.00
+    °34           0.56666667        0°34'00.00
+    12            12.00000000       12°00'00.00
+    12°           12.00000000       12°00'00.00
+    12°'          12.00000000       12°00'00.00
+    12°34         12.56666667       12°34'00.00
+    12°34'        12.56666667       12°34'00.00
+    12°34.        12.56666667       12°34'00.00
+    12°34.5       12.57500000       12°34'30.00
+    12°34.5'      12.57500000       12°34'30.00
+    12°34'56      12.58222222       12°34'56.00
+    12°34'56.     12.58222222       12°34'56.00
+    12°34'56.78   12.58243889       12°34'56.78
+    12°34'56.78"  12.58243889       12°34'56.78
 */ 
 
 Evaluator* Evaluator::instance()
@@ -1109,6 +1085,11 @@ Tokens Evaluator::scan(const QString& expr) const
                     numberBase = 10;
                     state = InNumber;
                 }
+            } else if (ch == 0xB0 || ch == '\'' || ch == ':') {
+                // Time/Degree notation
+                numberBase = 10;
+                tokenText.append(ex.at(i++));
+                state = InNumber;
             } else if (isExponent(ch, numberBase)) {
                 if (tokenText.endsWith("0")) {
                     // Maybe exponent (tokenText is "0" or "-0").
@@ -1152,12 +1133,6 @@ Tokens Evaluator::scan(const QString& expr) const
                 tokenText.append('d');
                 ++i;
                 state = InNumber;
-            } else if ((ch == 0xB0 || ch == 0xA4 || ch == '\'' || ch == ':') && tokenText == "0") {
-                // Time/Degree notation starting with zero
-                numberBase = 10;
-                tokenText.append(ch == 0xA4 ? 0xB0 : ch);   // convert currency to degree
-                ++i;
-                state = InNumber;
             } else if (isSeparatorChar(ch)) {
                 // Ignore thousand separators.
                 ++i;
@@ -1186,25 +1161,18 @@ Tokens Evaluator::scan(const QString& expr) const
             if (isDigit) {
                 // Consume as long as it's a digit
                 tokenText.append(ex.at(i++).toUpper());
-            } else if (ch == 0xB0 || ch == 0xA4 || ch == '\'' || ch == ':') {
+            } else if (ch == 0xB0 || ch == '\'' || ch == ':') {
                 // Time/Degree notation
-                tokenText.append(ch == 0xA4 ? 0xB0 : ch);   // convert currency to degree
-                ++i;
+                tokenText.append(ex.at(i++));
             } else if (isExponent(ch, numberBase)) {
                 // Maybe exponent
                 expText = ch.toUpper();
                 expStart = i;
                 ++i;
                 tokenText = fixNumberRadix(tokenText);
-                if (!tokenText.isNull()) {
-                    if (numberBase == 10) {
-                        tokenText = fixSexagesimal(tokenText, tokenUnit);
-                        if (!tokenText.isNull())
-                            state = InExpIndicator;
-                        else
-                            state = Bad;
-                    }
-                } else
+                if (!tokenText.isNull())
+                    state = InExpIndicator;
+                else
                     state = Bad;
             } else if (isRadixChar(ch)) {
                 // Might be a radix point or a separator.
@@ -1218,11 +1186,10 @@ Tokens Evaluator::scan(const QString& expr) const
                 // We're done with number.
                 tokenText = fixNumberRadix(tokenText);
                 if (!tokenText.isNull()) {
+                    state = InNumberEnd;
                     if (numberBase == 10) {
                         tokenText = fixSexagesimal(tokenText, tokenUnit);
-                        if (!tokenText.isNull())
-                            state = InNumberEnd;
-                        else
+                        if (tokenText.isNull())
                             state = Bad;
                     }
                 } else
