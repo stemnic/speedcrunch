@@ -726,25 +726,31 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
         int dotPos = number.indexOf('.');
         int minPos = number.indexOf(arc ? 0xB0 : ':');
         if (minPos >= 0) {  // degree sign or first colon -> minutes
-            int minutes = 0, seconds = 0;
-            int mains = number.left(minPos).toInt();    // hours or degrees
+            HNumber::Format fixed = HNumber::Format::Fixed();
+            HNumber minutes(0), seconds(0), mains(minPos == 0 ? "0"
+                : number.left(minPos).toStdString().c_str()); // hours or degrees
             int secPos = number.indexOf(arc ? '\'' : ':', minPos + 1);
             // single quote or second colon before decimals -> seconds
             if (secPos >= 0 && (dotPos < 0 || dotPos > secPos)) {
-                minutes = number.mid(minPos + 1, secPos - minPos - 1).toInt();
+                minutes = HNumber(secPos - minPos == 1 ? "0"
+                    : number.mid(minPos + 1, secPos - minPos - 1).toStdString().c_str());
                 if (dotPos >= 0)
-                    seconds = number.mid(secPos + 1, dotPos - secPos - 1).toInt();
+                    seconds = HNumber(dotPos - secPos == 1 ? "0"
+                        : number.mid(secPos + 1, dotPos - secPos - 1).toStdString().c_str());
                 else    // no decimals
-                    seconds = number.mid(secPos + 1).toInt();
-                result = QString::number(mains * 3600 + minutes * 60 + seconds);
+                    seconds = HNumber(number.size() - secPos == 1 ? "0"
+                        : number.mid(secPos + 1).toStdString().c_str());
+                result = HMath::format(mains * HNumber(3600) + minutes * HNumber(60) + seconds, fixed);
                 unit = (arc ? "arcsecond" : "second");
             }
             else {  // just minutes
                 if (dotPos >= 0)
-                    minutes = number.mid(minPos + 1, dotPos - minPos - 1).toInt();
+                    minutes = HNumber(dotPos - secPos == 1 ? "0"
+                        : number.mid(minPos + 1, dotPos - minPos - 1).toStdString().c_str());
                 else    // no decimals
-                    minutes = number.mid(minPos + 1).toInt();
-                result = QString::number(mains * 60 + minutes);
+                    minutes = HNumber(number.size() - minPos == 1 ? "0"
+                        : number.mid(minPos + 1).toStdString().c_str());
+                result = HMath::format(mains * HNumber(60) + minutes, fixed);
                 unit = (arc ? "arcminute" : "minute");
             }
             if (dotPos > 0)     // append decimals
@@ -753,41 +759,6 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
     }
     return result;
 }
-
-/*
-    input         fixed decimal     sexagesimal
-
-    :             0 second          0:00:00
-    ::            0 second          0:00:00
-    ::56          56.00 second      0:34:00.00
-    :34           2040.00 second    0:00:56.00
-    12:           43200.00 second   12:00:00.00
-    12::          43200.00 second   12:00:00.00
-    12:34         45240.00 second   12:34:00.00
-    12:34:        45240.00 second   12:34:00.00
-    12:34.        45240.00 second   12:34:00.00
-    12:34.5       45270.00 second   12:34:30.00
-    12:34:56      45296.00 second   12:34:56.00
-    12:34:56.     45296.00 second   12:34:56.00
-    12:34:56.78   45296.78 second   12:34:56.78
-
-    °             0                 0°00'00
-    °'            0                 0°00'00
-    °'56          0.01555556        0°00'56.00
-    °34           0.56666667        0°34'00.00
-    12            12.00000000       12°00'00.00
-    12°           12.00000000       12°00'00.00
-    12°'          12.00000000       12°00'00.00
-    12°34         12.56666667       12°34'00.00
-    12°34'        12.56666667       12°34'00.00
-    12°34.        12.56666667       12°34'00.00
-    12°34.5       12.57500000       12°34'30.00
-    12°34.5'      12.57500000       12°34'30.00
-    12°34'56      12.58222222       12°34'56.00
-    12°34'56.     12.58222222       12°34'56.00
-    12°34'56.78   12.58243889       12°34'56.78
-    12°34'56.78"  12.58243889       12°34'56.78
-*/ 
 
 Evaluator* Evaluator::instance()
 {

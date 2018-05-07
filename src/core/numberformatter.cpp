@@ -88,8 +88,10 @@ QString NumberFormatter::format(Quantity q)
         auto dimension = q.getDimension();
         if (dimension.count() == 1 && dimension.firstKey() == "time") {
             auto iterator = dimension.begin();
-            if ( iterator->numerator() == 1 && iterator->denominator() == 1)
-                time = true;    // single dimension time unit
+            if ( iterator->numerator() == 1 && iterator->denominator() == 1) {
+                q.clearDimension(); // remove unit, formatting itself is unit
+                time = true;
+            }
         }
     }
 
@@ -104,20 +106,16 @@ QString NumberFormatter::format(Quantity q)
     QString result = DMath::format(q, format);
 
     if (settings->resultFormat == 's' && (arc || time)) {   // sexagesimal
-        if (time) {     // remove unit, formatting itself is already unit
-            int unit = result.indexOf(" second");
-            if ( unit > 0 )
-                result = result.left(unit);
-        }
         int dotPos = result.indexOf('.');
-        int seconds = (dotPos > 0 ? result.left(dotPos).toInt() : result.toInt());
-        int hours = seconds / 3600;
-        seconds -= (hours * 3600);
-        int minutes = seconds / 60;
-        seconds -= (minutes * 60);
-        QString sexa = QString::number(hours);
-        sexa.append(time ? ':' : 0xB0).append(minutes < 10 ? "0" : "").append(QString::number(minutes));
-        sexa.append(time ? ':' : '\'').append(seconds < 10 ? "0" : "").append(QString::number(seconds));
+        HNumber seconds(dotPos > 0 ? result.left(dotPos).toStdString().c_str() : result.toStdString().c_str());
+        HNumber hours = HMath::floor(seconds / HNumber(3600));
+        seconds -= (hours * HNumber(3600));
+        HNumber minutes = HMath::floor(seconds / HNumber(60));
+        seconds -= (minutes * HNumber(60));
+        HNumber::Format fixed = HNumber::Format::Fixed();
+        QString sexa = HMath::format(hours, fixed);
+        sexa.append(time ? ':' : 0xB0).append(minutes < 10 ? "0" : "").append(HMath::format(minutes, fixed));
+        sexa.append(time ? ':' : '\'').append(seconds < 10 ? "0" : "").append(HMath::format(seconds, fixed));
         if (dotPos > 0)     // append decimals
             sexa.append(result.mid(dotPos));
         result = sexa;
