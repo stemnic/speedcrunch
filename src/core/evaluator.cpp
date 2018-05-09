@@ -688,74 +688,103 @@ QString Evaluator::fixNumberRadix(const QString& number)
     return result;
 }
 
+HNumber getInteger(const QString& number, int endPos = -1) {
+    if (number.size() == 0)
+        return HNumber(0);
+    if (endPos >= 0)
+        return HNumber(number.left(endPos).toStdString().c_str());
+    return HNumber(number.toStdString().c_str());
+}
+
 QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
 {
     unit.clear();
     QString result = number;
 
     bool arc = false;
-    int dotCount = 0, colonCount = 0, degreeCount = 0, minuteCount = 0;
+    int dotCount = 0, colonCount = 0, degreeCount = 0, minuteCount = 0, secondCount = 0;
     for (int i = 0 ; i < number.size() ; ++i) { // check order and amount
         QChar c = number[i];
         if (c == '.')   // check only point, called after fixNumberRadix()
             ++dotCount;
         else if (c == 0xB0) {   // °
-            if (dotCount)   // dot before degree, just ignored unit
+            if (dotCount)   // dot before degree, just ignored postfix unit
                 return result.remove(c);
-            if (colonCount || minuteCount)
+            if (colonCount || minuteCount || secondCount)
                 return QString();
             if (++degreeCount > 1)
                 return QString();
             arc = true;
         }
         else if (c == ':') {
-            if (dotCount || minuteCount || degreeCount)
+            if (dotCount || minuteCount || degreeCount || secondCount)
                 return QString();
             if (++colonCount > 2)
                 return QString();
         }
         else if (c == '\'') {
-            if (!arc)   // no degree, just thousand separator
-                return result.remove(c);
+//            if (!arc)   // no degree, just thousand separator
+//                return result.remove(c);
+            if (secondCount)
+                return QString();
             if (++minuteCount > 1)
                 return QString();
+            arc = true;
+        }
+        else if (c == '"') {
+            if (++secondCount > 1)
+                return QString();
+            arc = true;
         }
     }
 
-    if (colonCount || degreeCount || minuteCount) {
+    if (colonCount || degreeCount || minuteCount || secondCount) {
+        HNumber::Format fixed = HNumber::Format::Fixed();
+        HNumber minutes(0), seconds(0);
         int dotPos = number.indexOf('.');
         int minPos = number.indexOf(arc ? 0xB0 : ':');
         if (minPos >= 0) {  // degree sign or first colon -> minutes
-            HNumber::Format fixed = HNumber::Format::Fixed();
-            HNumber minutes(0), seconds(0), mains(minPos == 0 ? "0"
-                : number.left(minPos).toStdString().c_str()); // hours or degrees
+            HNumber mains = getInteger(number.left(minPos));    // hours or degrees
             int secPos = number.indexOf(arc ? '\'' : ':', minPos + 1);
             // single quote or second colon before decimals -> seconds
             if (secPos >= 0 && (dotPos < 0 || dotPos > secPos)) {
-                minutes = HNumber(secPos - minPos == 1 ? "0"
-                    : number.mid(minPos + 1, secPos - minPos - 1).toStdString().c_str());
-                if (dotPos >= 0)
-                    seconds = HNumber(dotPos - secPos == 1 ? "0"
-                        : number.mid(secPos + 1, dotPos - secPos - 1).toStdString().c_str());
-                else    // no decimals
-                    seconds = HNumber(number.size() - secPos == 1 ? "0"
-                        : number.mid(secPos + 1).toStdString().c_str());
+                minutes = getInteger(number.mid(minPos + 1, secPos - minPos - 1));
+                seconds = getInteger(number.mid(secPos + 1), dotPos);
                 result = HMath::format(mains * HNumber(3600) + minutes * HNumber(60) + seconds, fixed);
                 unit = (arc ? "arcsecond" : "second");
             }
             else {  // just minutes
-                if (dotPos >= 0)
-                    minutes = HNumber(dotPos - secPos == 1 ? "0"
-                        : number.mid(minPos + 1, dotPos - minPos - 1).toStdString().c_str());
-                else    // no decimals
-                    minutes = HNumber(number.size() - minPos == 1 ? "0"
-                        : number.mid(minPos + 1).toStdString().c_str());
+                minutes = getInteger(number.mid(minPos + 1), dotPos);
                 result = HMath::format(mains * HNumber(60) + minutes, fixed);
                 unit = (arc ? "arcminute" : "minute");
             }
-            if (dotPos > 0)     // append decimals
-                result += number.mid(dotPos);
         }
+        else if ( arc ) {
+            int secPos = number.indexOf('\'');
+            if (secPos >= 0) {  // single quote -> seconds
+                if (dotPos < 0 || dotPos > secPos) {
+                    minutes = getInteger(number.left(secPos), secPos);
+                    seconds = getInteger(number.mid(secPos + 1), dotPos);
+                    result = HMath::format(minutes * HNumber(60) + seconds, fixed);
+                    unit = "arcsecond";
+                }
+                else {  // postfix minutes
+                    minutes = getInteger(number.left(secPos), dotPos);
+                    result = HMath::format(minutes, fixed);
+                    unit = "arcminute";
+                }
+            }
+            else {
+                int unitPos = number.indexOf('"');
+                if (unitPos >= 0) {     // postfix seconds
+                    seconds = getInteger(number.left(unitPos), dotPos);
+                    result = HMath::format(seconds, fixed);
+                    unit = "arcsecond";
+                }
+            }
+        }
+        if (dotPos > 0)     // append decimals
+            result += number.mid(dotPos);
     }
     return result;
 }
@@ -891,6 +920,11 @@ QString Evaluator::error() const
 Tokens Evaluator::tokens() const
 {
     return scan(m_expression);
+}
+
+//
+bool isArcTime(QChar ch) {
+    return (ch == 0xB0 || ch == '\'' || ch == '"' || ch == ':');
 }
 
 Tokens Evaluator::scan(const QString& expr) const
@@ -1056,7 +1090,7 @@ Tokens Evaluator::scan(const QString& expr) const
                     numberBase = 10;
                     state = InNumber;
                 }
-            } else if (ch == 0xB0 || ch == '\'' || ch == ':') {
+            } else if (isArcTime(ch)) {
                 // Time/Degree notation
                 numberBase = 10;
                 tokenText.append(ex.at(i++));
@@ -1132,7 +1166,7 @@ Tokens Evaluator::scan(const QString& expr) const
             if (isDigit) {
                 // Consume as long as it's a digit
                 tokenText.append(ex.at(i++).toUpper());
-            } else if (ch == 0xB0 || ch == '\'' || ch == ':') {
+            } else if (isArcTime(ch)) {
                 // Time/Degree notation
                 tokenText.append(ex.at(i++));
             } else if (isExponent(ch, numberBase)) {
