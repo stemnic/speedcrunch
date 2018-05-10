@@ -816,7 +816,7 @@ void Editor::keyPressEvent(QKeyEvent* event)
         event->accept();
         return;
     case Qt::Key_At:
-        insert(QString::fromUtf8("°")); // U+00B0 − DEGREE SIGN
+        insert(QString::fromUtf8("°")); // U+00B0 ° DEGREE SIGN
         event->accept();
         return;
     default:;
