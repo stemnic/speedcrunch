@@ -702,10 +702,10 @@ HNumber getInteger(const QString& number) {
 QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
 {
     unit.clear();
-    QString result = number;
+    QString bad, result = number;
 
     bool arc = false;
-    int dotCount = 0, colonCount = 0, degreeCount = 0, minuteCount = 0, secondCount = 0;
+    int dotCount = 0, colonCount = 0, degreeCount = 0, minuteCount = 0, secondCount = 0, digitCount = 0;
     for (int i = 0 ; i < number.size() ; ++i) { // check order and amount
         QChar c = number[i];
         if (c == '.')   // check only point, called after fixNumberRadix()
@@ -714,51 +714,57 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
             if (dotCount)   // dot before degree, just ignored postfix unit
                 return result.remove(c);
             if (colonCount || minuteCount || secondCount)
-                return QString();
+                return bad;
             if (++degreeCount > 1)
-                return QString();
+                return bad;
             arc = true;
         }
         else if (c == ':') {
             if (dotCount || minuteCount || degreeCount || secondCount)
-                return QString();
+                return bad;
             if (++colonCount > 2)
-                return QString();
+                return bad;
         }
         else if (c == '\'') {
             if (secondCount)
-                return QString();
+                return bad;
             if (++minuteCount > 1)
-                return QString();
+                return bad;
             arc = true;
         }
         else if (c == '"') {
             if (degreeCount && !minuteCount)
-                return QString();
+                return bad;
             if (++secondCount > 1)
-                return QString();
+                return bad;
             arc = true;
         }
+        else if (c.isDigit())
+            ++digitCount;
     }
 
     if (colonCount || degreeCount || minuteCount || secondCount) {
+        if (digitCount == 0)
+            return bad;
         HNumber::Format fixed = HNumber::Format::Fixed();
-        HNumber minutes(0), seconds(0);
+        HNumber minutes(0), seconds(0), sign(1);
         int dotPos = number.indexOf('.');
         int minPos = number.indexOf(arc ? 0xB0 : ':');
         if (minPos >= 0) {  // degree sign or first colon -> minutes
             HNumber mains = getInteger(number.left(minPos));    // hours or degrees
+            if (mains.isNegative())
+                sign = HNumber(-1);
             int secPos = number.indexOf(arc ? '\'' : ':', minPos + 1);
             // single quote or second colon before decimals -> seconds
             if (secPos >= 0 && (dotPos < 0 || dotPos > secPos)) {
                 minutes = getInteger(number.mid(minPos + 1));
                 seconds = getInteger(number.mid(secPos + 1));
-                result = HMath::format(mains * HNumber(3600) + minutes * HNumber(60) + seconds, fixed);
+                result = HMath::format(mains * HNumber(3600) + minutes * HNumber(60) * sign + seconds * sign, fixed);
                 unit = (arc ? "arcsecond" : "second");
             }
             else {  // just minutes
                 minutes = getInteger(number.mid(minPos + 1));
-                result = HMath::format(mains * HNumber(60) + minutes, fixed);
+                result = HMath::format(mains * HNumber(60) + minutes * sign, fixed);
                 unit = (arc ? "arcminute" : "minute");
             }
         }
@@ -767,8 +773,10 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
             if (secPos >= 0) {  // single quote -> seconds
                 if (dotPos < 0 || dotPos > secPos) {
                     minutes = getInteger(number.left(secPos));
+                    if (minutes.isNegative())
+                        sign = HNumber(-1);
                     seconds = getInteger(number.mid(secPos + 1));
-                    result = HMath::format(minutes * HNumber(60) + seconds, fixed);
+                    result = HMath::format(minutes * HNumber(60) + seconds * sign, fixed);
                     unit = "arcsecond";
                 }
                 else {  // postfix minutes
@@ -963,8 +971,7 @@ Tokens Evaluator::scan(const QString& expr) const
     state = Init;
     int i = 0;
     QString ex = expr;
-    QString tokenText;
-    QString tokenUnit;
+    QString tokenText, tokenUnit;
     int tokenStart = 0; // Includes leading spaces.
     Token::Type type;
     int numberBase = 10;

@@ -844,7 +844,7 @@ WRAPPER_DMATH_4(decodeIeee754)
 
 QString DMath::format(Quantity q, Quantity::Format format)
 {
-    format = q.format() + format;  // Left hand side oerator takes priority.
+    format = q.format() + format;  // Left hand side operator takes priority.
 
     // Handle units.
     if (!q.hasUnit() && !q.isDimensionless()) {

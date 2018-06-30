@@ -103,6 +103,12 @@ QString NumberFormatter::format(Quantity q)
         q *= Quantity(3600);
     }
 
+    bool negative = false;
+    if (settings->resultFormat == 's' && q.isNegative()) {
+        q *= Quantity(HNumber(-1));
+        negative = true;
+    }
+
     QString result = DMath::format(q, format);
 
     if (settings->resultFormat == 's' && (arc || time)) {   // sexagesimal
@@ -120,6 +126,9 @@ QString NumberFormatter::format(Quantity q)
             sexa.append(result.mid(dotPos));
         result = sexa;
     }
+
+    if (negative)
+        result.insert(0, '-');
 
     if (settings->radixCharacter() == ',')
         result.replace('.', ',');
