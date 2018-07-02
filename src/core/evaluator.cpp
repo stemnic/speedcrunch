@@ -688,15 +688,15 @@ QString Evaluator::fixNumberRadix(const QString& number)
     return result;
 }
 
-HNumber getInteger(const QString& number) {
+HNumber getNumber(const QString& number) {
     if (number.size() == 0)
         return HNumber(0);
-    int endPos = number.indexOf(QRegExp("[.'\":]"));
+    int endPos = number.indexOf(QRegExp("['\":]"));
     if (endPos == 0)
         return HNumber(0);
     if (endPos > 0)
-        return HNumber(number.left(endPos).toStdString().c_str());
-    return HNumber(number.toStdString().c_str());
+        return HNumber(Evaluator::fixNumberRadix(number.left(endPos)).toStdString().c_str());
+    return HNumber(Evaluator::fixNumberRadix(number).toStdString().c_str());
 }
 
 QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
@@ -705,14 +705,10 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
     QString bad, result = number;
 
     bool arc = false;
-    int dotCount = 0, colonCount = 0, degreeCount = 0, minuteCount = 0, secondCount = 0, digitCount = 0;
+    int colonCount = 0, degreeCount = 0, minuteCount = 0, secondCount = 0, digitCount = 0;
     for (int i = 0 ; i < number.size() ; ++i) { // check order and amount
         QChar c = number[i];
-        if (c == '.')   // check only point, called after fixNumberRadix()
-            ++dotCount;
-        else if (c == 0xB0) {   // °
-            if (dotCount)   // dot before degree, just ignored postfix unit
-                return result.remove(c);
+        if (c == 0xB0) {   // °
             if (colonCount || minuteCount || secondCount)
                 return bad;
             if (++degreeCount > 1)
@@ -720,7 +716,7 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
             arc = true;
         }
         else if (c == ':') {
-            if (dotCount || minuteCount || degreeCount || secondCount)
+            if (minuteCount || degreeCount || secondCount)
                 return bad;
             if (++colonCount > 2)
                 return bad;
@@ -743,63 +739,66 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
             ++digitCount;
     }
 
-    if (colonCount || degreeCount || minuteCount || secondCount) {
+    if (colonCount || degreeCount || minuteCount || secondCount) {  // sexagesimal value
         if (digitCount == 0)
             return bad;
         HNumber::Format fixed = HNumber::Format::Fixed();
-        HNumber minutes(0), seconds(0), sign(1);
-        int dotPos = number.indexOf('.');
+        HNumber mains(0), minutes(0), seconds(0), sign(1);
         int minPos = number.indexOf(arc ? 0xB0 : ':');
         if (minPos >= 0) {  // degree sign or first colon -> minutes
-            HNumber mains = getInteger(number.left(minPos));    // hours or degrees
+            mains = getNumber(number.left(minPos));    // hours or degrees
             if (mains.isNegative())
                 sign = HNumber(-1);
             int secPos = number.indexOf(arc ? '\'' : ':', minPos + 1);
             // single quote or second colon before decimals -> seconds
-            if (secPos >= 0 && (dotPos < 0 || dotPos > secPos)) {
-                minutes = getInteger(number.mid(minPos + 1));
-                seconds = getInteger(number.mid(secPos + 1));
+            if (secPos >= 0) {
+                minutes = getNumber(number.mid(minPos + 1));
+                seconds = getNumber(number.mid(secPos + 1));
                 result = HMath::format(mains * HNumber(3600) + minutes * HNumber(60) * sign + seconds * sign, fixed);
                 unit = (arc ? "arcsecond" : "second");
             }
             else {  // just minutes
-                minutes = getInteger(number.mid(minPos + 1));
+                minutes = getNumber(number.mid(minPos + 1));
                 result = HMath::format(mains * HNumber(60) + minutes * sign, fixed);
-                unit = (arc ? "arcminute" : "minute");
+                unit = arc ? "arcminute" : "minute";
             }
         }
         else if ( arc ) {
             int secPos = number.indexOf('\'');
             if (secPos >= 0) {  // single quote -> seconds
-                if (dotPos < 0 || dotPos > secPos) {
-                    minutes = getInteger(number.left(secPos));
-                    if (minutes.isNegative())
-                        sign = HNumber(-1);
-                    seconds = getInteger(number.mid(secPos + 1));
-                    result = HMath::format(minutes * HNumber(60) + seconds * sign, fixed);
-                    unit = "arcsecond";
-                }
-                else {  // postfix minutes
-                    minutes = getInteger(number.left(secPos));
-                    result = HMath::format(minutes, fixed);
-                    unit = "arcminute";
-                }
+                minutes = getNumber(number.left(secPos));
+                if (minutes.isNegative())
+                    sign = HNumber(-1);
+                seconds = getNumber(number.mid(secPos + 1));
+                result = HMath::format(minutes * HNumber(60) + seconds * sign, fixed);
+                unit = "arcsecond";
             }
             else {
                 int unitPos = number.indexOf('"');
-                if (unitPos >= 0) {     // postfix seconds
-                    seconds = getInteger(number.left(unitPos));
+                if (unitPos >= 0) {  // postfix seconds
+                    seconds = getNumber(number.left(unitPos));
                     result = HMath::format(seconds, fixed);
                     unit = "arcsecond";
                 }
             }
         }
-        if (dotPos > 0) {   // append decimals, remove possible postfix units
+        int unitPos = number.indexOf('"');  // check digits after seconds unit
+        if (unitPos >= 0 && !getNumber(number.mid(unitPos + 1)).isZero())
+            return bad;
+        if (!seconds.isZero() && (!minutes.isInteger() || !mains.isInteger()))
+            return bad;
+        if (!minutes.isZero() && !mains.isInteger())
+            return bad;
+        int dotPos = number.lastIndexOf("[.,]");
+        if (dotPos >= 0) {  // append decimals, remove possible postfix units
             int minPos = number.indexOf('\''), secPos = number.indexOf('"');
-            int unitPos = ((secPos >= 0 && secPos < minPos) ? secPos : minPos);
+            int unitPos = (secPos >= 0 && secPos < minPos) ? secPos : minPos;
             result += number.mid(dotPos, unitPos < 0 ? -1 : unitPos - dotPos);
         }
     }
+    else
+        result = fixNumberRadix(result);
+
     return result;
 }
 
@@ -1201,6 +1200,15 @@ Tokens Evaluator::scan(const QString& expr) const
                 ++i;
             } else {
                 // We're done with number.
+                if (numberBase == 10)
+                    tokenText = fixSexagesimal(tokenText, tokenUnit);
+                else
+                    tokenText = fixNumberRadix(tokenText);
+                if (!tokenText.isNull())
+                    state = InNumberEnd;
+                else
+                    state = Bad;
+/*
                 tokenText = fixNumberRadix(tokenText);
                 if (!tokenText.isNull()) {
                     state = InNumberEnd;
@@ -1211,6 +1219,7 @@ Tokens Evaluator::scan(const QString& expr) const
                     }
                 } else
                     state = Bad;
+*/
             }
 
             break;

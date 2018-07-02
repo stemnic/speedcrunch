@@ -43,7 +43,7 @@ static int eval_new_failed_tests = 0;
 #define CHECK_EVAL_KNOWN_ISSUE(x,y,n) checkEval(__FILE__,__LINE__,#x,x,y,n)
 #define CHECK_EVAL_PRECISE(x,y) checkEvalPrecise(__FILE__,__LINE__,#x,x,y)
 #define CHECK_EVAL_FAIL(x) checkEval(__FILE__,__LINE__,#x,x,"",0,true)
-#define CHECK_EVAL_FORMAT_FAIL(x,y) checkEval(__FILE__,__LINE__,#x,x,y,0,true,true)
+#define CHECK_EVAL_FORMAT_FAIL(x) checkEval(__FILE__,__LINE__,#x,x,"",0,true,true)
 #define CHECK_USERFUNC_SET(x) checkEval(__FILE__,__LINE__,#x,x,"NaN")
 #define CHECK_USERFUNC_SET_FAIL(x) checkEval(__FILE__,__LINE__,#x,x,"",0,true)
 
@@ -399,9 +399,11 @@ void test_sexagesimal()
     settings->resultFormat = 's';
     settings->resultPrecision = 2;
 
-    CHECK_EVAL_FORMAT_FAIL(":", "0:00:00");
-    CHECK_EVAL_FORMAT_FAIL("::", "0:00:00");
-    CHECK_EVAL_FORMAT_FAIL("0:::", "0:00:00");
+    CHECK_EVAL_FORMAT_FAIL(":");
+    CHECK_EVAL_FORMAT_FAIL("::");
+    CHECK_EVAL_FORMAT_FAIL("0:::");
+    CHECK_EVAL_FORMAT_FAIL("1.2:34.56");
+    CHECK_EVAL_FORMAT_FAIL("12:3.4:56.78");
 
     CHECK_EVAL_FORMAT("0:", "0:00:00");
     CHECK_EVAL_FORMAT("::56", "0:00:56.00");
@@ -437,9 +439,17 @@ void test_sexagesimal()
     CHECK_EVAL_FORMAT("-12:34:56.", "-12:34:56.00");
     CHECK_EVAL_FORMAT("-12:34:56.78", "-12:34:56.78");
 
-    CHECK_EVAL_FORMAT_FAIL("°", "0°00'00");
-    CHECK_EVAL_FORMAT_FAIL("°'", "0°00'00");
-    CHECK_EVAL_FORMAT_FAIL("°0\"", "0°00'00");
+    CHECK_EVAL_FORMAT_FAIL("°");
+    CHECK_EVAL_FORMAT_FAIL("°'");
+    CHECK_EVAL_FORMAT_FAIL("°0\"");
+    CHECK_EVAL_FORMAT_FAIL("1.2°34.56");
+    CHECK_EVAL_FORMAT_FAIL("12°3.4'56.78\"");
+
+    CHECK_EVAL_FORMAT_FAIL("56\"7");
+    CHECK_EVAL_FORMAT_FAIL("56.78\"9");
+    CHECK_EVAL_FORMAT_FAIL("34'\"5");
+    CHECK_EVAL_FORMAT_FAIL("12°'\"3");
+    CHECK_EVAL_FORMAT_FAIL("12°34'56.78\"9");
 
     CHECK_EVAL_FORMAT("0", "0°00'00");
     CHECK_EVAL_FORMAT("°'56", "0°00'56.00");
