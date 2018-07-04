@@ -114,12 +114,12 @@ QString NumberFormatter::format(Quantity q)
     if (settings->resultFormat == 's' && (arc || time)) {   // sexagesimal
         int dotPos = result.indexOf('.');
         HNumber seconds(dotPos > 0 ? result.left(dotPos).toStdString().c_str() : result.toStdString().c_str());
-        HNumber hours = HMath::floor(seconds / HNumber(3600));
-        seconds -= (hours * HNumber(3600));
+        HNumber mains = HMath::floor(seconds / HNumber(3600));
+        seconds -= (mains * HNumber(3600));
         HNumber minutes = HMath::floor(seconds / HNumber(60));
         seconds -= (minutes * HNumber(60));
         HNumber::Format fixed = HNumber::Format::Fixed();
-        QString sexa = HMath::format(hours, fixed);
+        QString sexa = HMath::format(mains, fixed);
         sexa.append(time ? ':' : 0xB0).append(minutes < 10 ? "0" : "").append(HMath::format(minutes, fixed));
         sexa.append(time ? ':' : '\'').append(seconds < 10 ? "0" : "").append(HMath::format(seconds, fixed));
         if (dotPos > 0)     // append decimals

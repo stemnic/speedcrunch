@@ -365,16 +365,16 @@ void test_radix_char()
 
 void test_thousand_sep()
 {
-//    CHECK_EVAL("12'345.678'9", "12345.6789");
-//    CHECK_EVAL("1234'5.67'89", "12345.6789");
-//    CHECK_EVAL("1234'56", "123456");
-//    CHECK_EVAL("'123456", "123456");
-//    CHECK_EVAL("123456'", "123456");
-//    CHECK_EVAL("123'''456", "123456");
-//    CHECK_EVAL(".'123456", "0.123456");
+    CHECK_EVAL("12_345.678_9", "12345.6789");
+    CHECK_EVAL("1234_5.67_89", "12345.6789");
+    CHECK_EVAL("1234_56", "123456");
+    CHECK_EVAL("_123456", "123456");
+    CHECK_EVAL("123456_", "123456");
+    CHECK_EVAL("123___456", "123456");
+    CHECK_EVAL("._123456", "0.123456");
 
     CHECK_EVAL("12 345.678 9", "12345.6789");
-    CHECK_EVAL("12_345.678_9", "12345.6789");
+//    CHECK_EVAL("12'345.678'9", "12345.6789");
     CHECK_EVAL(QString::fromUtf8("12·345.678·9"), "12345.6789");
     CHECK_EVAL(QString::fromUtf8("12٫345.678٫9"), "12345.6789");
     CHECK_EVAL(QString::fromUtf8("12٬345.678٬9"), "12345.6789");
@@ -393,11 +393,14 @@ void test_sexagesimal()
 {
     // Backup current settings
     Settings* settings = Settings::instance();
+    char angleUnit = settings->angleUnit;
     char resultFormat = settings->resultFormat;
     int resultPrecision = settings->resultPrecision;
 
+    settings->angleUnit = 'd';
     settings->resultFormat = 's';
     settings->resultPrecision = 2;
+    Evaluator::instance()->initializeAngleUnits();
 
     CHECK_EVAL_FORMAT_FAIL(":");
     CHECK_EVAL_FORMAT_FAIL("::");
@@ -410,10 +413,12 @@ void test_sexagesimal()
     CHECK_EVAL_FORMAT("56 second", "0:00:56.00");
     CHECK_EVAL_FORMAT(":34", "0:34:00.00");
     CHECK_EVAL_FORMAT(":34:", "0:34:00.00");
-    CHECK_EVAL_FORMAT("34 minute", "0:34:00.00");
+    CHECK_EVAL_FORMAT(":34.5:", "0:34:30.00");
+    CHECK_EVAL_FORMAT("34.5 minute", "0:34:30.00");
     CHECK_EVAL_FORMAT("12:", "12:00:00.00");
     CHECK_EVAL_FORMAT("12::", "12:00:00.00");
-    CHECK_EVAL_FORMAT("12 hour", "12:00:00.00");
+    CHECK_EVAL_FORMAT("12.3:", "12:18:00.00");
+    CHECK_EVAL_FORMAT("12.3 hour", "12:18:00.00");
     CHECK_EVAL_FORMAT("12:34", "12:34:00.00");
     CHECK_EVAL_FORMAT("12:34:", "12:34:00.00");
     CHECK_EVAL_FORMAT("12:34.", "12:34:00.00");
@@ -424,19 +429,11 @@ void test_sexagesimal()
 
     CHECK_EVAL_FORMAT("-0:", "0:00:00");
     CHECK_EVAL_FORMAT("-::56", "-0:00:56.00");
-    CHECK_EVAL_FORMAT("-56 second", "-0:00:56.00");
     CHECK_EVAL_FORMAT("-:34", "-0:34:00.00");
-    CHECK_EVAL_FORMAT("-:34:", "-0:34:00.00");
-    CHECK_EVAL_FORMAT("-34 minute", "-0:34:00.00");
     CHECK_EVAL_FORMAT("-12:", "-12:00:00.00");
-    CHECK_EVAL_FORMAT("-12::", "-12:00:00.00");
-    CHECK_EVAL_FORMAT("-12 hour", "-12:00:00.00");
     CHECK_EVAL_FORMAT("-12:34", "-12:34:00.00");
-    CHECK_EVAL_FORMAT("-12:34:", "-12:34:00.00");
-    CHECK_EVAL_FORMAT("-12:34.", "-12:34:00.00");
     CHECK_EVAL_FORMAT("-12:34.5", "-12:34:30.00");
     CHECK_EVAL_FORMAT("-12:34:56", "-12:34:56.00");
-    CHECK_EVAL_FORMAT("-12:34:56.", "-12:34:56.00");
     CHECK_EVAL_FORMAT("-12:34:56.78", "-12:34:56.78");
 
     CHECK_EVAL_FORMAT_FAIL("°");
@@ -459,12 +456,17 @@ void test_sexagesimal()
     CHECK_EVAL_FORMAT("56.78\"", "0°00'56.78");
     CHECK_EVAL_FORMAT("°34", "0°34'00.00");
     CHECK_EVAL_FORMAT("34'", "0°34'00.00");
+    CHECK_EVAL_FORMAT("34.5'", "0°34'30.00");
     CHECK_EVAL_FORMAT("34'\"", "0°34'00.00");
-    CHECK_EVAL_FORMAT("34 arcminute", "0°34'00.00");
+    CHECK_EVAL_FORMAT("34.5'\"", "0°34'30.00");
+    CHECK_EVAL_FORMAT("34.5 arcminute", "0°34'30.00");
     CHECK_EVAL_FORMAT("34'56", "0°34'56.00");
     CHECK_EVAL_FORMAT("12°", "12°00'00.00");
     CHECK_EVAL_FORMAT("12°'", "12°00'00.00");
     CHECK_EVAL_FORMAT("12°'\"", "12°00'00.00");
+    CHECK_EVAL_FORMAT("12.3°", "12°18'00.00");
+    CHECK_EVAL_FORMAT("12.3°'", "12°18'00.00");
+    CHECK_EVAL_FORMAT("12.3°'\"", "12°18'00.00");
     CHECK_EVAL_FORMAT("12°34", "12°34'00.00");
     CHECK_EVAL_FORMAT("12°34'", "12°34'00.00");
     CHECK_EVAL_FORMAT("12°34.", "12°34'00.00");
@@ -477,32 +479,49 @@ void test_sexagesimal()
 
     CHECK_EVAL_FORMAT("-0", "0°00'00");
     CHECK_EVAL_FORMAT("-°'56", "-0°00'56.00");
-    CHECK_EVAL_FORMAT("-'56", "-0°00'56.00");
-    CHECK_EVAL_FORMAT("-°'56", "-0°00'56.00");
     CHECK_EVAL_FORMAT("-56\"", "-0°00'56.00");
-    CHECK_EVAL_FORMAT("-56 arcsecond", "-0°00'56.00");
-    CHECK_EVAL_FORMAT("-56.78\"", "-0°00'56.78");
     CHECK_EVAL_FORMAT("-°34", "-0°34'00.00");
     CHECK_EVAL_FORMAT("-34'", "-0°34'00.00");
-    CHECK_EVAL_FORMAT("-34'\"", "-0°34'00.00");
-    CHECK_EVAL_FORMAT("-34 arcminute", "-0°34'00.00");
-    CHECK_EVAL_FORMAT("-34'56", "-0°34'56.00");
     CHECK_EVAL_FORMAT("-12°", "-12°00'00.00");
-    CHECK_EVAL_FORMAT("-12°'", "-12°00'00.00");
-    CHECK_EVAL_FORMAT("-12°'\"", "-12°00'00.00");
+    CHECK_EVAL_FORMAT("-12.3°", "-12°18'00.00");
     CHECK_EVAL_FORMAT("-12°34", "-12°34'00.00");
-    CHECK_EVAL_FORMAT("-12°34'", "-12°34'00.00");
-    CHECK_EVAL_FORMAT("-12°34.", "-12°34'00.00");
     CHECK_EVAL_FORMAT("-12°34.5", "-12°34'30.00");
-    CHECK_EVAL_FORMAT("-12°34.5'", "-12°34'30.00");
     CHECK_EVAL_FORMAT("-12°34'56", "-12°34'56.00");
-    CHECK_EVAL_FORMAT("-12°34'56.", "-12°34'56.00");
     CHECK_EVAL_FORMAT("-12°34'56.78", "-12°34'56.78");
     CHECK_EVAL_FORMAT("-12°34'56.78\"", "-12°34'56.78");
 
+    settings->angleUnit = 'g';
+    Evaluator::instance()->initializeAngleUnits();
+
+    CHECK_EVAL_FORMAT("100.5", "90°27'00.00");
+    CHECK_EVAL_FORMAT("-200.3", "-180°16'12.00");
+    CHECK_EVAL_FORMAT("12.3 degree", "12°18'00.00");
+
+    settings->angleUnit = 'r';
+    Evaluator::instance()->initializeAngleUnits();
+
+    CHECK_EVAL_FORMAT("pi", "180°00'00.00");
+    CHECK_EVAL_FORMAT("-pi", "-180°00'00.00");
+    CHECK_EVAL_FORMAT("12.3 degree", "12°18'00.00");
+
+    settings->resultPrecision = 32;
+
+    CHECK_EVAL_FORMAT("::56.78901234567890123456789012345678", "0:00:56.78901234567890123456789012345678");
+    CHECK_EVAL_FORMAT(":34.56789012345678901234567890123456", "0:34:34.07340740740734074074073407407360");
+    CHECK_EVAL_FORMAT("12.34567890123456789012345678901234:", "12:20:44.44404444444440444444444044442400");
+
+    settings->angleUnit = 'd';
+    Evaluator::instance()->initializeAngleUnits();
+
+    CHECK_EVAL_FORMAT("56.78901234567890123456789012345678\"", "0°00'56.78901234567890123456789012345678");
+    CHECK_EVAL_FORMAT("34.56789012345678901234567890123456'", "0°34'34.07340740740734074074073407407360");
+    CHECK_EVAL_FORMAT("12.34567890123456789012345678901234°", "12°20'44.44404444444440444444444044442400");
+
     // Restore old settings
+    settings->angleUnit = angleUnit;
     settings->resultFormat = resultFormat;
     settings->resultPrecision = resultPrecision;
+    Evaluator::instance()->initializeAngleUnits();
 }
 
 void test_function_basic()

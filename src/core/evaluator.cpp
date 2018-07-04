@@ -750,17 +750,26 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
             if (mains.isNegative())
                 sign = HNumber(-1);
             int secPos = number.indexOf(arc ? '\'' : ':', minPos + 1);
-            // single quote or second colon before decimals -> seconds
-            if (secPos >= 0) {
+            if (secPos >= 0) {  // single quote or second colon -> seconds
                 minutes = getNumber(number.mid(minPos + 1));
                 seconds = getNumber(number.mid(secPos + 1));
-                result = HMath::format(mains * HNumber(3600) + minutes * HNumber(60) * sign + seconds * sign, fixed);
-                unit = (arc ? "arcsecond" : "second");
+                if (seconds.isZero()) {  // postfix minutes
+                    result = HMath::format(mains * HNumber(60) + minutes * sign, fixed);
+                    unit = arc ? "arcminute" : "minute";
+                }
+                else {  // minutes and seconds
+                    result = HMath::format(mains * HNumber(3600) + minutes * HNumber(60) * sign + seconds * sign, fixed);
+                    unit = arc ? "arcsecond" : "second";
+                }
             }
             else {  // just minutes
                 minutes = getNumber(number.mid(minPos + 1));
                 result = HMath::format(mains * HNumber(60) + minutes * sign, fixed);
                 unit = arc ? "arcminute" : "minute";
+            }
+            if (seconds.isZero() && minutes.isZero()) {  // postfix mains
+                result = HMath::format(mains, fixed);
+                unit = arc ? "" : "hour";
             }
         }
         else if ( arc ) {
@@ -770,8 +779,14 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
                 if (minutes.isNegative())
                     sign = HNumber(-1);
                 seconds = getNumber(number.mid(secPos + 1));
-                result = HMath::format(minutes * HNumber(60) + seconds * sign, fixed);
-                unit = "arcsecond";
+                if (seconds.isZero()) {  // postfix minutes
+                    result = HMath::format(minutes, fixed);
+                    unit = "arcminute";
+                }
+                else {
+                    result = HMath::format(minutes * HNumber(60) + seconds * sign, fixed);
+                    unit = "arcsecond";
+                }
             }
             else {
                 int unitPos = number.indexOf('"');
@@ -789,11 +804,14 @@ QString Evaluator::fixSexagesimal(const QString& number, QString& unit)
             return bad;
         if (!minutes.isZero() && !mains.isInteger())
             return bad;
-        int dotPos = number.lastIndexOf("[.,]");
-        if (dotPos >= 0) {  // append decimals, remove possible postfix units
+        int dotNumber = number.lastIndexOf(QRegExp("[.,]"));
+        if (dotNumber >= 0) {  // append decimals, remove possible postfix units
             int minPos = number.indexOf('\''), secPos = number.indexOf('"');
             int unitPos = (secPos >= 0 && secPos < minPos) ? secPos : minPos;
-            result += number.mid(dotPos, unitPos < 0 ? -1 : unitPos - dotPos);
+            int dotResult = result.lastIndexOf('.');
+            if (dotResult >= 0)  // replace decimals with original ones for accuracy
+                result.resize(dotResult);
+            result += number.mid(dotNumber, unitPos < 0 ? -1 : unitPos - dotNumber);
         }
     }
     else
@@ -1208,18 +1226,6 @@ Tokens Evaluator::scan(const QString& expr) const
                     state = InNumberEnd;
                 else
                     state = Bad;
-/*
-                tokenText = fixNumberRadix(tokenText);
-                if (!tokenText.isNull()) {
-                    state = InNumberEnd;
-                    if (numberBase == 10) {
-                        tokenText = fixSexagesimal(tokenText, tokenUnit);
-                        if (tokenText.isNull())
-                            state = Bad;
-                    }
-                } else
-                    state = Bad;
-*/
             }
 
             break;
