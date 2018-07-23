@@ -307,7 +307,6 @@ void SyntaxHighlighter::groupDigits(const QString& text, int pos, int length)
     bool invertGroup = false; // If true, group digits from the most significant digit.
     int groupSize = 3; // Number of digits to group (depends on the radix).
     int allowedChars = DEC_CHAR; // Allowed characters for the radix of the current number being parsed.
-    bool sexagesimal = Settings::instance()->resultFormat == 's';
 
     int endPos = pos + length;
     if (endPos > text.length())
@@ -328,7 +327,7 @@ void SyntaxHighlighter::groupDigits(const QString& text, int pos, int length)
                         endOfNumber = false;
                 }
 
-                if (sexagesimal && (c == ':' || c == 0xB0 || c == '\'' || c == '"'))
+                if (c == ':' || c == 0xB0 || c == '\'' || c == '"')
                     endOfNumber = true;
 
                 if (endOfNumber) {
