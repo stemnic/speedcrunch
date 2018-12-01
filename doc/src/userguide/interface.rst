@@ -125,7 +125,7 @@ formats:
 * :menuselection:`Hexadecimal`
     Display all results as hexadecimal numbers, i.e. in base-16.
 * :menuselection:`Sexagecimal`
-    Display dimensionless and time results as sexagecimal numbers, i.e. with minutes and seconds. All other results are displayed in fixed decimal form.
+    Display dimensionless and time results as :ref:`sexagecimal values <sexagecimal_values>`, i.e. with minutes and seconds. All other results are displayed in fixed decimal form.
 
 In addition to the main result format, some further options are available to customize
 the result output:
@@ -164,7 +164,7 @@ determines the angle format of the arguments.
 * :menuselection:`Gradian`
     Use gradians for angles. A full circle corresponds to an angle of 400 gradians.
 
-    .. versionadded:: 0.13
+    .. versionadded:: 1.0
     
 * :menuselection:`Cycle Unit`
     Cycle unit selection between Radian, Degree and Gradian.
@@ -297,7 +297,7 @@ Format
 * :kbd:`F9`
     Set result format to sexagecimal.
 
-    .. versionadded:: 0.13
+    .. versionadded:: 1.0
     
 * :kbd:`F10`
     Cycle angle unit (Degree/Radian/Gradian).
