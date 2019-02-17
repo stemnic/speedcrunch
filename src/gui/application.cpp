@@ -21,6 +21,7 @@
 #include "gui/application.h"
 
 #include <QByteArray>
+#include <QDir>
 
 #include <QSharedMemory>
 #ifndef Q_OS_WIN
@@ -32,7 +33,7 @@
 #include <windows.h>
 #endif  /* Q_OS_WIN */
 
-#define GUI_APPLICATION_SHARED_MEMORY_KEY "speedcrunch"
+#define GUI_APPLICATION_SHARED_MEMORY_KEY QStringLiteral("speedcrunch")
 #define GUI_APPLICATION_LOCAL_SOCKET_TIMEOUT 1000
 
 #ifdef Q_OS_WIN
@@ -81,7 +82,7 @@ Application::Application(int &argc, char *argv[])
     Q_D(Application);
 
     // Make instance key specific to user sessions
-    d->instanceKey = GUI_APPLICATION_SHARED_MEMORY_KEY + QString("@") + GetSessionId();
+    d->instanceKey = GUI_APPLICATION_SHARED_MEMORY_KEY + QLatin1Char('@') + GetSessionId();
 
     d->isRunning = false;
     d->sharedMemory.setKey(d->instanceKey);
@@ -101,9 +102,13 @@ Application::Application(int &argc, char *argv[])
         d->sharedMemory.unlock();
 
 #else   /* Q_OS_WIN */
-
+        // Was not running, cleanup in case the application crashed
+        QString localServerAddress = QDir::tempPath() + QLatin1Char('/') + d->instanceKey;
+        QFile localSocketFile(localServerAddress);
+        if (localSocketFile.exists())
+            localSocketFile.remove();
         connect(&d->localServer, SIGNAL(newConnection()), SLOT(receiveMessage()));
-        d->localServer.listen(d->instanceKey);
+        d->localServer.listen(localServerAddress);
 
 #endif  /* Q_OS_WIN */
 
