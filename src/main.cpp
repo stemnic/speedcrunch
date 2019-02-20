@@ -23,14 +23,18 @@
 #include <QCoreApplication>
 #include <QApplication>
 #include <QWindow>
+#include <QtDebug>
 
 int main(int argc, char* argv[])
 {
     Application application(argc, argv);
 
     if (application.isRunning()) {
-        application.sendRaiseRequest();
-        return 0;
+        if (application.sendRaiseRequest()) {
+            return 0;
+        } else {
+            qWarning() << "Failed to send raise request, continue with normal startup";
+        }
     }
 
     QCoreApplication::setApplicationName("SpeedCrunch");
@@ -44,7 +48,6 @@ int main(int argc, char* argv[])
 #ifndef Q_OS_WIN
 
     application.connect(&application, &Application::raiseRequested, &window, [&] {
-        printf("RAISE!!!\n");
         window.setWindowState( (window.windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
         window.raise();
         window.activateWindow();
