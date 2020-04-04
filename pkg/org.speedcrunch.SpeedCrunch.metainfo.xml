@@ -64,6 +64,11 @@
     <id>speedcrunch.desktop</id>
   </provides>
 
+  <kudos>
+   <kudo>ModernToolkit</kudo>
+   <kudo>UserDocs</kudo>
+  </kudos>
+
   <screenshots>
     <screenshot type="default">
       <image>http://speedcrunch.org/_static/appdata-screenshots/0.12/advanced-features.png</image>
