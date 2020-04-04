@@ -63,8 +63,8 @@ function create_pkgroot {
     install --mode=0644 $SPEEDCRUNCH_SOURCE_DIR/pkg/org.speedcrunch.SpeedCrunch.desktop $PKGROOT/usr/share/applications/
     dos2unix -q $PKGROOT/usr/share/applications/org.speedcrunch.SpeedCrunch.desktop
     mkdir --mode=0755 -p $PKGROOT/usr/share/appdata
-    install --mode=0644 $SPEEDCRUNCH_SOURCE_DIR/pkg/speedcrunch.appdata.xml $PKGROOT/usr/share/appdata/
-    dos2unix -q $PKGROOT/usr/share/appdata/speedcrunch.appdata.xml
+    install --mode=0644 $SPEEDCRUNCH_SOURCE_DIR/pkg/org.speedcrunch.SpeedCrunch.metainfo.xml $PKGROOT/usr/share/appdata/
+    dos2unix -q $PKGROOT/usr/share/appdata/org.speedcrunch.SpeedCrunch.metainfo.xml
 }
 
 function build_deb_package {
