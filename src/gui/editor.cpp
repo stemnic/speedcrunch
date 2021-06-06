@@ -1105,7 +1105,7 @@ ConstantCompletion::ConstantCompletion(Editor* editor)
                               SLOT(doneCompletion()));
 
     m_slider = new QTimeLine(100, m_popup);
-    m_slider->setCurveShape(QTimeLine::LinearCurve);
+    m_slider->setEasingCurve(QEasingCurve(QEasingCurve::Linear));
     connect(m_slider, SIGNAL(frameChanged(int)),
                       SLOT(setHorizontalPosition(int)));
 
