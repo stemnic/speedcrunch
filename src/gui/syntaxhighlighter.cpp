@@ -406,7 +406,7 @@ void SyntaxHighlighter::asHtml(QString& html)
     for(QTextBlock current = start; current.isValid() && current != end; current = current.next()) {
         const QTextLayout* layout(current.layout());
 
-        foreach(const QTextLayout::FormatRange &range, layout->additionalFormats()) {
+        foreach(const QTextLayout::FormatRange &range, layout->formats()) {
             const int start = current.position() + range.start - selectionStart;
             const int end = start + range.length;
             if(end <= 0 || start >= endOfDocument)
