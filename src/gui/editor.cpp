@@ -143,7 +143,7 @@ QSize Editor::sizeHint() const
 {
     ensurePolished();
     const QFontMetrics metrics = fontMetrics();
-    const int width = metrics.width('x') * 10;
+    const int width = metrics.horizontalAdvance('x') * 10;
     const int height = metrics.lineSpacing() + 6;
     return QSize(width, height);
 }
@@ -1035,7 +1035,7 @@ void EditorCompletion::showCompletion(const QStringList& choices)
     // Position, reference is editor's cursor position in global coord.
     auto cursor = m_editor->textCursor();
     cursor.movePosition(QTextCursor::StartOfWord);
-    const int pixelsOffset = metrics.width(m_editor->text(), cursor.position());
+    const int pixelsOffset = metrics.horizontalAdvance(m_editor->text(), cursor.position());
     auto point = QPoint(pixelsOffset, m_editor->height());
     QPoint position = m_editor->mapToGlobal(point);
 
@@ -1290,7 +1290,7 @@ void ConstantCompletion::showCompletion()
     // Position, reference is editor's cursor position in global coord.
     QFontMetrics metrics(m_editor->font());
     const int currentPosition = m_editor->textCursor().position();
-    const int pixelsOffset = metrics.width(m_editor->text(), currentPosition);
+    const int pixelsOffset = metrics.horizontalAdvance(m_editor->text(), currentPosition);
     auto pos = m_editor->mapToGlobal(QPoint(pixelsOffset, m_editor->height()));
 
     const int height = m_popup->height();
