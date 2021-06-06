@@ -530,7 +530,7 @@ void Editor::autoComplete(const QString& item)
 void Editor::insertFromMimeData(const QMimeData* source)
 {
     QStringList expressions =
-        source->text().split('\n', QString::SkipEmptyParts);
+        source->text().split("\n", Qt::SkipEmptyParts, Qt::CaseSensitive);
     if (expressions.size() == 1) {
         // Insert text manually to make sure expression does not contain new line characters
         insert(expressions.at(0));
