@@ -15,6 +15,13 @@ if(APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
 endif()
 
+if(APPLE AND EXISTS /opt/homebrew/opt/qt5)
+        # Homebrew installs Qt5 (up to at least 5.9.1) in
+        # /usr/local/qt5, ensure it can be found by CMake since
+        # it is not in the default /usr/local prefix.
+        list(APPEND CMAKE_PREFIX_PATH "/opt/homebrew/opt/qt5")
+endif()
+
 set(speedcrunch_VERSION "master")
 
 set(CMAKE_AUTOMOC ON)
