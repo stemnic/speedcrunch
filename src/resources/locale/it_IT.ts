@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it_IT" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="it_IT">
 <context>
     <name>AboutBox</name>
     <message>
@@ -186,7 +188,7 @@
         <location filename="../../core/book.cpp" line="106"/>
         <location filename="../../core/book.cpp" line="376"/>
         <source>Standing Wave Ratio &amp; Return Loss</source>
-        <translation type="unfinished"/>
+        <translation>Rapporto di onda stazionaria e perdita di ritorno</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="107"/>
@@ -644,7 +646,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="619"/>
         <source>First Radiation Constant for Spectral Radiance</source>
-        <translation type="unfinished"/>
+        <translation>Prima costante di radiazione per radiosità spettrale</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="620"/>
@@ -679,7 +681,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="626"/>
         <source>{220} Lattice Spacing of Silicon</source>
-        <translation type="unfinished"/>
+        <translation>{220} Spaziatura reticolare di silicio</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="629"/>
@@ -1332,23 +1334,23 @@
 <context>
     <name>Evaluator</name>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1833"/>
-        <location filename="../../core/evaluator.cpp" line="1932"/>
-        <location filename="../../core/evaluator.cpp" line="1944"/>
-        <location filename="../../core/evaluator.cpp" line="1955"/>
-        <location filename="../../core/evaluator.cpp" line="1966"/>
-        <location filename="../../core/evaluator.cpp" line="1977"/>
-        <location filename="../../core/evaluator.cpp" line="1988"/>
-        <location filename="../../core/evaluator.cpp" line="1999"/>
-        <location filename="../../core/evaluator.cpp" line="2009"/>
-        <location filename="../../core/evaluator.cpp" line="2020"/>
-        <location filename="../../core/evaluator.cpp" line="2031"/>
-        <location filename="../../core/evaluator.cpp" line="2042"/>
-        <location filename="../../core/evaluator.cpp" line="2053"/>
-        <location filename="../../core/evaluator.cpp" line="2064"/>
-        <location filename="../../core/evaluator.cpp" line="2075"/>
-        <location filename="../../core/evaluator.cpp" line="2146"/>
-        <location filename="../../core/evaluator.cpp" line="2202"/>
+        <location filename="../../core/evaluator.cpp" line="1837"/>
+        <location filename="../../core/evaluator.cpp" line="1936"/>
+        <location filename="../../core/evaluator.cpp" line="1948"/>
+        <location filename="../../core/evaluator.cpp" line="1959"/>
+        <location filename="../../core/evaluator.cpp" line="1970"/>
+        <location filename="../../core/evaluator.cpp" line="1981"/>
+        <location filename="../../core/evaluator.cpp" line="1992"/>
+        <location filename="../../core/evaluator.cpp" line="2003"/>
+        <location filename="../../core/evaluator.cpp" line="2013"/>
+        <location filename="../../core/evaluator.cpp" line="2024"/>
+        <location filename="../../core/evaluator.cpp" line="2035"/>
+        <location filename="../../core/evaluator.cpp" line="2046"/>
+        <location filename="../../core/evaluator.cpp" line="2057"/>
+        <location filename="../../core/evaluator.cpp" line="2068"/>
+        <location filename="../../core/evaluator.cpp" line="2079"/>
+        <location filename="../../core/evaluator.cpp" line="2150"/>
+        <location filename="../../core/evaluator.cpp" line="2206"/>
         <source>invalid expression</source>
         <translation>espressione non valida</translation>
     </message>
@@ -1391,28 +1393,28 @@
         <translation>errore</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1893"/>
+        <location filename="../../core/evaluator.cpp" line="1897"/>
         <source>compile error</source>
         <translation>errore di compilazione</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2081"/>
+        <location filename="../../core/evaluator.cpp" line="2085"/>
         <source>unit must not be zero</source>
         <translation>l&apos;unità non deve essere zero</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2085"/>
+        <location filename="../../core/evaluator.cpp" line="2089"/>
         <source>Conversion failed - dimension mismatch</source>
         <translation>Conversione non riuscita - dimensioni non corrispondenti</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2117"/>
-        <location filename="../../core/evaluator.cpp" line="2141"/>
+        <location filename="../../core/evaluator.cpp" line="2121"/>
+        <location filename="../../core/evaluator.cpp" line="2145"/>
         <source>unknown function or variable</source>
         <translation>variabile o funzione sconosciute</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2220"/>
+        <location filename="../../core/evaluator.cpp" line="2224"/>
         <source>recursion not supported</source>
         <translation>ricorsione non supportata</translation>
     </message>
@@ -1446,7 +1448,7 @@
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="144"/>
-        <location filename="../../core/evaluator.cpp" line="2214"/>
+        <location filename="../../core/evaluator.cpp" line="2218"/>
         <source>wrong number of arguments</source>
         <translation>numero di argomenti errato</translation>
     </message>
@@ -1476,23 +1478,23 @@
         <translation>errore interno, prego riportare l&apos;anomalia</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2282"/>
-        <location filename="../../core/evaluator.cpp" line="2306"/>
+        <location filename="../../core/evaluator.cpp" line="2286"/>
+        <location filename="../../core/evaluator.cpp" line="2310"/>
         <source>%1 is a reserved name, please choose another</source>
         <translation>%1 è un nome risevato, scegliere un altro</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2290"/>
+        <location filename="../../core/evaluator.cpp" line="2294"/>
         <source>%1 is a variable name, please choose another or delete the variable</source>
         <translation>%1 é il nome di una variabile, scegliere un altro nome o eliminare la variabile</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2300"/>
+        <location filename="../../core/evaluator.cpp" line="2304"/>
         <source>argument %1 is used more than once</source>
         <translation>l&apos;argomento %1 è usato più di una volta</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2324"/>
+        <location filename="../../core/evaluator.cpp" line="2328"/>
         <source>%1 is a user function name, please choose another or delete the function</source>
         <translation>%1 è una funzione definita dall&apos;utente, sceglierne un&apos;altra o eliminare la funzione</translation>
     </message>
@@ -1540,7 +1542,7 @@
         <location filename="../../core/functions.cpp" line="1110"/>
         <location filename="../../core/functions.cpp" line="1111"/>
         <source>x; exponent_bits; significand_bits [; exponent_bias]</source>
-        <translation type="unfinished"/>
+        <translation>x; bit_esponenti; bit_significativi [; exponent_bias]</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1112"/>
@@ -1556,13 +1558,13 @@
         <location filename="../../core/functions.cpp" line="1115"/>
         <location filename="../../core/functions.cpp" line="1117"/>
         <source>events; average_events</source>
-        <translation type="unfinished"/>
+        <translation>eventi; media_eventi</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1116"/>
         <location filename="../../core/functions.cpp" line="1118"/>
         <source>average_events</source>
-        <translation type="unfinished"/>
+        <translation>media_eventi</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1119"/>
@@ -1637,7 +1639,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1141"/>
         <source>Binomial Probability Mass Function</source>
-        <translation type="unfinished"/>
+        <translation>Funzione di massa della probabilità binomiale</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1142"/>
@@ -1657,12 +1659,12 @@
     <message>
         <location filename="../../core/functions.cpp" line="1145"/>
         <source>Ceiling</source>
-        <translation type="unfinished"/>
+        <translation>Limite massimo</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1146"/>
         <source>Complex Conjugate</source>
-        <translation type="unfinished"/>
+        <translation>Complesso Coniugato</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1147"/>
@@ -1687,7 +1689,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1151"/>
         <source>Convert Unix timestamp to Date</source>
-        <translation type="unfinished"/>
+        <translation>Converti data e ora Unix</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1153"/>
@@ -1712,7 +1714,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1157"/>
         <source>Floor</source>
-        <translation type="unfinished"/>
+        <translation>Piano</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1158"/>
@@ -1737,12 +1739,12 @@
     <message>
         <location filename="../../core/functions.cpp" line="1162"/>
         <source>Gradians of arc</source>
-        <translation type="unfinished"/>
+        <translation>Gradianti arco</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1164"/>
         <source>Hypergeometric Cumulative Distribution Function</source>
-        <translation type="unfinished"/>
+        <translation>Funzione di Distribuzione Cumulativa Ipergeometrica</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1165"/>
@@ -1752,7 +1754,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1166"/>
         <source>Hypergeometric Probability Mass Function</source>
-        <translation type="unfinished"/>
+        <translation>Funzione di massa di probabilità ipergeometrica</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1167"/>
@@ -1847,7 +1849,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1186"/>
         <source>Mask to a bit size</source>
-        <translation type="unfinished"/>
+        <translation>Maschera a dimensioni ridotte</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1187"/>
@@ -1892,7 +1894,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1104"/>
         <source>unix_timestamp; x hours offset to GMT</source>
-        <translation type="unfinished"/>
+        <translation>unix_timestamp; x x ore compensate a GMT</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1152"/>
@@ -1922,7 +1924,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1197"/>
         <source>Poissonian Cumulative Distribution Function</source>
-        <translation type="unfinished"/>
+        <translation>Funzione di distribuzione cumulativa di Poisson</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1198"/>
@@ -1932,7 +1934,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1199"/>
         <source>Poissonian Probability Mass Function</source>
-        <translation type="unfinished"/>
+        <translation>Funzione di massa della probabilità di Poisson</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1200"/>
@@ -2154,7 +2156,7 @@
         <location filename="../../gui/mainwindow.cpp" line="276"/>
         <location filename="../../gui/mainwindow.cpp" line="1635"/>
         <source>Gradian</source>
-        <translation type="unfinished"/>
+        <translation>Gradianti</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="280"/>
@@ -2178,7 +2180,7 @@
         <location filename="../../gui/mainwindow.cpp" line="283"/>
         <location filename="../../gui/mainwindow.cpp" line="2041"/>
         <source>Sexagesimal</source>
-        <translation type="unfinished"/>
+        <translation>Sessagesimale</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="284"/>
@@ -2322,12 +2324,12 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="329"/>
         <source>&amp;Gradian</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Gradiante</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="330"/>
         <source>&amp;Cycle Unit</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Unità Ciclo</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="332"/>
@@ -2607,7 +2609,7 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="363"/>
         <source>&amp;Sexagesimal</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Sessagesimale</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="370"/>

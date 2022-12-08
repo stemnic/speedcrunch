@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru_RU" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru_RU">
 <context>
     <name>AboutBox</name>
     <message>
@@ -574,12 +576,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="602"/>
         <source>Quantum of Circulation</source>
-        <translation>Квант вращения</translation>
+        <translation>Квант циркуляции скорости</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="603"/>
         <source>Quantum of Circulation times 2</source>
-        <translation>Квант циркуляции скорости 2</translation>
+        <translation>Квант циркуляции скорости × 2</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="604"/>
@@ -609,7 +611,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="612"/>
         <source>Avogadro&apos;s Number</source>
-        <translation>Число Авагадро</translation>
+        <translation>Число Авогадро</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="613"/>
@@ -624,7 +626,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="615"/>
         <source>Compton wavelength over 2 pi</source>
-        <translation>Длина волны Комптона большая 2π</translation>
+        <translation>Длина волны Комптона / 2π</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="616"/>
@@ -654,12 +656,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="621"/>
         <source>Loschmidt constant (273.15 K, 100 kPa)</source>
-        <translation>Постоянная Лошмидта (273.15 K, 100 kPa)</translation>
+        <translation>Постоянная Лошмидта (при 273,15 °К, 100 кПа)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="622"/>
         <source>Loschmidt constant (273.15 K, 101.325 kPa)</source>
-        <translation>Постоянная Лошмидта (273.15 K, 101.325 kPa)</translation>
+        <translation>Постоянная Лошмидта (при 273,15 °К, 101,325 кПа)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="623"/>
@@ -679,7 +681,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="626"/>
         <source>{220} Lattice Spacing of Silicon</source>
-        <translation>{220} Интервал решетки кремния</translation>
+        <translation>{220} Интервал решётки кремния</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="629"/>
@@ -709,7 +711,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="637"/>
         <source>Gregorian Year</source>
-        <translation>Грегорианский календарь</translation>
+        <translation>Григорианский календарь</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="638"/>
@@ -1321,7 +1323,7 @@
     <message>
         <location filename="../../gui/editor.cpp" line="610"/>
         <source>Selection result: n/a</source>
-        <translation>Выбранный результат: неопределён</translation>
+        <translation>Выбранный результат: не определён</translation>
     </message>
     <message>
         <location filename="../../gui/editor.cpp" line="614"/>
@@ -1332,23 +1334,23 @@
 <context>
     <name>Evaluator</name>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1833"/>
-        <location filename="../../core/evaluator.cpp" line="1932"/>
-        <location filename="../../core/evaluator.cpp" line="1944"/>
-        <location filename="../../core/evaluator.cpp" line="1955"/>
-        <location filename="../../core/evaluator.cpp" line="1966"/>
-        <location filename="../../core/evaluator.cpp" line="1977"/>
-        <location filename="../../core/evaluator.cpp" line="1988"/>
-        <location filename="../../core/evaluator.cpp" line="1999"/>
-        <location filename="../../core/evaluator.cpp" line="2009"/>
-        <location filename="../../core/evaluator.cpp" line="2020"/>
-        <location filename="../../core/evaluator.cpp" line="2031"/>
-        <location filename="../../core/evaluator.cpp" line="2042"/>
-        <location filename="../../core/evaluator.cpp" line="2053"/>
-        <location filename="../../core/evaluator.cpp" line="2064"/>
-        <location filename="../../core/evaluator.cpp" line="2075"/>
-        <location filename="../../core/evaluator.cpp" line="2146"/>
-        <location filename="../../core/evaluator.cpp" line="2202"/>
+        <location filename="../../core/evaluator.cpp" line="1837"/>
+        <location filename="../../core/evaluator.cpp" line="1936"/>
+        <location filename="../../core/evaluator.cpp" line="1948"/>
+        <location filename="../../core/evaluator.cpp" line="1959"/>
+        <location filename="../../core/evaluator.cpp" line="1970"/>
+        <location filename="../../core/evaluator.cpp" line="1981"/>
+        <location filename="../../core/evaluator.cpp" line="1992"/>
+        <location filename="../../core/evaluator.cpp" line="2003"/>
+        <location filename="../../core/evaluator.cpp" line="2013"/>
+        <location filename="../../core/evaluator.cpp" line="2024"/>
+        <location filename="../../core/evaluator.cpp" line="2035"/>
+        <location filename="../../core/evaluator.cpp" line="2046"/>
+        <location filename="../../core/evaluator.cpp" line="2057"/>
+        <location filename="../../core/evaluator.cpp" line="2068"/>
+        <location filename="../../core/evaluator.cpp" line="2079"/>
+        <location filename="../../core/evaluator.cpp" line="2150"/>
+        <location filename="../../core/evaluator.cpp" line="2206"/>
         <source>invalid expression</source>
         <translation>неверное выражение</translation>
     </message>
@@ -1361,29 +1363,29 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="109"/>
         <source>too time consuming - computation was rejected</source>
-        <translation>слишком долгое вычисление - отмена</translation>
+        <translation>слишком долгое вычисление — отмена</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="116"/>
         <location filename="../../core/evaluator.cpp" line="182"/>
         <source>dimension mismatch - quantities with different dimensions cannot be compared, added, etc.</source>
-        <translation>несоответствие измерений - величины с различными измерениями не могут быть сопоставлены, добавлены и т.д.</translation>
+        <translation>несоответствие измерений — величины с различными измерениями не могут быть сопоставлены, добавлены и т.д.</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="121"/>
         <source>invalid dimension - operation might require dimensionless arguments</source>
-        <translation>ложное измерение - операция может потребовать безразмерные аргументы</translation>
+        <translation>ложное измерение — операция может потребовать безразмерные аргументы</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="125"/>
         <location filename="../../core/evaluator.cpp" line="168"/>
         <source>Computation aborted - encountered numerical instability</source>
-        <translation>Вычисление прекращено - встречена численная неустойчивость</translation>
+        <translation>Вычисление прекращено — встречена численная неустойчивость</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="178"/>
         <source>invalid dimension - function might require dimensionless arguments</source>
-        <translation>неверное измерение - функция может потребовать безразмерные аргументы</translation>
+        <translation>неверное измерение — функция может потребовать безразмерные аргументы</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="193"/>
@@ -1391,28 +1393,28 @@
         <translation>ошибка</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1893"/>
+        <location filename="../../core/evaluator.cpp" line="1897"/>
         <source>compile error</source>
         <translation>ошибка при компиляции</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2081"/>
+        <location filename="../../core/evaluator.cpp" line="2085"/>
         <source>unit must not be zero</source>
         <translation>ед. изм. не должна равняться нулю</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2085"/>
+        <location filename="../../core/evaluator.cpp" line="2089"/>
         <source>Conversion failed - dimension mismatch</source>
-        <translation>Ошибка преобразования - несоответствие измерения</translation>
+        <translation>Ошибка преобразования — несоответствие измерения</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2117"/>
-        <location filename="../../core/evaluator.cpp" line="2141"/>
+        <location filename="../../core/evaluator.cpp" line="2121"/>
+        <location filename="../../core/evaluator.cpp" line="2145"/>
         <source>unknown function or variable</source>
         <translation>неизвестная функция или переменная</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2220"/>
+        <location filename="../../core/evaluator.cpp" line="2224"/>
         <source>recursion not supported</source>
         <translation>рекурсия не поддерживается</translation>
     </message>
@@ -1446,7 +1448,7 @@
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="144"/>
-        <location filename="../../core/evaluator.cpp" line="2214"/>
+        <location filename="../../core/evaluator.cpp" line="2218"/>
         <source>wrong number of arguments</source>
         <translation>неверное число аргументов</translation>
     </message>
@@ -1476,23 +1478,23 @@
         <translation>внутренняя ошибка, пожалуйста, отправьте сообщение об ошибке</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2282"/>
-        <location filename="../../core/evaluator.cpp" line="2306"/>
+        <location filename="../../core/evaluator.cpp" line="2286"/>
+        <location filename="../../core/evaluator.cpp" line="2310"/>
         <source>%1 is a reserved name, please choose another</source>
-        <translation>%1 - зарезервированное имя, выберите другое</translation>
+        <translation>%1 — зарезервированное имя, выберите другое</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2290"/>
+        <location filename="../../core/evaluator.cpp" line="2294"/>
         <source>%1 is a variable name, please choose another or delete the variable</source>
         <translation>%1 это имя переменной, пожалуйста, выберите другое имя или удалите существующую переменную</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2300"/>
+        <location filename="../../core/evaluator.cpp" line="2304"/>
         <source>argument %1 is used more than once</source>
         <translation>аргумент %1 используется более одного раза</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2324"/>
+        <location filename="../../core/evaluator.cpp" line="2328"/>
         <source>%1 is a user function name, please choose another or delete the function</source>
         <translation>%1 это имя функции, пожалуйста, выберите другое имя или удалите существующую функцию</translation>
     </message>
@@ -1637,12 +1639,12 @@
     <message>
         <location filename="../../core/functions.cpp" line="1141"/>
         <source>Binomial Probability Mass Function</source>
-        <translation>Биноминальная функция вероятности</translation>
+        <translation>Биномиальная функция вероятности</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1142"/>
         <source>Binomial Distribution Variance</source>
-        <translation>Расхождение биноминального распределния</translation>
+        <translation>Разброс биномиального распределения</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1143"/>
@@ -1662,7 +1664,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1146"/>
         <source>Complex Conjugate</source>
-        <translation type="unfinished"/>
+        <translation>комплексно-сопряжённое</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1147"/>
@@ -1687,7 +1689,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1151"/>
         <source>Convert Unix timestamp to Date</source>
-        <translation type="unfinished"/>
+        <translation>Преобразовать метку времени Unix в дату</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1153"/>
@@ -1737,7 +1739,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1162"/>
         <source>Gradians of arc</source>
-        <translation type="unfinished"/>
+        <translation>Грады дуги</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1164"/>
@@ -1892,7 +1894,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1104"/>
         <source>unix_timestamp; x hours offset to GMT</source>
-        <translation type="unfinished"/>
+        <translation>метка времени Unix; смещение часов от GMT</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1152"/>
@@ -1902,12 +1904,12 @@
     <message>
         <location filename="../../core/functions.cpp" line="1163"/>
         <source>Convert to Hexadecimal Representation</source>
-        <translation>Перевести в Шестнадцатеричное представление</translation>
+        <translation>Перевести в Шестнадцатеричное&#xa0;представление</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1194"/>
         <source>Convert to Octal Representation</source>
-        <translation>Перевести в Восьмеричное представление</translation>
+        <translation>Перевести в Восьмеричное&#xa0;представление</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1195"/>
@@ -2154,7 +2156,7 @@
         <location filename="../../gui/mainwindow.cpp" line="276"/>
         <location filename="../../gui/mainwindow.cpp" line="1635"/>
         <source>Gradian</source>
-        <translation type="unfinished"/>
+        <translation>Град</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="280"/>
@@ -2178,7 +2180,7 @@
         <location filename="../../gui/mainwindow.cpp" line="283"/>
         <location filename="../../gui/mainwindow.cpp" line="2041"/>
         <source>Sexagesimal</source>
-        <translation type="unfinished"/>
+        <translation>Шестидесятеричная</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="284"/>
@@ -2322,12 +2324,12 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="329"/>
         <source>&amp;Gradian</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Град</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="330"/>
         <source>&amp;Cycle Unit</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Переключить</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="332"/>
@@ -2377,7 +2379,7 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="346"/>
         <source>&amp;System Default</source>
-        <translation>&amp;Система по умолчанию</translation>
+        <translation>&amp;Системные настройки</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="347"/>
@@ -2607,7 +2609,7 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="363"/>
         <source>&amp;Sexagesimal</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Шестидесятеричная</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="370"/>
@@ -2660,7 +2662,7 @@
         <source>Merge session being loaded with current session?
 If no, current variables and display will be cleared.</source>
         <translation>Объединить загружаемый сеанс с текущим?
-Если нет, текущие переменные и экран будут очищены</translation>
+Если нет, текущие переменные и экран будут очищены.</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1446"/>
@@ -2677,7 +2679,7 @@ If no, current variables and display will be cleared.</source>
         <source>Merge session being imported with current session?
 If no, current variables and display will be cleared.</source>
         <translation>Объединить импортируемый сеанс с текущим?
-Если нет, текущие переменные и экран будут очищены</translation>
+Если нет, текущие переменные и экран будут очищены.</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1489"/>
@@ -2709,7 +2711,7 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="2418"/>
         <source>System Default</source>
-        <translation>Система по умолчанию</translation>
+        <translation>Принятый в системе</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="2422"/>
@@ -2780,7 +2782,7 @@ If no, current variables and display will be cleared.</source>
         <location filename="../../gui/mainwindow.cpp" line="1380"/>
         <location filename="../../gui/mainwindow.cpp" line="1425"/>
         <source>SpeedCrunch Sessions (*.json);;All Files (*)</source>
-        <translation>Сессии SpeedCrunch (*.json);;Все файлы (*)</translation>
+        <translation>Сеансы SpeedCrunch (*.json);;Все файлы (*)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1398"/>

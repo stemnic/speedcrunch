@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="el" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="el">
 <context>
     <name>AboutBox</name>
     <message>
@@ -10,12 +12,12 @@
     <message>
         <location filename="../../gui/aboutbox.cpp" line="46"/>
         <source>Maintainer</source>
-        <translation type="unfinished"/>
+        <translation>Συντηρητής</translation>
     </message>
     <message>
         <location filename="../../gui/aboutbox.cpp" line="48"/>
         <source>Core developers</source>
-        <translation type="unfinished"/>
+        <translation>Κύριοι προγραμματιστές</translation>
     </message>
     <message>
         <location filename="../../gui/aboutbox.cpp" line="56"/>
@@ -25,7 +27,7 @@
     <message>
         <location filename="../../gui/aboutbox.cpp" line="126"/>
         <source>Copyright (C) 2004-2016 The SpeedCrunch developers</source>
-        <translation type="unfinished"/>
+        <translation>Copyright (C) 2004-2016 Οι προγραμματιστές του SpeedCrunch</translation>
     </message>
     <message>
         <location filename="../../gui/aboutbox.cpp" line="149"/>
@@ -45,12 +47,12 @@
     <message>
         <location filename="../../gui/aboutbox.cpp" line="130"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version</source>
-        <translation type="unfinished"/>
+        <translation>Αυτό το πρόγραμμα είναι ελεύθερο, μπορείτε να το αναδιανείμετε ή/και να το τροποποιήσετε σύμφωνα με τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU, όπως δημοσιεύεται από το Free Software Foundation, είτε την έκδοση 2 της Άδειας, είτε (κατ&apos; επιλογή σας) οποιαδήποτε μεταγενέστερη έκδοση.</translation>
     </message>
     <message>
         <location filename="../../gui/aboutbox.cpp" line="136"/>
         <source>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.</source>
-        <translation type="unfinished"/>
+        <translation>Αυτό το πρόγραμμα διανέμεται με την ελπίδα ότι θα είναι χρήσιμο, αλλά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ, χωρίς καν την σιωπηρή εγγύηση της ΕΜΠΟΡΕΥΜΑΤΙΚΟΤΗΤΑΣ ή της ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΝΑΝ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Δείτε τη Γενική Άδεια Δημόσιας Χρήσης GNU για περισσότερες λεπτομέρειες.</translation>
     </message>
 </context>
 <context>
@@ -70,13 +72,13 @@
         <location filename="../../core/book.cpp" line="86"/>
         <location filename="../../core/book.cpp" line="116"/>
         <source>Quadratic Equation</source>
-        <translation type="unfinished"/>
+        <translation>Δευτεροβάθμια εξίσωση</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="87"/>
         <location filename="../../core/book.cpp" line="127"/>
         <source>Logarithmic Base Conversion</source>
-        <translation type="unfinished"/>
+        <translation>Μετατροπή λογαριθμικης βάσης</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="88"/>
@@ -151,48 +153,48 @@
         <location filename="../../core/book.cpp" line="100"/>
         <location filename="../../core/book.cpp" line="178"/>
         <source>Reactance</source>
-        <translation type="unfinished"/>
+        <translation>αντίσταση</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="101"/>
         <location filename="../../core/book.cpp" line="200"/>
         <source>Resonance</source>
-        <translation type="unfinished"/>
+        <translation>αντήχηση</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="102"/>
         <location filename="../../core/book.cpp" line="329"/>
         <source>Radio Frequency</source>
-        <translation type="unfinished"/>
+        <translation>Ραδιοσυχνότητα</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="103"/>
         <source>Antennas</source>
-        <translation type="unfinished"/>
+        <translation>Κεραίες</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="104"/>
         <location filename="../../core/book.cpp" line="344"/>
         <source>Characteristic Impedance (coax)</source>
-        <translation type="unfinished"/>
+        <translation>Χαρακτηριστική Σύνθετη Αντίσταση (ομοαξονικό)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="105"/>
         <location filename="../../core/book.cpp" line="359"/>
         <source>Velocity of Propagation (coax)</source>
-        <translation type="unfinished"/>
+        <translation>Ταχύτητα Διάδοσης (ομοαξονικό)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="106"/>
         <location filename="../../core/book.cpp" line="376"/>
         <source>Standing Wave Ratio &amp; Return Loss</source>
-        <translation type="unfinished"/>
+        <translation>Αναλογία Στάσιμου Κύματος &amp; Απώλεια Επιστροφής</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="107"/>
         <location filename="../../core/book.cpp" line="402"/>
         <source>Free Space Wavelength</source>
-        <translation type="unfinished"/>
+        <translation>Μήκος Κύματος Ελεύθερου Χώρου</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="142"/>
@@ -300,22 +302,22 @@
     <message>
         <location filename="../../core/book.cpp" line="245"/>
         <source>slant height</source>
-        <translation type="unfinished"/>
+        <translation>κεκλιμένο ύψος</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="263"/>
         <source>face diagonal</source>
-        <translation type="unfinished"/>
+        <translation>πρόσωπο διαγώνιο</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="264"/>
         <source>space diagonal</source>
-        <translation type="unfinished"/>
+        <translation>διαγώνιος χώρου</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="265"/>
         <source>edge length</source>
-        <translation type="unfinished"/>
+        <translation>μηκος ακμής</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="298"/>
@@ -325,7 +327,7 @@
     <message>
         <location filename="../../core/book.cpp" line="300"/>
         <source>central angle (degrees)</source>
-        <translation type="unfinished"/>
+        <translation>Κεντρική γωνία (μοίρες)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="424"/>
@@ -337,22 +339,22 @@
     <message>
         <location filename="../../core/book.cpp" line="386"/>
         <source>input power</source>
-        <translation type="unfinished"/>
+        <translation>ισχύς εισόδου</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="387"/>
         <source>reflected power</source>
-        <translation type="unfinished"/>
+        <translation>ανακλώμενη ισχύς</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="388"/>
         <source>transmitted power</source>
-        <translation type="unfinished"/>
+        <translation>μεταδιδόμενη ισχύς</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="389"/>
         <source>return loss</source>
-        <translation type="unfinished"/>
+        <translation>απώλεια επιστροφής</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="347"/>
@@ -363,12 +365,12 @@
     <message>
         <location filename="../../core/book.cpp" line="348"/>
         <source>outer conductor&apos;s inner diameter</source>
-        <translation type="unfinished"/>
+        <translation>εσωτερική διάμετρος του εξωτερικού αγωγού</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="349"/>
         <source>inner conductor&apos;s outer diameter</source>
-        <translation type="unfinished"/>
+        <translation>εξωτερική διάμετρος του εσωτερικού αγωγού</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="365"/>
@@ -383,7 +385,7 @@
     <message>
         <location filename="../../core/book.cpp" line="391"/>
         <source>standing wave ratio</source>
-        <translation type="unfinished"/>
+        <translation>λόγος στάσιμων κυμάτων</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="392"/>
@@ -401,7 +403,7 @@
     <message>
         <location filename="../../gui/bookdock.cpp" line="71"/>
         <source>Formula Book</source>
-        <translation type="unfinished"/>
+        <translation>Βιβλίο Τύπων</translation>
     </message>
 </context>
 <context>
@@ -424,7 +426,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="562"/>
         <source>Archimedes&apos; constant Pi</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά του Αρχιμήδη για το π</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="563"/>
@@ -474,12 +476,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="575"/>
         <source>Speed of Light in Vacuum</source>
-        <translation type="unfinished"/>
+        <translation>Ταχύτητα του φωτός στο κενό</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="576"/>
         <source>Standard Gravity</source>
-        <translation type="unfinished"/>
+        <translation>Τυπική Βαρύτητα</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="580"/>
@@ -489,12 +491,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="582"/>
         <source>Bohr-Procopiu Magneton</source>
-        <translation type="unfinished"/>
+        <translation>Bohr-Procopiu Magneton</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="583"/>
         <source>Conductance Quantum</source>
-        <translation type="unfinished"/>
+        <translation>Κβαντική αγωγιμότητα</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="584"/>
@@ -504,97 +506,97 @@
     <message>
         <location filename="../../core/constants.cpp" line="585"/>
         <source>Elementary Charge</source>
-        <translation type="unfinished"/>
+        <translation>Στοιχειώδης φόρτιση</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="586"/>
         <source>Conventional value of Josephson Constant</source>
-        <translation type="unfinished"/>
+        <translation>Συμβατική τιμή της σταθεράς Josephson</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="587"/>
         <source>Josephson Constant</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά Josephson</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="588"/>
         <source>Magnetic Flux Quantum</source>
-        <translation type="unfinished"/>
+        <translation>Κβαντική Μαγνητική Ροή</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="589"/>
         <source>Nuclear Magneton</source>
-        <translation type="unfinished"/>
+        <translation>Πυρηνικό Magneton</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="590"/>
         <source>Resistance Quantum</source>
-        <translation type="unfinished"/>
+        <translation>Κβαντική Αντίσταση</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="591"/>
         <source>Conventional value of von Klitzing Constant</source>
-        <translation type="unfinished"/>
+        <translation>Συμβατική τιμή της σταθεράς von Klitzing</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="592"/>
         <source>von Klitzing Constant</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά von Klitzing</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="595"/>
         <source>Atomic &amp; Nuclear</source>
-        <translation type="unfinished"/>
+        <translation>Ατομική &amp; Πυρηνική</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="597"/>
         <source>Bohr Radius</source>
-        <translation type="unfinished"/>
+        <translation>Ακτίνα Bohr</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="598"/>
         <source>Fermi Coupling Constant</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά σύζευξης Fermi</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="599"/>
         <source>Fine-structure Constant</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά λεπτής υφής</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="600"/>
         <source>Hartree Energy</source>
-        <translation type="unfinished"/>
+        <translation>Ενέργεια Hartree</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="601"/>
         <source>Hartree Energy in eV</source>
-        <translation type="unfinished"/>
+        <translation>Ενέργεια Hartree σε eV</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="602"/>
         <source>Quantum of Circulation</source>
-        <translation type="unfinished"/>
+        <translation>Κβάντος Κυκλοφορίας</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="603"/>
         <source>Quantum of Circulation times 2</source>
-        <translation type="unfinished"/>
+        <translation>Κβάντο Κυκλοφορίας επί 2</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="604"/>
         <source>Rydberg Constant</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά Rydberg</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="605"/>
         <source>Thomson Cross Section</source>
-        <translation type="unfinished"/>
+        <translation>Διατομή Thomson</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="606"/>
         <source>Weak Mixing Angle</source>
-        <translation type="unfinished"/>
+        <translation>Ασθενής γωνία ανάμιξης</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="609"/>
@@ -604,7 +606,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="611"/>
         <source>Atomic Mass Unit</source>
-        <translation type="unfinished"/>
+        <translation>Μονάδα ατομικής μάζας</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="612"/>
@@ -619,17 +621,17 @@
     <message>
         <location filename="../../core/constants.cpp" line="614"/>
         <source>Compton wavelength</source>
-        <translation type="unfinished"/>
+        <translation>Μήκος κύματος Compton</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="615"/>
         <source>Compton wavelength over 2 pi</source>
-        <translation type="unfinished"/>
+        <translation>Μήκος κύματος Compton πάνω από 2 pi</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="616"/>
         <source>Electron volt</source>
-        <translation type="unfinished"/>
+        <translation>Ηλεκτρονικό βολτ</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="617"/>
@@ -639,12 +641,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="618"/>
         <source>First Radiation Constant</source>
-        <translation type="unfinished"/>
+        <translation>Πρώτη σταθερά ακτινοβολίας</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="619"/>
         <source>First Radiation Constant for Spectral Radiance</source>
-        <translation type="unfinished"/>
+        <translation>Πρώτη σταθερά ακτινοβολίας για τη φασματική ακτινοβολία</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="620"/>
@@ -654,32 +656,32 @@
     <message>
         <location filename="../../core/constants.cpp" line="621"/>
         <source>Loschmidt constant (273.15 K, 100 kPa)</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά Loschmidt (273,15 Κ, 100 kPa)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="622"/>
         <source>Loschmidt constant (273.15 K, 101.325 kPa)</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά Loschmidt (273,15 K, 101,325 kPa)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="623"/>
         <source>Molar Planck Constant</source>
-        <translation type="unfinished"/>
+        <translation>Μοριακή σταθερά Planck</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="624"/>
         <source>Second Radiation Constant</source>
-        <translation type="unfinished"/>
+        <translation>Δεύτερη σταθερά ακτινοβολίας</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="625"/>
         <source>Stefan-Boltzmann Constant</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερά Stefan-Boltzmann</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="626"/>
         <source>{220} Lattice Spacing of Silicon</source>
-        <translation type="unfinished"/>
+        <translation>{220} Διάστημα πλέγματος πυριτίου</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="629"/>
@@ -699,7 +701,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="633"/>
         <source>Parsec</source>
-        <translation type="unfinished"/>
+        <translation>παρσεκ</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="635"/>
@@ -754,7 +756,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="650"/>
         <source>Molar Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μοριακή μάζα</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="652"/>
@@ -1174,92 +1176,92 @@
     <message>
         <location filename="../../core/constants.cpp" line="739"/>
         <source>Particle Masses</source>
-        <translation type="unfinished"/>
+        <translation>Μάζες σωματιδίων</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="741"/>
         <source>Electron Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα ηλεκτρονίου</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="742"/>
         <source>Muon Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μυονική μάζα</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="743"/>
         <source>Tau Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Tau</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="744"/>
         <source>Up-Quark Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Up-Quark</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="745"/>
         <source>Down-Quark Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Down-Quark</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="746"/>
         <source>Charm-Quark Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Charm-Quark</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="747"/>
         <source>Strange-Quark Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Strange-Quark</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="748"/>
         <source>Top-Quark Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Top-Quark</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="749"/>
         <source>Bottom-Quark Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Bottom-Quark</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="750"/>
         <source>W-Boson Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα W-Boson</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="751"/>
         <source>Z-Boson Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Z-Boson</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="752"/>
         <source>Higgs-Boson Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Higgs-Boson</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="753"/>
         <source>Proton Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Proton</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="754"/>
         <source>Neutron Mass</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Neutron</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="755"/>
         <source>Electron Mass (SI)</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα ηλεκτρονίου (SI)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="756"/>
         <source>Proton Mass (SI)</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Proton (SI)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="757"/>
         <source>Neutron Mass (SI)</source>
-        <translation type="unfinished"/>
+        <translation>Μάζα Neutron (SI)</translation>
     </message>
 </context>
 <context>
@@ -1267,7 +1269,7 @@
     <message>
         <location filename="../../gui/constantswidget.cpp" line="121"/>
         <source>No match found</source>
-        <translation type="unfinished"/>
+        <translation>Δεν βρέθηκε αντιστοιχία</translation>
     </message>
     <message>
         <location filename="../../gui/constantswidget.cpp" line="124"/>
@@ -1306,12 +1308,12 @@
     <message>
         <location filename="../../gui/editor.cpp" line="375"/>
         <source>User function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση χρήστη</translation>
     </message>
     <message>
         <location filename="../../gui/editor.cpp" line="459"/>
         <source>Argument</source>
-        <translation type="unfinished"/>
+        <translation>Όρισμα</translation>
     </message>
     <message>
         <location filename="../../gui/editor.cpp" line="564"/>
@@ -1321,34 +1323,34 @@
     <message>
         <location filename="../../gui/editor.cpp" line="610"/>
         <source>Selection result: n/a</source>
-        <translation type="unfinished"/>
+        <translation>Αποτέλεσμα επιλογής: δ/υ</translation>
     </message>
     <message>
         <location filename="../../gui/editor.cpp" line="614"/>
         <source>Selection result: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation>Αποτέλεσμα επιλογής: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
     <name>Evaluator</name>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1833"/>
-        <location filename="../../core/evaluator.cpp" line="1932"/>
-        <location filename="../../core/evaluator.cpp" line="1944"/>
-        <location filename="../../core/evaluator.cpp" line="1955"/>
-        <location filename="../../core/evaluator.cpp" line="1966"/>
-        <location filename="../../core/evaluator.cpp" line="1977"/>
-        <location filename="../../core/evaluator.cpp" line="1988"/>
-        <location filename="../../core/evaluator.cpp" line="1999"/>
-        <location filename="../../core/evaluator.cpp" line="2009"/>
-        <location filename="../../core/evaluator.cpp" line="2020"/>
-        <location filename="../../core/evaluator.cpp" line="2031"/>
-        <location filename="../../core/evaluator.cpp" line="2042"/>
-        <location filename="../../core/evaluator.cpp" line="2053"/>
-        <location filename="../../core/evaluator.cpp" line="2064"/>
-        <location filename="../../core/evaluator.cpp" line="2075"/>
-        <location filename="../../core/evaluator.cpp" line="2146"/>
-        <location filename="../../core/evaluator.cpp" line="2202"/>
+        <location filename="../../core/evaluator.cpp" line="1837"/>
+        <location filename="../../core/evaluator.cpp" line="1936"/>
+        <location filename="../../core/evaluator.cpp" line="1948"/>
+        <location filename="../../core/evaluator.cpp" line="1959"/>
+        <location filename="../../core/evaluator.cpp" line="1970"/>
+        <location filename="../../core/evaluator.cpp" line="1981"/>
+        <location filename="../../core/evaluator.cpp" line="1992"/>
+        <location filename="../../core/evaluator.cpp" line="2003"/>
+        <location filename="../../core/evaluator.cpp" line="2013"/>
+        <location filename="../../core/evaluator.cpp" line="2024"/>
+        <location filename="../../core/evaluator.cpp" line="2035"/>
+        <location filename="../../core/evaluator.cpp" line="2046"/>
+        <location filename="../../core/evaluator.cpp" line="2057"/>
+        <location filename="../../core/evaluator.cpp" line="2068"/>
+        <location filename="../../core/evaluator.cpp" line="2079"/>
+        <location filename="../../core/evaluator.cpp" line="2150"/>
+        <location filename="../../core/evaluator.cpp" line="2206"/>
         <source>invalid expression</source>
         <translation>Λανθασμένη έκφραση</translation>
     </message>
@@ -1361,60 +1363,60 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="109"/>
         <source>too time consuming - computation was rejected</source>
-        <translation type="unfinished"/>
+        <translation>Αρκετά χρονοβόρο - ο υπολογισμός απορρίφθηκε</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="116"/>
         <location filename="../../core/evaluator.cpp" line="182"/>
         <source>dimension mismatch - quantities with different dimensions cannot be compared, added, etc.</source>
-        <translation type="unfinished"/>
+        <translation>Οι διαστάσεις διαφέρουν - ποσότητες με διαφορετικές διαστάσεις δεν μπορούν να συγκριθούν, προστεθούν, κ.α.</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="121"/>
         <source>invalid dimension - operation might require dimensionless arguments</source>
-        <translation type="unfinished"/>
+        <translation>μη έγκυρη διάσταση - ο υπολογισμός ενδέχεται να απαιτεί ορίσματα χωρίς διάσταση</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="125"/>
         <location filename="../../core/evaluator.cpp" line="168"/>
         <source>Computation aborted - encountered numerical instability</source>
-        <translation type="unfinished"/>
+        <translation>Ο υπολογισμός διακόπηκε - παρουσιάστηκε αριθμητική αστάθεια</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="178"/>
         <source>invalid dimension - function might require dimensionless arguments</source>
-        <translation type="unfinished"/>
+        <translation>άκυρη διάσταση - η συνάρτηση ενδέχεται να απαιτεί ορίσματα χωρίς διαστάσεις</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="193"/>
         <source>error</source>
-        <translation type="unfinished"/>
+        <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1893"/>
+        <location filename="../../core/evaluator.cpp" line="1897"/>
         <source>compile error</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="2081"/>
-        <source>unit must not be zero</source>
-        <translation type="unfinished"/>
+        <translation>Σφάλμα μεταγλώττισης</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="2085"/>
-        <source>Conversion failed - dimension mismatch</source>
-        <translation type="unfinished"/>
+        <source>unit must not be zero</source>
+        <translation>η μονάδα δεν πρέπει να είναι μηδέν</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2117"/>
-        <location filename="../../core/evaluator.cpp" line="2141"/>
+        <location filename="../../core/evaluator.cpp" line="2089"/>
+        <source>Conversion failed - dimension mismatch</source>
+        <translation>Η μετατροπή απέτυχε - οι διαστάσεις δεν συμφωνούν</translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="2121"/>
+        <location filename="../../core/evaluator.cpp" line="2145"/>
         <source>unknown function or variable</source>
         <translation>άγνωστη συνάρτηση ή μεταβλητή</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2220"/>
+        <location filename="../../core/evaluator.cpp" line="2224"/>
         <source>recursion not supported</source>
-        <translation type="unfinished"/>
+        <translation>Η αναδρομή δεν υποστηρίζεται</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="87"/>
@@ -1425,28 +1427,28 @@
         <location filename="../../core/evaluator.cpp" line="90"/>
         <location filename="../../core/evaluator.cpp" line="154"/>
         <source>underflow - tiny result is out of SpeedCrunch&apos;s number range</source>
-        <translation type="unfinished"/>
+        <translation>υποχείλιση - πολύ μικρό αποτέλεσμα εκτός των δυνατών τιμών που υποστηρίζει το SpeedCrunch</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="94"/>
         <location filename="../../core/evaluator.cpp" line="150"/>
         <source>overflow - huge result is out of SpeedCrunch&apos;s number range</source>
-        <translation type="unfinished"/>
+        <translation>Υπερχείλιση - πολύ μεγάλο αποτέλεσμα εκτός των δυνατών τιμών που υποστηρίζει το SpeedCrunch</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="101"/>
         <location filename="../../core/evaluator.cpp" line="158"/>
         <source>overflow - logic result exceeds maximum of 256 bits</source>
-        <translation type="unfinished"/>
+        <translation>Υπερχείλιση - το λογικό αποτέλεσμα ξεπερνάει τα 256 bits</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="105"/>
         <source>overflow - integer result exceeds maximum limit for integers</source>
-        <translation type="unfinished"/>
+        <translation>υπερχείλιση - το ακέραιο αποτέλεσμα ξεπερνάει το πάνω όρια για τους ακέραιους</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="144"/>
-        <location filename="../../core/evaluator.cpp" line="2214"/>
+        <location filename="../../core/evaluator.cpp" line="2218"/>
         <source>wrong number of arguments</source>
         <translation>εσφαλμένος αριθμός ορισμάτων</translation>
     </message>
@@ -1463,7 +1465,7 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="172"/>
         <source>undefined for argument domain</source>
-        <translation type="unfinished"/>
+        <translation>απροσδιόριστο για το επιχείρημα domain</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="175"/>
@@ -1473,28 +1475,28 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="190"/>
         <source>internal error, please report a bug</source>
-        <translation type="unfinished"/>
+        <translation>εσωτερικό σφάλμα, παρακαλώ αναφέρετε το πρόβλημα</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2282"/>
-        <location filename="../../core/evaluator.cpp" line="2306"/>
+        <location filename="../../core/evaluator.cpp" line="2286"/>
+        <location filename="../../core/evaluator.cpp" line="2310"/>
         <source>%1 is a reserved name, please choose another</source>
-        <translation type="unfinished"/>
+        <translation>το %1 είναι ένα δεσμευμένο όνομα, παρακαλούμε επιλέξτε ένα άλλο</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2290"/>
+        <location filename="../../core/evaluator.cpp" line="2294"/>
         <source>%1 is a variable name, please choose another or delete the variable</source>
-        <translation type="unfinished"/>
+        <translation>το %1 είναι ένα όνομα μεταβλητής, παρακαλώ επιλέξτε ένα άλλο ή διαγράψτε τη μεταβλητή</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2300"/>
+        <location filename="../../core/evaluator.cpp" line="2304"/>
         <source>argument %1 is used more than once</source>
-        <translation type="unfinished"/>
+        <translation>το όρισμα %1 χρησιμοποιείται περισσότερες από μία φορές</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2324"/>
+        <location filename="../../core/evaluator.cpp" line="2328"/>
         <source>%1 is a user function name, please choose another or delete the function</source>
-        <translation type="unfinished"/>
+        <translation>το %1 είναι όνομα συνάρτησης χρήστη, παρακαλούμε επιλέξτε μια άλλη ή διαγράψτε τη συνάρτηση</translation>
     </message>
 </context>
 <context>
@@ -1502,152 +1504,152 @@
     <message>
         <location filename="../../core/functions.cpp" line="1100"/>
         <source>max; trials; probability</source>
-        <translation type="unfinished"/>
+        <translation>μέγιστο; δοκιμές; πιθανότητα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1101"/>
         <location filename="../../core/functions.cpp" line="1103"/>
         <source>trials; probability</source>
-        <translation type="unfinished"/>
+        <translation>δοκιμές; πιθανότητα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1102"/>
         <source>hits; trials; probability</source>
-        <translation type="unfinished"/>
+        <translation>χτυπήματα; δοκιμές; πιθανότητα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1105"/>
         <source>max; total; hits; trials</source>
-        <translation type="unfinished"/>
+        <translation>μέγιστο; σύνολο; χτυπήματα; δοκιμές</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1106"/>
         <location filename="../../core/functions.cpp" line="1108"/>
         <source>total; hits; trials</source>
-        <translation type="unfinished"/>
+        <translation>σύνολο; χτυπήματα; δοκιμές</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1107"/>
         <source>count; total; hits; trials</source>
-        <translation type="unfinished"/>
+        <translation>μέτρηση; σύνολο; χτυπήματα; δοκιμές</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1109"/>
         <source>dividend; divisor</source>
-        <translation type="unfinished"/>
+        <translation>μέρισμα; διαιρέτης</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1110"/>
         <location filename="../../core/functions.cpp" line="1111"/>
         <source>x; exponent_bits; significand_bits [; exponent_bias]</source>
-        <translation type="unfinished"/>
+        <translation>x; bits_εκθέτη; bits_σημαίνοντος [; bias_εκθέτη]</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1112"/>
         <source>base; x</source>
-        <translation type="unfinished"/>
+        <translation>βάση; x</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1114"/>
         <source>value; modulo</source>
-        <translation type="unfinished"/>
+        <translation>τιμή; modulo</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1115"/>
         <location filename="../../core/functions.cpp" line="1117"/>
         <source>events; average_events</source>
-        <translation type="unfinished"/>
+        <translation>γεγονότα; μέσος_όρος_γεγονότων</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1116"/>
         <location filename="../../core/functions.cpp" line="1118"/>
         <source>average_events</source>
-        <translation type="unfinished"/>
+        <translation>μέσος_όρος_γεγονότων</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1119"/>
         <source>x [; precision]</source>
-        <translation type="unfinished"/>
+        <translation>x [; ακρίβεια]</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1127"/>
         <source>Absolute Value</source>
-        <translation type="unfinished"/>
+        <translation>Απόλυτη Τιμή</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1128"/>
         <source>Absolute Deviation</source>
-        <translation type="unfinished"/>
+        <translation>Απόλυτη Απόκλιση</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1129"/>
         <source>Arc Cosine</source>
-        <translation type="unfinished"/>
+        <translation>Τόξο Συνημιτόνου</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1130"/>
         <source>Logical AND</source>
-        <translation type="unfinished"/>
+        <translation>Λογικό AND</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1131"/>
         <source>Area Hyperbolic Cosine</source>
-        <translation type="unfinished"/>
+        <translation>Περιοχή Υπερβολικού Συνημίτονου</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1132"/>
         <source>Area Hyperbolic Sine</source>
-        <translation type="unfinished"/>
+        <translation>Περιοχή Υπερβολικού Ημίτονου</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1133"/>
         <source>Area Hyperbolic Tangent</source>
-        <translation type="unfinished"/>
+        <translation>Περιοχή Υπερβολικής Εφαπτομένης</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1134"/>
         <source>Arc Sine</source>
-        <translation type="unfinished"/>
+        <translation>Τόξο ημίτονου</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1135"/>
         <source>Arc Tangent</source>
-        <translation type="unfinished"/>
+        <translation>Τόξο Εφαπτομένης</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1136"/>
         <source>Arc Tangent with two Arguments</source>
-        <translation type="unfinished"/>
+        <translation>Εφαπτομένη Τόξου με δύο Ορίσματα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1137"/>
         <source>Average (Arithmetic Mean)</source>
-        <translation type="unfinished"/>
+        <translation>Μέση τιμή (αριθμητικός μέσος όρος)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1139"/>
         <source>Binomial Cumulative Distribution Function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση Διωνυμικής Αθροιστικής Κατανομής</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1140"/>
         <source>Binomial Distribution Mean</source>
-        <translation type="unfinished"/>
+        <translation>Διωνυμική Κατανομή Mean</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1141"/>
         <source>Binomial Probability Mass Function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση Διωνυμικής Μάζας Πιθανότητας</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1142"/>
         <source>Binomial Distribution Variance</source>
-        <translation type="unfinished"/>
+        <translation>Διακύμανση Διωνυμικής Κατανομής</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1143"/>
         <source>Convert to Cartesian Notation</source>
-        <translation type="unfinished"/>
+        <translation>Μετατροπή σε Καρτεσιανό Συμβολισμό</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1144"/>
@@ -1657,197 +1659,197 @@
     <message>
         <location filename="../../core/functions.cpp" line="1145"/>
         <source>Ceiling</source>
-        <translation type="unfinished"/>
+        <translation>Ανώτατο όριο</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1146"/>
         <source>Complex Conjugate</source>
-        <translation type="unfinished"/>
+        <translation>Συζυγής Μιγαδικός</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1147"/>
         <source>Cosine</source>
-        <translation type="unfinished"/>
+        <translation>Συνημίτονο</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1148"/>
         <source>Hyperbolic Cosine</source>
-        <translation type="unfinished"/>
+        <translation>Υπερβολικό Συνημίτονο</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1149"/>
         <source>Cotangent</source>
-        <translation type="unfinished"/>
+        <translation>Συνεφαπτομένη</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1150"/>
         <source>Cosecant</source>
-        <translation type="unfinished"/>
+        <translation>Συντεμνούσα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1151"/>
         <source>Convert Unix timestamp to Date</source>
-        <translation type="unfinished"/>
+        <translation>Μετατροπή Χρονικής Σήμανσης Unix σε Ημερομηνία</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1153"/>
         <source>Degrees of Arc</source>
-        <translation type="unfinished"/>
+        <translation>Μοίρες Τόξου</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1154"/>
         <source>Error Function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση Σφάλματος</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1155"/>
         <source>Complementary Error Function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση Συμπληρωματικού Σφάλματος</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1156"/>
         <source>Exponential</source>
-        <translation type="unfinished"/>
+        <translation>Εκθετική</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1157"/>
         <source>Floor</source>
-        <translation type="unfinished"/>
+        <translation>Πάτωμα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1158"/>
         <source>Fractional Part</source>
-        <translation type="unfinished"/>
+        <translation>Κλασματικό Τμήμα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1159"/>
         <source>Extension of Factorials [= (x-1)!]</source>
-        <translation type="unfinished"/>
+        <translation>Επέκταση των Παραγοντικών [= (x-1)!]</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1160"/>
         <source>Greatest Common Divisor</source>
-        <translation type="unfinished"/>
+        <translation>Μέγιστος Κοινός Διαιρέτης</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1161"/>
         <source>Geometric Mean</source>
-        <translation type="unfinished"/>
+        <translation>Γεωμετρικός Μέσος</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1162"/>
         <source>Gradians of arc</source>
-        <translation type="unfinished"/>
+        <translation>Gradians τόξου</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1164"/>
         <source>Hypergeometric Cumulative Distribution Function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση Υπεργεωμετρικής Αθροιστικής Κατανομής</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1165"/>
         <source>Hypergeometric Distribution Mean</source>
-        <translation type="unfinished"/>
+        <translation>Υπεργεωμετρική Κατανομή Mean</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1166"/>
         <source>Hypergeometric Probability Mass Function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση Υπεργεωμετρικής Μάζας Πιθανότητας</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1167"/>
         <source>Hypergeometric Distribution Variance</source>
-        <translation type="unfinished"/>
+        <translation>Διακύμανση Yπεργεωμετρικής Kατανομής</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1168"/>
         <source>Integer Quotient</source>
-        <translation type="unfinished"/>
+        <translation>Ακέραιο πηλίκο</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1169"/>
         <source>Integer Part</source>
-        <translation type="unfinished"/>
+        <translation>Ακέραιο τμήμα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1170"/>
         <source>Imaginary Part</source>
-        <translation type="unfinished"/>
+        <translation>Φανταστικό Τμήμα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1171"/>
         <source>Decode IEEE-754 Binary Value</source>
-        <translation type="unfinished"/>
+        <translation>Αποκωδικοποίηση Δυαδικής Τιμής IEEE-754</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1172"/>
         <source>Encode IEEE-754 Binary Value</source>
-        <translation type="unfinished"/>
+        <translation>Κωδικοποίηση Δυαδικής Τιμής IEEE-754</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1173"/>
         <source>Decode 16-bit Half-Precision Value</source>
-        <translation type="unfinished"/>
+        <translation>Αποκωδικοποίηση Τιμής Μισής Ακρίβειας 16-bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1174"/>
         <source>Encode 16-bit Half-Precision Value</source>
-        <translation type="unfinished"/>
+        <translation>Κωδικοποίηση Τιμής Μισής Ακρίβειας 16-bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1175"/>
         <source>Decode 32-bit Single-Precision Value</source>
-        <translation type="unfinished"/>
+        <translation>Αποκωδικοποίηση Τιμής Απλής Ακρίβειας 32-bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1176"/>
         <source>Encode 32-bit Single-Precision Value</source>
-        <translation type="unfinished"/>
+        <translation>Κωδικοποίηση Τιμής Απλής Ακρίβειας 32-bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1177"/>
         <source>Decode 64-bit Double-Precision Value</source>
-        <translation type="unfinished"/>
+        <translation>Αποκωδικοποίηση Τιμής Διπλής Ακρίβειας 64-bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1178"/>
         <source>Encode 64-bit Double-Precision Value</source>
-        <translation type="unfinished"/>
+        <translation>Κωδικοποίηση Τιμής Διπλής Ακρίβειας 64-bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1179"/>
         <source>Decode 128-bit Quad-Precision Value</source>
-        <translation type="unfinished"/>
+        <translation>Αποκωδικοποίηση Τιμής Τετραπλής Ακρίβειας 128-bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1180"/>
         <source>Encode 128-bit Quad-Precision Value</source>
-        <translation type="unfinished"/>
+        <translation>Κωδικοποίηση Τιμής Τετραπλής Ακρίβειας 128-bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1181"/>
         <source>Binary Logarithm</source>
-        <translation type="unfinished"/>
+        <translation>Δυαδικός Λογάριθμος</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1182"/>
         <source>Common Logarithm</source>
-        <translation type="unfinished"/>
+        <translation>Κοινός Λογάριθμος</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1183"/>
         <source>Natural Logarithm</source>
-        <translation type="unfinished"/>
+        <translation>Φυσικός Λογάριθμος</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1185"/>
         <source>Logarithm to Arbitrary Base</source>
-        <translation type="unfinished"/>
+        <translation>Λογάριθμος σε Αυθαίρετη Βάση</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1186"/>
         <source>Mask to a bit size</source>
-        <translation type="unfinished"/>
+        <translation>Μάσκα σε μέγεθος bit</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1187"/>
@@ -1857,7 +1859,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1188"/>
         <source>Median Value (50th Percentile)</source>
-        <translation type="unfinished"/>
+        <translation>Διάμεση Τιμή (50ο Εκατοστημόριο)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1189"/>
@@ -1867,82 +1869,82 @@
     <message>
         <location filename="../../core/functions.cpp" line="1190"/>
         <source>Modulo</source>
-        <translation type="unfinished"/>
+        <translation>Modulo</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1191"/>
         <source>Combination (Binomial Coefficient)</source>
-        <translation type="unfinished"/>
+        <translation>Συνδυασμός (Διωνυμικός Συντελεστής)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1192"/>
         <source>Logical NOT</source>
-        <translation type="unfinished"/>
+        <translation>Λογικό NOT</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1193"/>
         <source>Permutation (Arrangement)</source>
-        <translation type="unfinished"/>
+        <translation>Permutation (Διάταξη)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1138"/>
         <source>Convert to Binary Representation</source>
-        <translation type="unfinished"/>
+        <translation>Μετατροπή σε Δυαδική Απεικόνιση</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1104"/>
         <source>unix_timestamp; x hours offset to GMT</source>
-        <translation type="unfinished"/>
+        <translation>χρονοσήμανση_unix; x ώρες μετατόπιση σε GMT</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1152"/>
         <source>Convert to Decimal Representation</source>
-        <translation type="unfinished"/>
+        <translation>Μετατροπή σε Δεκαδική Απεικόνιση</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1163"/>
         <source>Convert to Hexadecimal Representation</source>
-        <translation type="unfinished"/>
+        <translation>Μετατροπή σε Δεκαεξαδική Απεικόνιση</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1194"/>
         <source>Convert to Octal Representation</source>
-        <translation type="unfinished"/>
+        <translation>Μετατροπή σε Οκταδική Απεικόνιση</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1195"/>
         <source>Logical OR</source>
-        <translation type="unfinished"/>
+        <translation>Λογικό OR</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1196"/>
         <source>Phase of Complex Number</source>
-        <translation type="unfinished"/>
+        <translation>Φάση Μιγαδικού Αριθμού</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1197"/>
         <source>Poissonian Cumulative Distribution Function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση Αθροιστικής Κατανομής Poissonian</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1198"/>
         <source>Poissonian Distribution Mean</source>
-        <translation type="unfinished"/>
+        <translation>Κατανομή Poissonian Mean</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1199"/>
         <source>Poissonian Probability Mass Function</source>
-        <translation type="unfinished"/>
+        <translation>Συνάρτηση Μάζας Πιθανότητας Poissonian</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1200"/>
         <source>Poissonian Distribution Variance</source>
-        <translation type="unfinished"/>
+        <translation>Διασπορά Κατανομής Poissonian</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1201"/>
         <source>Convert to Polar Notation</source>
-        <translation type="unfinished"/>
+        <translation>Μετατροπή σε Πολικό Συμβολισμό</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1202"/>
@@ -1957,32 +1959,32 @@
     <message>
         <location filename="../../core/functions.cpp" line="1204"/>
         <source>Real Part</source>
-        <translation type="unfinished"/>
+        <translation>Πραγματικό Τμήμα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1205"/>
         <source>Rounding</source>
-        <translation type="unfinished"/>
+        <translation>Στρογγυλοποίηση</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1206"/>
         <source>Secant</source>
-        <translation type="unfinished"/>
+        <translation>Διατεμνούσα</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1207"/>
         <source>Arithmetic Shift Left</source>
-        <translation type="unfinished"/>
+        <translation>Αριθμητική Μετατόπιση Αριστερά</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1208"/>
         <source>Arithmetic Shift Right</source>
-        <translation type="unfinished"/>
+        <translation>Αριθμητική Μετατόπιση Δεξιά</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1209"/>
         <source>Signum</source>
-        <translation type="unfinished"/>
+        <translation>Signum</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1210"/>
@@ -2002,7 +2004,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1213"/>
         <source>Standard Deviation (Square Root of Variance)</source>
-        <translation type="unfinished"/>
+        <translation>Τυπική Απόκλιση (Τετραγωνική Ρίζα της Διακύμανσης)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1214"/>
@@ -2012,22 +2014,22 @@
     <message>
         <location filename="../../core/functions.cpp" line="1215"/>
         <source>Tangent</source>
-        <translation type="unfinished"/>
+        <translation>Εφαπτομένη</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1216"/>
         <source>Hyperbolic Tangent</source>
-        <translation type="unfinished"/>
+        <translation>Υπερβολική Εφαπτομένη</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1217"/>
         <source>Truncation</source>
-        <translation type="unfinished"/>
+        <translation>Περικοπή</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1218"/>
         <source>Sign-extend a value</source>
-        <translation type="unfinished"/>
+        <translation>Επέκταση τιμής με πρόσημο</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1219"/>
@@ -2037,7 +2039,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1220"/>
         <source>Logical XOR</source>
-        <translation type="unfinished"/>
+        <translation>Λογικό XOR</translation>
     </message>
 </context>
 <context>
@@ -2055,12 +2057,12 @@
     <message>
         <location filename="../../gui/functionswidget.cpp" line="148"/>
         <source>No match found</source>
-        <translation type="unfinished"/>
+        <translation>Δεν βρέθηκε αντιστοιχία</translation>
     </message>
     <message>
         <location filename="../../gui/functionswidget.cpp" line="142"/>
         <source>Identifier</source>
-        <translation type="unfinished"/>
+        <translation>Προσδιοριστικό</translation>
     </message>
 </context>
 <context>
@@ -2068,7 +2070,7 @@
     <message>
         <location filename="../../gui/keypad.cpp" line="169"/>
         <source>Inverse cosine</source>
-        <translation type="unfinished"/>
+        <translation>Αντίστροφο συνημίτονο</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="170"/>
@@ -2078,12 +2080,12 @@
     <message>
         <location filename="../../gui/keypad.cpp" line="171"/>
         <source>Inverse sine</source>
-        <translation type="unfinished"/>
+        <translation>Αντίστροφο ημίτονο</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="172"/>
         <source>Inverse tangent</source>
-        <translation type="unfinished"/>
+        <translation>Αντίστροφη εφαπτομένη</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="173"/>
@@ -2098,17 +2100,17 @@
     <message>
         <location filename="../../gui/keypad.cpp" line="175"/>
         <source>Scientific notation</source>
-        <translation type="unfinished"/>
+        <translation>Επιστημονική σημειογραφία</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="176"/>
         <source>Exponential</source>
-        <translation type="unfinished"/>
+        <translation>Εκθετική</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="177"/>
         <source>Natural logarithm</source>
-        <translation type="unfinished"/>
+        <translation>Φυσικός λογάριθμος</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="178"/>
@@ -2123,17 +2125,17 @@
     <message>
         <location filename="../../gui/keypad.cpp" line="180"/>
         <source>Tangent</source>
-        <translation type="unfinished"/>
+        <translation>Εφαπτομένη</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="181"/>
         <source>Assign variable x</source>
-        <translation type="unfinished"/>
+        <translation>Ανάθεση μεταβλητής x</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="182"/>
         <source>The variable x</source>
-        <translation type="unfinished"/>
+        <translation>Η μεταβλητή x</translation>
     </message>
 </context>
 <context>
@@ -2154,19 +2156,19 @@
         <location filename="../../gui/mainwindow.cpp" line="276"/>
         <location filename="../../gui/mainwindow.cpp" line="1635"/>
         <source>Gradian</source>
-        <translation type="unfinished"/>
+        <translation>Gradian</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="280"/>
         <location filename="../../gui/mainwindow.cpp" line="1968"/>
         <source>Binary</source>
-        <translation type="unfinished"/>
+        <translation>Δυαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="281"/>
         <location filename="../../gui/mainwindow.cpp" line="2016"/>
         <source>Octal</source>
-        <translation type="unfinished"/>
+        <translation>Οκταδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="282"/>
@@ -2178,36 +2180,36 @@
         <location filename="../../gui/mainwindow.cpp" line="283"/>
         <location filename="../../gui/mainwindow.cpp" line="2041"/>
         <source>Sexagesimal</source>
-        <translation type="unfinished"/>
+        <translation>Εξαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="284"/>
         <location filename="../../gui/mainwindow.cpp" line="1993"/>
         <source>Fixed decimal</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερό δεκαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="285"/>
         <location filename="../../gui/mainwindow.cpp" line="1985"/>
         <source>Engineering decimal</source>
-        <translation type="unfinished"/>
+        <translation>Δεκαδικό μηχανικών</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="286"/>
         <location filename="../../gui/mainwindow.cpp" line="2033"/>
         <source>Scientific decimal</source>
-        <translation type="unfinished"/>
+        <translation>Επιστημονικό δεκαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="287"/>
         <location filename="../../gui/mainwindow.cpp" line="2000"/>
         <source>General decimal</source>
-        <translation type="unfinished"/>
+        <translation>Γενικό δεκαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="294"/>
         <source>Angle unit</source>
-        <translation type="unfinished"/>
+        <translation>Μονάδα γωνίας</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="295"/>
@@ -2237,17 +2239,17 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="308"/>
         <source>Clear E&amp;xpression</source>
-        <translation type="unfinished"/>
+        <translation>Εκκαθάριση έκφρασης</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="309"/>
         <source>Clear &amp;History</source>
-        <translation type="unfinished"/>
+        <translation>Καθαρισμός Ιστορικού</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="310"/>
         <source>Copy Last &amp;Result</source>
-        <translation type="unfinished"/>
+        <translation>Αντιγραφή Τελευταίου Αποτελέσματος</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="311"/>
@@ -2267,12 +2269,12 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="314"/>
         <source>&amp;Wrap Selection in Parentheses</source>
-        <translation type="unfinished"/>
+        <translation>Αναδίπλωση Επιλογής σε Παρενθέσεις</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="316"/>
         <source>&amp;Constants</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερές</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="317"/>
@@ -2282,7 +2284,7 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="318"/>
         <source>&amp;Functions</source>
-        <translation type="unfinished"/>
+        <translation>Συναρτήσεις</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="319"/>
@@ -2292,27 +2294,27 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="322"/>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"/>
+        <translation>Γραμμή κατάστασης</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="323"/>
         <source>&amp;Variables</source>
-        <translation type="unfinished"/>
+        <translation>Μεταβλητές</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="324"/>
         <source>Bitfield</source>
-        <translation type="unfinished"/>
+        <translation>Bitfield</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="325"/>
         <source>Use&amp;r Functions</source>
-        <translation type="unfinished"/>
+        <translation>Συναρτήσεις Χ&amp;ρήστη</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="327"/>
         <source>&amp;Degree</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Μοίρες</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="328"/>
@@ -2322,87 +2324,87 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="329"/>
         <source>&amp;Gradian</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Gradian</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="330"/>
         <source>&amp;Cycle Unit</source>
-        <translation type="unfinished"/>
+        <translation>Μονάδα Κύκλου</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="332"/>
         <source>Automatic Result &amp;Reuse</source>
-        <translation type="unfinished"/>
+        <translation>Αυτόματη Επαναχρησιμοποίηση Αποτελεσμάτων</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="333"/>
         <source>Automatic &amp;Completion</source>
-        <translation type="unfinished"/>
+        <translation>Αυτόματη Ολοκλήρωση</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="334"/>
         <source>&amp;Partial Results</source>
-        <translation type="unfinished"/>
+        <translation>Μερικά Αποτελέσματα</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="335"/>
         <source>Save &amp;History on Exit</source>
-        <translation type="unfinished"/>
+        <translation>Αποθήκευση Ιστορικού κατά την Έξοδο</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="336"/>
         <source>Save &amp;Window Positon on Exit</source>
-        <translation type="unfinished"/>
+        <translation>Αποθήκευση Θέσης Παραθύρου κατά την Έξοδο</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="337"/>
         <source>Syntax &amp;Highlighting</source>
-        <translation type="unfinished"/>
+        <translation>Επισήμανση Συντακτικού</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="342"/>
         <source>Leave &amp;Last Expression</source>
-        <translation type="unfinished"/>
+        <translation>Αφήστε την Τελευταία Έκφραση</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="343"/>
         <source>Automatic &amp;Result to Clipboard</source>
-        <translation type="unfinished"/>
+        <translation>Αυτόματο Αποτέλεσμα στο Πρόχειρο</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="345"/>
         <source>&amp;Comma</source>
-        <translation type="unfinished"/>
+        <translation>Κόμμα</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="346"/>
         <source>&amp;System Default</source>
-        <translation type="unfinished"/>
+        <translation>Προεπιλογή &amp;Συστήματος</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="347"/>
         <source>&amp;Dot</source>
-        <translation type="unfinished"/>
+        <translation>Τελεία</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="348"/>
         <source>Dot &amp;And Comma</source>
-        <translation type="unfinished"/>
+        <translation>Τελεία και Κόμμα</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="360"/>
         <source>&amp;Binary</source>
-        <translation type="unfinished"/>
+        <translation>Δυαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="358"/>
         <source>&amp;Engineering</source>
-        <translation type="unfinished"/>
+        <translation>Μηχανική</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="357"/>
         <source>&amp;Fixed Decimal</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερό Δεκαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="356"/>
@@ -2417,7 +2419,7 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="361"/>
         <source>&amp;Octal</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Οκταδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="359"/>
@@ -2427,62 +2429,62 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="364"/>
         <source>&amp;Cartesian</source>
-        <translation type="unfinished"/>
+        <translation>Καρτεσιανό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="365"/>
         <source>&amp;Polar</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Πολικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="369"/>
         <source>User &amp;Manual</source>
-        <translation type="unfinished"/>
+        <translation>Οδηγίες Χρήσης</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="375"/>
         <source>&amp;Donate</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Δωρεά</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="603"/>
         <source>&amp;Input Format</source>
-        <translation type="unfinished"/>
+        <translation>Εισαγωγή Μορφής</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="608"/>
         <source>Comple&amp;x Format</source>
-        <translation type="unfinished"/>
+        <translation>Μορφή Μιγαδικών</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="723"/>
         <source>Constants</source>
-        <translation type="unfinished"/>
+        <translation>Σταθερές</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="739"/>
         <source>Functions</source>
-        <translation type="unfinished"/>
+        <translation>Συναρτήσεις</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="753"/>
         <source>History</source>
-        <translation type="unfinished"/>
+        <translation>Ιστορικο</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="770"/>
         <source>Variables</source>
-        <translation type="unfinished"/>
+        <translation>Μεταβλητές</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="788"/>
         <source>User Functions</source>
-        <translation type="unfinished"/>
+        <translation>Συναρτήσεις χρήστη</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1109"/>
         <source>Type an expression here</source>
-        <translation type="unfinished"/>
+        <translation>Εδώ γράψτε μία έκφραση</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="366"/>
@@ -2497,7 +2499,7 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="597"/>
         <source>&amp;Session</source>
-        <translation type="unfinished"/>
+        <translation>Συνεδρία</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="599"/>
@@ -2517,42 +2519,42 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="602"/>
         <source>Result &amp;Format</source>
-        <translation type="unfinished"/>
+        <translation>Μορφή Αποτελέσματος</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="605"/>
         <source>&amp;Decimal</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Δεκαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="607"/>
         <source>&amp;Angle Unit</source>
-        <translation type="unfinished"/>
+        <translation>Μονάδα Γωνίας</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="609"/>
         <source>&amp;Behavior</source>
-        <translation type="unfinished"/>
+        <translation>Συμπεριφορά</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="604"/>
         <source>Radix &amp;Character</source>
-        <translation type="unfinished"/>
+        <translation>Χαρακτήρας Radix</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="320"/>
         <source>&amp;Keypad</source>
-        <translation type="unfinished"/>
+        <translation>Πληκτρολόγιο</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="331"/>
         <source>Always on &amp;Top</source>
-        <translation type="unfinished"/>
+        <translation>Πάντα στην κορυφή</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="338"/>
         <source>Disabled</source>
-        <translation type="unfinished"/>
+        <translation>Ανενεργό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="339"/>
@@ -2572,47 +2574,47 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="344"/>
         <source>Enable Complex Numbers</source>
-        <translation type="unfinished"/>
+        <translation>Ενεργοποίηση μιγαδικών αριθμών</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="349"/>
         <source>&amp;0 Digits</source>
-        <translation type="unfinished"/>
+        <translation>&amp;0 Ψηφία</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="350"/>
         <source>&amp;15 Digits</source>
-        <translation type="unfinished"/>
+        <translation>&amp;15 Ψηφία</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="351"/>
         <source>&amp;2 Digits</source>
-        <translation type="unfinished"/>
+        <translation>&amp;2 Ψηφία</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="352"/>
         <source>&amp;3 Digits</source>
-        <translation type="unfinished"/>
+        <translation>&amp;3 Ψηφία</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="353"/>
         <source>&amp;50 Digits</source>
-        <translation type="unfinished"/>
+        <translation>&amp;50 Ψηφία</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="354"/>
         <source>&amp;8 Digits</source>
-        <translation type="unfinished"/>
+        <translation>&amp;8 Ψηφία</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="363"/>
         <source>&amp;Sexagesimal</source>
-        <translation type="unfinished"/>
+        <translation>Εξαδικό</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="370"/>
         <source>Context Help</source>
-        <translation type="unfinished"/>
+        <translation>Βοήθεια Συμφραζομένων</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="376"/>
@@ -2632,12 +2634,12 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="613"/>
         <source>Digit Grouping</source>
-        <translation type="unfinished"/>
+        <translation>Ομαδοποίηση Ψηφίων</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1381"/>
         <source>Load Session</source>
-        <translation type="unfinished"/>
+        <translation>Φόρτωση Συνεδρίας</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1387"/>
@@ -2653,13 +2655,14 @@
         <location filename="../../gui/mainwindow.cpp" line="1387"/>
         <location filename="../../gui/mainwindow.cpp" line="1453"/>
         <source>Can&apos;t read from file %1</source>
-        <translation type="unfinished"/>
+        <translation>Δεν είναι δυνατή η ανάγνωση από το αρχείο %1</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1393"/>
         <source>Merge session being loaded with current session?
 If no, current variables and display will be cleared.</source>
-        <translation type="unfinished"/>
+        <translation>Η συγχώνευση συνεδρίας φορτώνεται με την τρέχουσα συνεδρία;
+Εάν όχι, οι τρέχουσες μεταβλητές και η οθόνη θα διαγραφούν.</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1446"/>
@@ -2669,45 +2672,46 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1447"/>
         <source>Import Session</source>
-        <translation type="unfinished"/>
+        <translation>Εισαγωγή Συνεδρίας</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1458"/>
         <source>Merge session being imported with current session?
 If no, current variables and display will be cleared.</source>
-        <translation type="unfinished"/>
+        <translation>Η συγχώνευση συνεδρίας εισάγεται με την τρέχουσα συνεδρία;
+Εάν όχι, οι τρέχουσες μεταβλητές και η οθόνη θα διαγραφούν.</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1489"/>
         <source>Ignore error?</source>
-        <translation type="unfinished"/>
+        <translation>Αγνόηση σφάλματος;</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1426"/>
         <source>Save Session</source>
-        <translation type="unfinished"/>
+        <translation>Αποθήκευση Συνεδρίας</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1432"/>
         <location filename="../../gui/mainwindow.cpp" line="1660"/>
         <location filename="../../gui/mainwindow.cpp" line="1681"/>
         <source>Can&apos;t write to file %1</source>
-        <translation type="unfinished"/>
+        <translation>Αδυναμία εγγραφής στο αρχείο %1</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1674"/>
         <source>Text file (*.txt);;Any file (*.*)</source>
-        <translation type="unfinished"/>
+        <translation>Αρχείο Κειμένου (*.txt);;Όλα (*.*)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1712"/>
         <source>Display font</source>
-        <translation type="unfinished"/>
+        <translation>Γραμματοσειρά εμφάνισης</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="2418"/>
         <source>System Default</source>
-        <translation type="unfinished"/>
+        <translation>Προεπιλογή Συστήματος</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="2422"/>
@@ -2717,17 +2721,17 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="2422"/>
         <source>Select the language:</source>
-        <translation type="unfinished"/>
+        <translation>Επιλογή γλώσσας:</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="355"/>
         <source>&amp;Automatic</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Αυτόματο</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="606"/>
         <source>&amp;Precision</source>
-        <translation type="unfinished"/>
+        <translation>Ακρίβεια</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="301"/>
@@ -2737,32 +2741,32 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="302"/>
         <source>Plain &amp;text</source>
-        <translation type="unfinished"/>
+        <translation>Απλό κείμενο</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="321"/>
         <source>Formula &amp;Book</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Βιβλίο Τύπων</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="371"/>
         <source>Check &amp;Updates</source>
-        <translation type="unfinished"/>
+        <translation>Έλεγχος για Ενημερώσεις</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="372"/>
         <source>Send &amp;Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Αποστολή Σχολίων</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="373"/>
         <source>Join &amp;Community</source>
-        <translation type="unfinished"/>
+        <translation>Συμμετοχή στην Κοινότητα</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="374"/>
         <source>&amp;News Feed</source>
-        <translation type="unfinished"/>
+        <translation>Ροή Ειδήσεων</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="598"/>
@@ -2778,13 +2782,13 @@ If no, current variables and display will be cleared.</source>
         <location filename="../../gui/mainwindow.cpp" line="1380"/>
         <location filename="../../gui/mainwindow.cpp" line="1425"/>
         <source>SpeedCrunch Sessions (*.json);;All Files (*)</source>
-        <translation type="unfinished"/>
+        <translation>Συνεδρίες SpeedCrunch (*.json);;Όλα (*)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1398"/>
         <location filename="../../gui/mainwindow.cpp" line="1464"/>
         <source>Merge?</source>
-        <translation type="unfinished"/>
+        <translation>Συγχώνευση;</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1652"/>
@@ -2794,7 +2798,7 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1653"/>
         <source>HTML file (*.html)</source>
-        <translation type="unfinished"/>
+        <translation>Αρχείο HTML (*.html)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1673"/>
@@ -2807,12 +2811,12 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/manualwindow.cpp" line="69"/>
         <source>SpeedCrunch Manual</source>
-        <translation type="unfinished"/>
+        <translation>Εγχειρίδιο SpeedCrunch</translation>
     </message>
     <message>
         <location filename="../../gui/manualwindow.cpp" line="71"/>
         <source>%1 - SpeedCrunch Manual</source>
-        <translation type="unfinished"/>
+        <translation>%1 - Εγχειρίδιο SpeedCrunch</translation>
     </message>
 </context>
 <context>
@@ -2835,7 +2839,7 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/userfunctionlistwidget.cpp" line="155"/>
         <source>No match found</source>
-        <translation type="unfinished"/>
+        <translation>Δεν βρέθηκε αντιστοιχία</translation>
     </message>
     <message>
         <location filename="../../gui/userfunctionlistwidget.cpp" line="157"/>
@@ -2878,7 +2882,7 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/variablelistwidget.cpp" line="154"/>
         <source>No match found</source>
-        <translation type="unfinished"/>
+        <translation>Δεν βρέθηκε αντιστοιχία</translation>
     </message>
     <message>
         <location filename="../../gui/variablelistwidget.cpp" line="156"/>

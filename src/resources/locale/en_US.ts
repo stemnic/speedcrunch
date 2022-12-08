@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.1">
 <context>
     <name>AboutBox</name>
     <message>
@@ -25,16 +25,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../gui/aboutbox.cpp" line="126"/>
-        <source>Copyright (C) 2004-2016 The SpeedCrunch developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/aboutbox.cpp" line="149"/>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../gui/aboutbox.cpp" line="57"/>
         <source>Math engine</source>
         <translation type="unfinished"></translation>
@@ -45,6 +35,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../gui/aboutbox.cpp" line="126"/>
+        <source>Copyright (C) 2004-2016 The SpeedCrunch developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/aboutbox.cpp" line="130"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version</source>
         <translation type="unfinished"></translation>
@@ -52,6 +47,11 @@
     <message>
         <location filename="../../gui/aboutbox.cpp" line="136"/>
         <source>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/aboutbox.cpp" line="149"/>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -330,10 +330,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/book.cpp" line="424"/>
-        <location filename="../../core/book.cpp" line="425"/>
-        <location filename="../../core/book.cpp" line="426"/>
-        <source>temperature</source>
+        <location filename="../../core/book.cpp" line="347"/>
+        <location filename="../../core/book.cpp" line="366"/>
+        <source>dielectric constant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/book.cpp" line="348"/>
+        <source>outer conductor&apos;s inner diameter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/book.cpp" line="349"/>
+        <source>inner conductor&apos;s outer diameter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/book.cpp" line="365"/>
+        <source>speed of light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -357,27 +371,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/book.cpp" line="347"/>
-        <location filename="../../core/book.cpp" line="366"/>
-        <source>dielectric constant</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/book.cpp" line="348"/>
-        <source>outer conductor&apos;s inner diameter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/book.cpp" line="349"/>
-        <source>inner conductor&apos;s outer diameter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/book.cpp" line="365"/>
-        <source>speed of light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../core/book.cpp" line="390"/>
         <source>reflection coefficient</source>
         <translation type="unfinished"></translation>
@@ -395,6 +388,13 @@
     <message>
         <location filename="../../core/book.cpp" line="408"/>
         <source>frequency (Hz)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/book.cpp" line="424"/>
+        <location filename="../../core/book.cpp" line="425"/>
+        <location filename="../../core/book.cpp" line="426"/>
+        <source>temperature</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1267,6 +1267,16 @@
 <context>
     <name>ConstantsWidget</name>
     <message>
+        <location filename="../../gui/constantswidget.cpp" line="119"/>
+        <source>Category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/constantswidget.cpp" line="120"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/constantswidget.cpp" line="121"/>
         <source>No match found</source>
         <translation type="unfinished"></translation>
@@ -1284,16 +1294,6 @@
     <message>
         <location filename="../../gui/constantswidget.cpp" line="126"/>
         <source>Unit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/constantswidget.cpp" line="119"/>
-        <source>Category</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/constantswidget.cpp" line="120"/>
-        <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1334,30 +1334,37 @@
 <context>
     <name>Evaluator</name>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1833"/>
-        <location filename="../../core/evaluator.cpp" line="1932"/>
-        <location filename="../../core/evaluator.cpp" line="1944"/>
-        <location filename="../../core/evaluator.cpp" line="1955"/>
-        <location filename="../../core/evaluator.cpp" line="1966"/>
-        <location filename="../../core/evaluator.cpp" line="1977"/>
-        <location filename="../../core/evaluator.cpp" line="1988"/>
-        <location filename="../../core/evaluator.cpp" line="1999"/>
-        <location filename="../../core/evaluator.cpp" line="2009"/>
-        <location filename="../../core/evaluator.cpp" line="2020"/>
-        <location filename="../../core/evaluator.cpp" line="2031"/>
-        <location filename="../../core/evaluator.cpp" line="2042"/>
-        <location filename="../../core/evaluator.cpp" line="2053"/>
-        <location filename="../../core/evaluator.cpp" line="2064"/>
-        <location filename="../../core/evaluator.cpp" line="2075"/>
-        <location filename="../../core/evaluator.cpp" line="2146"/>
-        <location filename="../../core/evaluator.cpp" line="2202"/>
-        <source>invalid expression</source>
+        <location filename="../../core/evaluator.cpp" line="87"/>
+        <source>cannot operate on a NaN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="90"/>
+        <location filename="../../core/evaluator.cpp" line="154"/>
+        <source>underflow - tiny result is out of SpeedCrunch&apos;s number range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="94"/>
+        <location filename="../../core/evaluator.cpp" line="150"/>
+        <source>overflow - huge result is out of SpeedCrunch&apos;s number range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="98"/>
         <location filename="../../core/evaluator.cpp" line="165"/>
         <source>division by zero</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="101"/>
+        <location filename="../../core/evaluator.cpp" line="158"/>
+        <source>overflow - logic result exceeds maximum of 256 bits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="105"/>
+        <source>overflow - integer result exceeds maximum limit for integers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1383,72 +1390,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="178"/>
-        <source>invalid dimension - function might require dimensionless arguments</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="193"/>
-        <source>error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="1893"/>
-        <source>compile error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="2081"/>
-        <source>unit must not be zero</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="2085"/>
-        <source>Conversion failed - dimension mismatch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="2117"/>
-        <location filename="../../core/evaluator.cpp" line="2141"/>
-        <source>unknown function or variable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="2220"/>
-        <source>recursion not supported</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="87"/>
-        <source>cannot operate on a NaN</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="90"/>
-        <location filename="../../core/evaluator.cpp" line="154"/>
-        <source>underflow - tiny result is out of SpeedCrunch&apos;s number range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="94"/>
-        <location filename="../../core/evaluator.cpp" line="150"/>
-        <source>overflow - huge result is out of SpeedCrunch&apos;s number range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="101"/>
-        <location filename="../../core/evaluator.cpp" line="158"/>
-        <source>overflow - logic result exceeds maximum of 256 bits</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/evaluator.cpp" line="105"/>
-        <source>overflow - integer result exceeds maximum limit for integers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../core/evaluator.cpp" line="144"/>
-        <location filename="../../core/evaluator.cpp" line="2214"/>
+        <location filename="../../core/evaluator.cpp" line="2218"/>
         <source>wrong number of arguments</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1473,28 +1416,85 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../core/evaluator.cpp" line="178"/>
+        <source>invalid dimension - function might require dimensionless arguments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../core/evaluator.cpp" line="190"/>
         <source>internal error, please report a bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2282"/>
-        <location filename="../../core/evaluator.cpp" line="2306"/>
+        <location filename="../../core/evaluator.cpp" line="193"/>
+        <source>error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="1837"/>
+        <location filename="../../core/evaluator.cpp" line="1936"/>
+        <location filename="../../core/evaluator.cpp" line="1948"/>
+        <location filename="../../core/evaluator.cpp" line="1959"/>
+        <location filename="../../core/evaluator.cpp" line="1970"/>
+        <location filename="../../core/evaluator.cpp" line="1981"/>
+        <location filename="../../core/evaluator.cpp" line="1992"/>
+        <location filename="../../core/evaluator.cpp" line="2003"/>
+        <location filename="../../core/evaluator.cpp" line="2013"/>
+        <location filename="../../core/evaluator.cpp" line="2024"/>
+        <location filename="../../core/evaluator.cpp" line="2035"/>
+        <location filename="../../core/evaluator.cpp" line="2046"/>
+        <location filename="../../core/evaluator.cpp" line="2057"/>
+        <location filename="../../core/evaluator.cpp" line="2068"/>
+        <location filename="../../core/evaluator.cpp" line="2079"/>
+        <location filename="../../core/evaluator.cpp" line="2150"/>
+        <location filename="../../core/evaluator.cpp" line="2206"/>
+        <source>invalid expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="1897"/>
+        <source>compile error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="2085"/>
+        <source>unit must not be zero</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="2089"/>
+        <source>Conversion failed - dimension mismatch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="2121"/>
+        <location filename="../../core/evaluator.cpp" line="2145"/>
+        <source>unknown function or variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="2224"/>
+        <source>recursion not supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/evaluator.cpp" line="2286"/>
+        <location filename="../../core/evaluator.cpp" line="2310"/>
         <source>%1 is a reserved name, please choose another</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2290"/>
+        <location filename="../../core/evaluator.cpp" line="2294"/>
         <source>%1 is a variable name, please choose another or delete the variable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2300"/>
+        <location filename="../../core/evaluator.cpp" line="2304"/>
         <source>argument %1 is used more than once</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2324"/>
+        <location filename="../../core/evaluator.cpp" line="2328"/>
         <source>%1 is a user function name, please choose another or delete the function</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1515,6 +1515,11 @@
     <message>
         <location filename="../../core/functions.cpp" line="1102"/>
         <source>hits; trials; probability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/functions.cpp" line="1104"/>
+        <source>unix_timestamp; x hours offset to GMT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1627,6 +1632,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../core/functions.cpp" line="1138"/>
+        <source>Convert to Binary Representation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../core/functions.cpp" line="1139"/>
         <source>Binomial Cumulative Distribution Function</source>
         <translation type="unfinished"></translation>
@@ -1692,6 +1702,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../core/functions.cpp" line="1152"/>
+        <source>Convert to Decimal Representation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../core/functions.cpp" line="1153"/>
         <source>Degrees of Arc</source>
         <translation type="unfinished"></translation>
@@ -1739,6 +1754,11 @@
     <message>
         <location filename="../../core/functions.cpp" line="1162"/>
         <source>Gradians of arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../core/functions.cpp" line="1163"/>
+        <source>Convert to Hexadecimal Representation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1887,26 +1907,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../core/functions.cpp" line="1138"/>
-        <source>Convert to Binary Representation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/functions.cpp" line="1104"/>
-        <source>unix_timestamp; x hours offset to GMT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/functions.cpp" line="1152"/>
-        <source>Convert to Decimal Representation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../core/functions.cpp" line="1163"/>
-        <source>Convert to Hexadecimal Representation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../core/functions.cpp" line="1194"/>
         <source>Convert to Octal Representation</source>
         <translation type="unfinished"></translation>
@@ -2045,6 +2045,11 @@
 <context>
     <name>FunctionsWidget</name>
     <message>
+        <location filename="../../gui/functionswidget.cpp" line="142"/>
+        <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/functionswidget.cpp" line="143"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
@@ -2057,11 +2062,6 @@
     <message>
         <location filename="../../gui/functionswidget.cpp" line="148"/>
         <source>No match found</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/functionswidget.cpp" line="142"/>
-        <source>Identifier</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2148,14 +2148,14 @@
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="276"/>
-        <location filename="../../gui/mainwindow.cpp" line="1607"/>
-        <source>Degree</source>
+        <location filename="../../gui/mainwindow.cpp" line="1635"/>
+        <source>Gradian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="276"/>
-        <location filename="../../gui/mainwindow.cpp" line="1635"/>
-        <source>Gradian</source>
+        <location filename="../../gui/mainwindow.cpp" line="1607"/>
+        <source>Degree</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2214,6 +2214,16 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="295"/>
         <source>Result format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="301"/>
+        <source>&amp;HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="302"/>
+        <source>Plain &amp;text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2292,6 +2302,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../gui/mainwindow.cpp" line="320"/>
+        <source>&amp;Keypad</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="321"/>
+        <source>Formula &amp;Book</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/mainwindow.cpp" line="322"/>
         <source>&amp;Status Bar</source>
         <translation type="unfinished"></translation>
@@ -2332,6 +2352,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../gui/mainwindow.cpp" line="331"/>
+        <source>Always on &amp;Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/mainwindow.cpp" line="332"/>
         <source>Automatic Result &amp;Reuse</source>
         <translation type="unfinished"></translation>
@@ -2362,196 +2387,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../gui/mainwindow.cpp" line="342"/>
-        <source>Leave &amp;Last Expression</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="343"/>
-        <source>Automatic &amp;Result to Clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="345"/>
-        <source>&amp;Comma</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="346"/>
-        <source>&amp;System Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="347"/>
-        <source>&amp;Dot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="348"/>
-        <source>Dot &amp;And Comma</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="360"/>
-        <source>&amp;Binary</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="358"/>
-        <source>&amp;Engineering</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="357"/>
-        <source>&amp;Fixed Decimal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="356"/>
-        <source>&amp;General</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="362"/>
-        <source>&amp;Hexadecimal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="361"/>
-        <source>&amp;Octal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="359"/>
-        <source>&amp;Scientific</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="364"/>
-        <source>&amp;Cartesian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="365"/>
-        <source>&amp;Polar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="369"/>
-        <source>User &amp;Manual</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="375"/>
-        <source>&amp;Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="603"/>
-        <source>&amp;Input Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="608"/>
-        <source>Comple&amp;x Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="723"/>
-        <source>Constants</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="739"/>
-        <source>Functions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="753"/>
-        <source>History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="770"/>
-        <source>Variables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="788"/>
-        <source>User Functions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="1109"/>
-        <source>Type an expression here</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="366"/>
-        <source>&amp;Font...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="367"/>
-        <source>&amp;Language...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="597"/>
-        <source>&amp;Session</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="599"/>
-        <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="600"/>
-        <source>&amp;View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="601"/>
-        <source>Se&amp;ttings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="602"/>
-        <source>Result &amp;Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="605"/>
-        <source>&amp;Decimal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="607"/>
-        <source>&amp;Angle Unit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="609"/>
-        <source>&amp;Behavior</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="604"/>
-        <source>Radix &amp;Character</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="320"/>
-        <source>&amp;Keypad</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="331"/>
-        <source>Always on &amp;Top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../gui/mainwindow.cpp" line="338"/>
         <source>Disabled</source>
         <translation type="unfinished"></translation>
@@ -2572,8 +2407,38 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../gui/mainwindow.cpp" line="342"/>
+        <source>Leave &amp;Last Expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="343"/>
+        <source>Automatic &amp;Result to Clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/mainwindow.cpp" line="344"/>
         <source>Enable Complex Numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="345"/>
+        <source>&amp;Comma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="346"/>
+        <source>&amp;System Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="347"/>
+        <source>&amp;Dot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="348"/>
+        <source>Dot &amp;And Comma</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2607,8 +2472,73 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../gui/mainwindow.cpp" line="355"/>
+        <source>&amp;Automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="356"/>
+        <source>&amp;General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="357"/>
+        <source>&amp;Fixed Decimal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="358"/>
+        <source>&amp;Engineering</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="359"/>
+        <source>&amp;Scientific</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="360"/>
+        <source>&amp;Binary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="361"/>
+        <source>&amp;Octal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="362"/>
+        <source>&amp;Hexadecimal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/mainwindow.cpp" line="363"/>
         <source>&amp;Sexagesimal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="364"/>
+        <source>&amp;Cartesian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="365"/>
+        <source>&amp;Polar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="366"/>
+        <source>&amp;Font...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="367"/>
+        <source>&amp;Language...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="369"/>
+        <source>User &amp;Manual</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2617,13 +2547,108 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../gui/mainwindow.cpp" line="371"/>
+        <source>Check &amp;Updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="372"/>
+        <source>Send &amp;Feedback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="373"/>
+        <source>Join &amp;Community</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="374"/>
+        <source>&amp;News Feed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="375"/>
+        <source>&amp;Donate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/mainwindow.cpp" line="376"/>
         <source>About &amp;SpeedCrunch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../gui/mainwindow.cpp" line="597"/>
+        <source>&amp;Session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="598"/>
+        <source>&amp;Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="599"/>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="600"/>
+        <source>&amp;View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="601"/>
+        <source>Se&amp;ttings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="602"/>
+        <source>Result &amp;Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="603"/>
+        <source>&amp;Input Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="604"/>
+        <source>Radix &amp;Character</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="605"/>
+        <source>&amp;Decimal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="606"/>
+        <source>&amp;Precision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="607"/>
+        <source>&amp;Angle Unit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="608"/>
+        <source>Comple&amp;x Format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="609"/>
+        <source>&amp;Behavior</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/mainwindow.cpp" line="610"/>
         <source>&amp;Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="611"/>
+        <source>Color Scheme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2634,6 +2659,42 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="613"/>
         <source>Digit Grouping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="723"/>
+        <source>Constants</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="739"/>
+        <source>Functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="753"/>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="770"/>
+        <source>Variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="788"/>
+        <source>User Functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="1109"/>
+        <source>Type an expression here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="1380"/>
+        <location filename="../../gui/mainwindow.cpp" line="1425"/>
+        <source>SpeedCrunch Sessions (*.json);;All Files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2664,6 +2725,24 @@ If no, current variables and display will be cleared.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../gui/mainwindow.cpp" line="1398"/>
+        <location filename="../../gui/mainwindow.cpp" line="1464"/>
+        <source>Merge?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="1426"/>
+        <source>Save Session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="1432"/>
+        <location filename="../../gui/mainwindow.cpp" line="1660"/>
+        <location filename="../../gui/mainwindow.cpp" line="1681"/>
+        <source>Can&apos;t write to file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../gui/mainwindow.cpp" line="1446"/>
         <source>All Files (*)</source>
         <translation type="unfinished"></translation>
@@ -2685,15 +2764,18 @@ If no, current variables and display will be cleared.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../gui/mainwindow.cpp" line="1426"/>
-        <source>Save Session</source>
+        <location filename="../../gui/mainwindow.cpp" line="1652"/>
+        <source>Export session as HTML</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../gui/mainwindow.cpp" line="1432"/>
-        <location filename="../../gui/mainwindow.cpp" line="1660"/>
-        <location filename="../../gui/mainwindow.cpp" line="1681"/>
-        <source>Can&apos;t write to file %1</source>
+        <location filename="../../gui/mainwindow.cpp" line="1653"/>
+        <source>HTML file (*.html)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../gui/mainwindow.cpp" line="1673"/>
+        <source>Export session as plain text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2719,88 +2801,6 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="2422"/>
         <source>Select the language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="355"/>
-        <source>&amp;Automatic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="606"/>
-        <source>&amp;Precision</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="301"/>
-        <source>&amp;HTML</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="302"/>
-        <source>Plain &amp;text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="321"/>
-        <source>Formula &amp;Book</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="371"/>
-        <source>Check &amp;Updates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="372"/>
-        <source>Send &amp;Feedback</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="373"/>
-        <source>Join &amp;Community</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="374"/>
-        <source>&amp;News Feed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="598"/>
-        <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="611"/>
-        <source>Color Scheme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="1380"/>
-        <location filename="../../gui/mainwindow.cpp" line="1425"/>
-        <source>SpeedCrunch Sessions (*.json);;All Files (*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="1398"/>
-        <location filename="../../gui/mainwindow.cpp" line="1464"/>
-        <source>Merge?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="1652"/>
-        <source>Export session as HTML</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="1653"/>
-        <source>HTML file (*.html)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../gui/mainwindow.cpp" line="1673"/>
-        <source>Export session as plain text</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

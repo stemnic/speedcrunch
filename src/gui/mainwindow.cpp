@@ -1695,10 +1695,10 @@ void MainWindow::exportPlainText()
 void MainWindow::setWidgetsDirection()
 {
     QLocale::Language lang = QLocale().language();
-    bool rtlSystem = (lang == QLocale::Hebrew || lang == QLocale::Arabic);
+    bool rtlSystem = (lang == QLocale::Hebrew || lang == QLocale::Arabic || lang == QLocale::Persian);
 
     QString code = m_settings->language;
-    bool rtlCustom = (code.contains("he") || code.contains("ar"));
+    bool rtlCustom = (code.contains("he") || code.contains("ar") || code.contains("fa"));
 
     if ((m_settings->language == "C" && rtlSystem) || rtlCustom)
         qApp->setLayoutDirection(Qt::RightToLeft);

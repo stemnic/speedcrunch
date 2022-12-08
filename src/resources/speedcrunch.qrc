@@ -2,6 +2,7 @@
     <qresource prefix="/">
         <file>speedcrunch.png</file>
         <file>locale/ar.qm</file>
+        <file>locale/bg.qm</file>
         <file>locale/ca_ES.qm</file>
         <file>locale/cs_CZ.qm</file>
         <file>locale/da.qm</file>
@@ -9,10 +10,12 @@
         <file>locale/el.qm</file>
         <file>locale/en_GB.qm</file>
         <file>locale/en_US.qm</file>
+        <file>locale/eo.qm</file>
         <file>locale/es_AR.qm</file>
         <file>locale/es_ES.qm</file>
         <file>locale/et_EE.qm</file>
         <file>locale/eu_ES.qm</file>
+        <file>locale/fa_IR.qm</file>
         <file>locale/fi_FI.qm</file>
         <file>locale/fr_FR.qm</file>
         <file>locale/he_IL.qm</file>
@@ -31,11 +34,16 @@
         <file>locale/ro_RO.qm</file>
         <file>locale/ru_RU.qm</file>
         <file>locale/sk.qm</file>
+        <file>locale/sl_SI.qm</file>
         <file>locale/sv_SE.qm</file>
+        <file>locale/ta.qm</file>
+        <file>locale/te.qm</file>
         <file>locale/tr_TR.qm</file>
+        <file>locale/uk.qm</file>
         <file>locale/uz_Latn_UZ.qm</file>
         <file>locale/vi.qm</file>
         <file>locale/zh_CN.qm</file>
+        <file>locale/zh_TW.qm</file>
         <file>color-schemes/Terminal.json</file>
         <file>color-schemes/Tomorrow.json</file>
         <file>color-schemes/Tomorrow Night.json</file>

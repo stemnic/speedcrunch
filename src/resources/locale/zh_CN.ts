@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_CN">
 <context>
     <name>AboutBox</name>
     <message>
@@ -45,7 +47,7 @@
     <message>
         <location filename="../../gui/aboutbox.cpp" line="130"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version</source>
-        <translation>本程序是自由软件；根据您的选择，您可以在由自由软件基金会发布的 GNU GPL v2 或者更高的版本的协议下重新发布并且/或者修改它</translation>
+        <translation>本程序是自由软件；根据您的选择，您可以在由自由软件基金会发布的 GNU GPL v2 (或者更高的版本的)协议下重新发布并且/或者修改它。</translation>
     </message>
     <message>
         <location filename="../../gui/aboutbox.cpp" line="136"/>
@@ -70,7 +72,7 @@
         <location filename="../../core/book.cpp" line="86"/>
         <location filename="../../core/book.cpp" line="116"/>
         <source>Quadratic Equation</source>
-        <translation>二次方程</translation>
+        <translation>一元二次方程</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="87"/>
@@ -105,19 +107,19 @@
         <location filename="../../core/book.cpp" line="92"/>
         <location filename="../../core/book.cpp" line="255"/>
         <source>Cube</source>
-        <translation>立方体</translation>
+        <translation>正方体</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="93"/>
         <location filename="../../core/book.cpp" line="236"/>
         <source>Cone</source>
-        <translation>锥体</translation>
+        <translation>圆锥</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="94"/>
         <location filename="../../core/book.cpp" line="275"/>
         <source>Cylinder</source>
-        <translation>柱面</translation>
+        <translation>圆柱</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="95"/>
@@ -133,7 +135,7 @@
     <message>
         <location filename="../../core/book.cpp" line="97"/>
         <source>Electronics</source>
-        <translation>电子</translation>
+        <translation>电子学</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="98"/>
@@ -145,13 +147,13 @@
         <location filename="../../core/book.cpp" line="99"/>
         <location filename="../../core/book.cpp" line="154"/>
         <source>Power</source>
-        <translation>能量</translation>
+        <translation>电能</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="100"/>
         <location filename="../../core/book.cpp" line="178"/>
         <source>Reactance</source>
-        <translation>电阻</translation>
+        <translation>电抗</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="101"/>
@@ -163,7 +165,7 @@
         <location filename="../../core/book.cpp" line="102"/>
         <location filename="../../core/book.cpp" line="329"/>
         <source>Radio Frequency</source>
-        <translation>电波频率</translation>
+        <translation>无线电</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="103"/>
@@ -180,19 +182,19 @@
         <location filename="../../core/book.cpp" line="105"/>
         <location filename="../../core/book.cpp" line="359"/>
         <source>Velocity of Propagation (coax)</source>
-        <translation>传播速度 (同轴)</translation>
+        <translation>电磁波波速 (同轴)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="106"/>
         <location filename="../../core/book.cpp" line="376"/>
         <source>Standing Wave Ratio &amp; Return Loss</source>
-        <translation>驻波比&amp;回波损耗</translation>
+        <translation>驻波比和回波损耗</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="107"/>
         <location filename="../../core/book.cpp" line="402"/>
         <source>Free Space Wavelength</source>
-        <translation>自由空间波长</translation>
+        <translation>自由空间电磁波波长</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="142"/>
@@ -215,7 +217,7 @@
     <message>
         <location filename="../../core/book.cpp" line="165"/>
         <source>power</source>
-        <translation>功率</translation>
+        <translation>电功率</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="186"/>
@@ -242,12 +244,12 @@
     <message>
         <location filename="../../core/book.cpp" line="190"/>
         <source>frequency</source>
-        <translation>频率</translation>
+        <translation>电磁波频率</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="205"/>
         <source>resonance frequency</source>
-        <translation>共振频率</translation>
+        <translation>谐振频率</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="223"/>
@@ -295,27 +297,27 @@
         <location filename="../../core/book.cpp" line="244"/>
         <location filename="../../core/book.cpp" line="282"/>
         <source>height</source>
-        <translation>高度</translation>
+        <translation>高</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="245"/>
         <source>slant height</source>
-        <translation>斜向高度</translation>
+        <translation>斜高</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="263"/>
         <source>face diagonal</source>
-        <translation>平面对角线</translation>
+        <translation>面对角线</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="264"/>
         <source>space diagonal</source>
-        <translation>空间对角线</translation>
+        <translation>体对角线</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="265"/>
         <source>edge length</source>
-        <translation>边长</translation>
+        <translation>棱长</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="298"/>
@@ -325,7 +327,7 @@
     <message>
         <location filename="../../core/book.cpp" line="300"/>
         <source>central angle (degrees)</source>
-        <translation>中心角 (度)</translation>
+        <translation>圆心角 (度)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="424"/>
@@ -358,7 +360,7 @@
         <location filename="../../core/book.cpp" line="347"/>
         <location filename="../../core/book.cpp" line="366"/>
         <source>dielectric constant</source>
-        <translation>介电常数</translation>
+        <translation>相对介电常数</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="348"/>
@@ -393,7 +395,7 @@
     <message>
         <location filename="../../core/book.cpp" line="408"/>
         <source>frequency (Hz)</source>
-        <translation>频率 (Hz)</translation>
+        <translation>电磁波频率 (赫兹)</translation>
     </message>
 </context>
 <context>
@@ -424,12 +426,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="562"/>
         <source>Archimedes&apos; constant Pi</source>
-        <translation>阿基米德常数 π</translation>
+        <translation>阿基米德常数π</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="563"/>
         <source>Euler&apos;s number</source>
-        <translation>欧拉数</translation>
+        <translation>欧拉数e</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="564"/>
@@ -439,12 +441,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="567"/>
         <source>General Physics</source>
-        <translation>普通物理</translation>
+        <translation>普通物理学</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="569"/>
         <source>Characteristic Impedance of Vacuum</source>
-        <translation>真空的特性阻抗</translation>
+        <translation>真空特性阻抗</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="570"/>
@@ -454,7 +456,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="571"/>
         <source>Electric Constant</source>
-        <translation>电常数</translation>
+        <translation>真空介电常数</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="572"/>
@@ -464,7 +466,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="573"/>
         <source>Magnetic Constant</source>
-        <translation>磁常数</translation>
+        <translation>真空磁导率</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="574"/>
@@ -479,12 +481,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="576"/>
         <source>Standard Gravity</source>
-        <translation>标准重力</translation>
+        <translation>标准重力加速度</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="580"/>
         <source>Electromagnetic</source>
-        <translation>电磁</translation>
+        <translation>电磁学</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="582"/>
@@ -504,7 +506,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="585"/>
         <source>Elementary Charge</source>
-        <translation>基本电荷</translation>
+        <translation>元电荷</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="586"/>
@@ -534,17 +536,17 @@
     <message>
         <location filename="../../core/constants.cpp" line="591"/>
         <source>Conventional value of von Klitzing Constant</source>
-        <translation>克里青常数的经典值</translation>
+        <translation>克里津常数的经典值</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="592"/>
         <source>von Klitzing Constant</source>
-        <translation>克里青常数</translation>
+        <translation>克里津常数</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="595"/>
         <source>Atomic &amp; Nuclear</source>
-        <translation>原子与原子核</translation>
+        <translation>原子和原子核</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="597"/>
@@ -569,7 +571,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="601"/>
         <source>Hartree Energy in eV</source>
-        <translation>哈特利能量 (eV)</translation>
+        <translation>单位为电子伏特的哈特利能量</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="602"/>
@@ -1332,23 +1334,23 @@
 <context>
     <name>Evaluator</name>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1833"/>
-        <location filename="../../core/evaluator.cpp" line="1932"/>
-        <location filename="../../core/evaluator.cpp" line="1944"/>
-        <location filename="../../core/evaluator.cpp" line="1955"/>
-        <location filename="../../core/evaluator.cpp" line="1966"/>
-        <location filename="../../core/evaluator.cpp" line="1977"/>
-        <location filename="../../core/evaluator.cpp" line="1988"/>
-        <location filename="../../core/evaluator.cpp" line="1999"/>
-        <location filename="../../core/evaluator.cpp" line="2009"/>
-        <location filename="../../core/evaluator.cpp" line="2020"/>
-        <location filename="../../core/evaluator.cpp" line="2031"/>
-        <location filename="../../core/evaluator.cpp" line="2042"/>
-        <location filename="../../core/evaluator.cpp" line="2053"/>
-        <location filename="../../core/evaluator.cpp" line="2064"/>
-        <location filename="../../core/evaluator.cpp" line="2075"/>
-        <location filename="../../core/evaluator.cpp" line="2146"/>
-        <location filename="../../core/evaluator.cpp" line="2202"/>
+        <location filename="../../core/evaluator.cpp" line="1837"/>
+        <location filename="../../core/evaluator.cpp" line="1936"/>
+        <location filename="../../core/evaluator.cpp" line="1948"/>
+        <location filename="../../core/evaluator.cpp" line="1959"/>
+        <location filename="../../core/evaluator.cpp" line="1970"/>
+        <location filename="../../core/evaluator.cpp" line="1981"/>
+        <location filename="../../core/evaluator.cpp" line="1992"/>
+        <location filename="../../core/evaluator.cpp" line="2003"/>
+        <location filename="../../core/evaluator.cpp" line="2013"/>
+        <location filename="../../core/evaluator.cpp" line="2024"/>
+        <location filename="../../core/evaluator.cpp" line="2035"/>
+        <location filename="../../core/evaluator.cpp" line="2046"/>
+        <location filename="../../core/evaluator.cpp" line="2057"/>
+        <location filename="../../core/evaluator.cpp" line="2068"/>
+        <location filename="../../core/evaluator.cpp" line="2079"/>
+        <location filename="../../core/evaluator.cpp" line="2150"/>
+        <location filename="../../core/evaluator.cpp" line="2206"/>
         <source>invalid expression</source>
         <translation>无效的表达式</translation>
     </message>
@@ -1391,28 +1393,28 @@
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="1893"/>
+        <location filename="../../core/evaluator.cpp" line="1897"/>
         <source>compile error</source>
         <translation>编译错误</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2081"/>
+        <location filename="../../core/evaluator.cpp" line="2085"/>
         <source>unit must not be zero</source>
         <translation>单位不能为零</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2085"/>
+        <location filename="../../core/evaluator.cpp" line="2089"/>
         <source>Conversion failed - dimension mismatch</source>
         <translation>转换失败 - 量纲不匹配</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2117"/>
-        <location filename="../../core/evaluator.cpp" line="2141"/>
+        <location filename="../../core/evaluator.cpp" line="2121"/>
+        <location filename="../../core/evaluator.cpp" line="2145"/>
         <source>unknown function or variable</source>
         <translation>未知函数或变量</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2220"/>
+        <location filename="../../core/evaluator.cpp" line="2224"/>
         <source>recursion not supported</source>
         <translation>不支持递归</translation>
     </message>
@@ -1446,7 +1448,7 @@
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="144"/>
-        <location filename="../../core/evaluator.cpp" line="2214"/>
+        <location filename="../../core/evaluator.cpp" line="2218"/>
         <source>wrong number of arguments</source>
         <translation>参数数量错误</translation>
     </message>
@@ -1476,23 +1478,23 @@
         <translation>内部错误，请反馈 Bug</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2282"/>
-        <location filename="../../core/evaluator.cpp" line="2306"/>
+        <location filename="../../core/evaluator.cpp" line="2286"/>
+        <location filename="../../core/evaluator.cpp" line="2310"/>
         <source>%1 is a reserved name, please choose another</source>
         <translation>%1 是一个保留名称，请选取其他名称</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2290"/>
+        <location filename="../../core/evaluator.cpp" line="2294"/>
         <source>%1 is a variable name, please choose another or delete the variable</source>
         <translation>%1 是一个变量名，请选取其他名称或者删除变量</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2300"/>
+        <location filename="../../core/evaluator.cpp" line="2304"/>
         <source>argument %1 is used more than once</source>
         <translation>参数 %1 使用了超过一次</translation>
     </message>
     <message>
-        <location filename="../../core/evaluator.cpp" line="2324"/>
+        <location filename="../../core/evaluator.cpp" line="2328"/>
         <source>%1 is a user function name, please choose another or delete the function</source>
         <translation>%1 是用户函数名，请选取其他名称或者删除函数</translation>
     </message>
@@ -1662,7 +1664,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1146"/>
         <source>Complex Conjugate</source>
-        <translation type="unfinished"/>
+        <translation>共轭复数</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1147"/>
@@ -1687,7 +1689,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1151"/>
         <source>Convert Unix timestamp to Date</source>
-        <translation type="unfinished"/>
+        <translation>将Unix时间戳转换为普通时间</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1153"/>
@@ -1737,7 +1739,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1162"/>
         <source>Gradians of arc</source>
-        <translation type="unfinished"/>
+        <translation>将弧度转换为百分度</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1164"/>
@@ -1892,7 +1894,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1104"/>
         <source>unix_timestamp; x hours offset to GMT</source>
-        <translation type="unfinished"/>
+        <translation>Unix时间戳；时区与GMT时间的时间之差</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1152"/>
@@ -2154,7 +2156,7 @@
         <location filename="../../gui/mainwindow.cpp" line="276"/>
         <location filename="../../gui/mainwindow.cpp" line="1635"/>
         <source>Gradian</source>
-        <translation type="unfinished"/>
+        <translation>百分度</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="280"/>
@@ -2178,7 +2180,7 @@
         <location filename="../../gui/mainwindow.cpp" line="283"/>
         <location filename="../../gui/mainwindow.cpp" line="2041"/>
         <source>Sexagesimal</source>
-        <translation type="unfinished"/>
+        <translation>六十进制</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="284"/>
@@ -2322,12 +2324,12 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="329"/>
         <source>&amp;Gradian</source>
-        <translation type="unfinished"/>
+        <translation>百分度</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="330"/>
         <source>&amp;Cycle Unit</source>
-        <translation type="unfinished"/>
+        <translation>下一个单位</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="332"/>
@@ -2607,7 +2609,7 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="363"/>
         <source>&amp;Sexagesimal</source>
-        <translation type="unfinished"/>
+        <translation>六十分制</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="370"/>
