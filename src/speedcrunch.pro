@@ -1,20 +1,10 @@
 equals(QT_MAJOR_VERSION, 5) {
-    lessThan(QT_MINOR_VERSION, 2) {
-        error(Qt 5.2 or newer is required but version $$[QT_VERSION] was detected.)
+    lessThan(QT_MINOR_VERSION, 15) {
+        error(Qt 5.15 or newer is required but version $$[QT_VERSION] was detected.)
     }
 
     QT += widgets
     CONFIG += c++11
-}
-
-equals(QT_MAJOR_VERSION, 4) {
-    lessThan(QT_MINOR_VERSION, 8) {
-        error(Qt 4.8 or newer is required but version $$[QT_VERSION] was detected.)
-    }
-
-    !win32|win32-g++ {
-        QMAKE_CXXFLAGS += -std=c++0x
-    }
 }
 
 CONFIG(debug, debug|release) {

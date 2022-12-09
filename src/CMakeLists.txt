@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
+find_package(Qt5Core 5.15.0 REQUIRED)
+
 if (MSVC)
     add_definitions(-D_USE_MATH_DEFINES)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS -D_CRT_NONSTDC_NO_WARNINGS -D_SCL_SECURE_NO_WARNINGS)
