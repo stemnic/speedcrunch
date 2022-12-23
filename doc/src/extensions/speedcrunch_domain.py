@@ -27,6 +27,7 @@ enable the extension and use the 'sc' domain like any other domain (e.g.
 import bisect
 from collections import deque
 import re
+import os
 
 import sphinx
 from sphinx import addnodes
@@ -35,9 +36,12 @@ from sphinx.domains import Domain, Index, ObjType
 from sphinx.roles import XRefRole
 from sphinx.util.docfields import Field, GroupedField
 from sphinx.util.nodes import make_refnode
+from sphinx.locale import get_translation
 
-from translations import _, l_
 import qtkeyword
+
+_MESSAGE_CATALOG = 'extra-doc-strings'
+_ = get_translation(_MESSAGE_CATALOG)
 
 _SIG_RE = re.compile(r'''
     ^                       # start
@@ -81,10 +85,10 @@ class SpeedCrunchObject(ObjectDescription):
 
     doc_field_types = [
         # l10n: Label for parameter lists when documenting functions
-        GroupedField('parameter', label=l_('Parameters'),
+        GroupedField('parameter', label=_('Parameters'),
                      names=('param', 'parameter', 'arg', 'argument',)),
         # l10n: Label for the return value field when documenting functions
-        Field('returnvalue', label=l_('Returns'), has_arg=False,
+        Field('returnvalue', label=_('Returns'), has_arg=False,
               names=('returns', 'return',)),
     ]
 
@@ -162,9 +166,9 @@ class FunctionIndex(Index):
 
     name = 'functionindex'
     # l10n: Function index long name (title and links)
-    localname = l_('Function Index')
+    localname = _('Function Index')
     # l10n: Function index short name (used in the header of some Sphinx themes)
-    shortname = l_('functions')
+    shortname = _('functions')
 
     def generate(self, docnames=None):
         content = {}
@@ -187,9 +191,9 @@ class SpeedCrunchDomain(Domain):
 
     object_types = {
         # l10n: Label for built-in SpeedCrunch functions
-        'function': ObjType(l_('function'), 'func'),
+        'function': ObjType(_('function'), 'func'),
         # l10n: Label for built-in SpeedCrunch constants
-        'constant': ObjType(l_('constant'), 'const'),
+        'constant': ObjType(_('constant'), 'const'),
     }
 
     directives = {
@@ -257,4 +261,6 @@ def add_index_to_standard_domain(app, env, *args):
 def setup(app):
     app.add_domain(SpeedCrunchDomain)
     app.connect('env-before-read-docs', add_index_to_standard_domain)
+    for locale_dir in app.config.locale_dirs:
+        app.add_message_catalog(_MESSAGE_CATALOG, os.path.join(app.srcdir, locale_dir))
     return {'version': '0.1'}

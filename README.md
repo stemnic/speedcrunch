@@ -42,7 +42,7 @@ with the SpeedCrunch source. Rebuilding the manual requires the following additi
 software:
 
   - [Python](http://python.org) 3.4 or later
-  - [Sphinx](http://sphinx-doc.org) 1.3 or later
+  - [Sphinx](http://sphinx-doc.org) 1.8 or later
   - [the Qt help builder extension](https://github.com/sphinx-doc/sphinxcontrib-qthelp) 1.0 or later
   - [the Quark theme](https://pypi.python.org/pypi/quark-sphinx-theme) 0.2 or later
 

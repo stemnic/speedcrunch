@@ -33,15 +33,14 @@ gettext_additional_targets = ['index']
 gettext_compact = True
 
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = '1.3'
+needs_sphinx = '1.8'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 sys.path.append(os.path.abspath('extensions'))
 
-extensions = ['qtkeyword', 'speedcrunch_domain', 'sc_post_config', 'sc_lexer',
-              'translations']
+extensions = ['qtkeyword', 'speedcrunch_domain', 'sc_post_config', 'sc_lexer']
 ignore_qtkeywords = not bundled
 primary_domain = 'sc'
 
@@ -79,7 +78,7 @@ release = 'master'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+#language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
