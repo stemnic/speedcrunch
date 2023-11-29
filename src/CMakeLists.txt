@@ -3,6 +3,11 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
+if(APPLE)
+        list(APPEND CMAKE_PREFIX_PATH "/opt/homebrew/opt/qt@5/")
+        list(APPEND CMAKE_PREFIX_PATH "/opt/homebrew/opt/qt@5/lib/cmake/QT5Core")
+endif()
+
 find_package(Qt5Core 5.15.0 REQUIRED)
 
 if (MSVC)
